@@ -8,83 +8,83 @@ import texts from 'resources/texts';
 import {TextStyled} from './Text.styles';
 
 describe('TextStyled Component', () => {
-  test('DEVE ser igual ao snapshot', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should match the snapshot', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test(`DEVE ter a cor igual a "${colors.black}" QUANDO a propriedade color for igual a "${colors.black}"`, () => {
-    const {container} = render(<TextStyled color={colors.black}>Teste</TextStyled>);
+  test(`should have color equal to "${colors.black}" WHEN the color prop is "${colors.black}"`, () => {
+    const {container} = render(<TextStyled color={colors.black}>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('color', colors.black);
   });
 
-  test('DEVE ter a cor padrão igual a "colors.background01" QUANDO a propriedade color não for informada', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should have the default color equal to "colors.background01" WHEN the color prop is not provided', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('color', colors.background01);
   });
 
-  test('DEVE ter o tamanho da fonte igual a "14px" QUANDO a propriedade $tamanho for igual a "14"', () => {
-    const {container} = render(<TextStyled $tamanho={14}>Teste</TextStyled>);
+  test('should have font-size equal to "14px" WHEN the $size prop is "14"', () => {
+    const {container} = render(<TextStyled $size={14}>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('font-size', '14px');
   });
 
-  test('DEVE ter o tamanho da fonte padrão igual a texts.tamanho.xxsmall QUANDO a propriedade $tamanho não for informada', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should have the default font-size equal to texts.tamanho.xxsmall WHEN the $size prop is not provided', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('font-size', `${texts.tamanho.xxsmall}px`);
   });
 
-  test('DEVE ter a margin-top igual a "10px" QUANDO a propriedade $marginTop for igual a "10"', () => {
-    const {container} = render(<TextStyled $marginTop={10}>Teste</TextStyled>);
+  test('should have margin-top equal to "10px" WHEN the $marginTop prop is "10"', () => {
+    const {container} = render(<TextStyled $marginTop={10}>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('margin-top', '10px');
   });
 
-  test('DEVE ter a margin-top padrão igual a "0px" QUANDO a propriedade $marginTop não for informada', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should have default margin-top equal to "0px" WHEN the $marginTop prop is not provided', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('margin-top', '0px');
   });
 
-  test('DEVE ter o font-family igual a "AvertaStd-Bold" QUANDO a propriedade peso for igual a "bold"', () => {
-    const {container} = render(<TextStyled peso="bold">Teste</TextStyled>);
+  test('should have font-family equal to "AvertaStd-Bold" WHEN the weight prop is "bold"', () => {
+    const {container} = render(<TextStyled weight="bold">Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('font-family', fonts.avertaBold);
   });
 
-  test('DEVE ter o font-family igual a "AvertaStd-Regular" QUANDO a propriedade peso não for informada', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should have font-family equal to "AvertaStd-Regular" WHEN the weight prop is not provided', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('font-family', fonts.avertaRegular);
   });
 
-  test('DEVE ter o text-transform igual a "uppercase" QUANDO a propriedade $toUpper for igual a true', () => {
-    const {container} = render(<TextStyled $toUpper={true}>Teste</TextStyled>);
+  test('should have text-transform equal to "uppercase" WHEN the $toUpper prop is true', () => {
+    const {container} = render(<TextStyled $toUpper={true}>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('text-transform', 'uppercase');
   });
 
-  test('DEVE ter o text-transform igual a "none" QUANDO a propriedade $toUpper não for informada', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should have text-transform equal to "none" WHEN the $toUpper prop is not provided', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('text-transform', 'none');
   });
 
-  test('DEVE ter o cursor igual a "pointer" QUANDO a propriedade cursor for igual a "pointer"', () => {
-    const {container} = render(<TextStyled cursor="pointer">Teste</TextStyled>);
+  test('should have cursor equal to "pointer" WHEN the cursor prop is "pointer"', () => {
+    const {container} = render(<TextStyled cursor="pointer">Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('cursor', 'pointer');
   });
 
-  test('DEVE ter o cursor padrão igual a "text" QUANDO a propriedade cursor não for informada', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should have default cursor equal to "text" WHEN the cursor prop is not provided', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('cursor', 'text');
   });
 
-  test('DEVE ter o line-height igual a "20px" QUANDO a propriedade $alturaDeLinha for igual a "20"', () => {
-    const {container} = render(<TextStyled $alturaDeLinha={20}>Teste</TextStyled>);
+  test('should have line-height equal to "20px" WHEN the $lineHeight prop is "20"', () => {
+    const {container} = render(<TextStyled $lineHeight={20}>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('line-height', '20px');
   });
 
-  test('DEVE ter o font-weight igual a "500" QUANDO a propriedade $fontWeight for igual a "500"', () => {
-    const {container} = render(<TextStyled $fontWeight={500}>Teste</TextStyled>);
+  test('should have font-weight equal to "500" WHEN the $fontWeight prop is "500"', () => {
+    const {container} = render(<TextStyled $fontWeight={500}>Test</TextStyled>);
     expect(container.firstChild).toHaveStyleRule('font-weight', '500');
   });
 
-  test('NÃO DEVE ter o line-height QUANDO a propriedade $alturaDeLinha não for informada', () => {
-    const {container} = render(<TextStyled>Teste</TextStyled>);
+  test('should NOT have line-height WHEN the $lineHeight prop is not provided', () => {
+    const {container} = render(<TextStyled>Test</TextStyled>);
     expect(container.firstChild).not.toHaveStyleRule('line-height');
   });
 });

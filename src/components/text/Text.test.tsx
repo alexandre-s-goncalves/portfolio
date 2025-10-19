@@ -4,61 +4,61 @@ import '@testing-library/jest-dom';
 import * as S from './Text';
 
 describe('Text', () => {
-  describe('Renderização', () => {
-    test('DEVE renderizar o texto "Texto de teste"', () => {
-      const {getByText} = render(<S.Text>Texto de teste</S.Text>);
-      const result = getByText('Texto de teste');
+  describe('Rendering', () => {
+    test('should render the text "Test text"', () => {
+      const {getByText} = render(<S.Text>Test text</S.Text>);
+      const result = getByText('Test text');
       expect(result).toBeDefined();
     });
 
-    test('DEVE renderizar com o tipo de elemento "h1" quando a propriedade type for "h1"', () => {
-      const {container} = render(<S.Text type="h1">Título</S.Text>);
+    test('should render an "h1" element when the type prop is "h1"', () => {
+      const {container} = render(<S.Text type="h1">Title</S.Text>);
       const result = container.querySelector('h1');
       expect(result).toBeInTheDocument();
     });
 
-    test('DEVE renderizar com o tipo de elemento "p" como padrão quando a propriedade type não for informada', () => {
-      const {container} = render(<S.Text>Parágrafo padrão</S.Text>);
+    test('should render a "p" element by default when type is not provided', () => {
+      const {container} = render(<S.Text>Default paragraph</S.Text>);
       const result = container.querySelector('p');
       expect(result).toBeInTheDocument();
     });
 
-    test('DEVE aplicar "text-transform: uppercase" QUANDO a propriedade toUpper for igual a "true"', () => {
-      const {container} = render(<S.Text toUpper={true}>Texto em maiúsculas</S.Text>);
+    test('should apply "text-transform: uppercase" WHEN the toUpper prop is true', () => {
+      const {container} = render(<S.Text toUpper={true}>Uppercase text</S.Text>);
       const result = container.firstChild;
       expect(result).toHaveStyle('text-transform: uppercase');
     });
 
-    test('NÃO DEVE renderizar o texto em maiúsculas QUANDO a propriedade toUpper não for passada', () => {
-      const {getByText} = render(<S.Text>Texto normal</S.Text>);
-      const result = getByText('Texto normal');
+    test('should NOT render text in uppercase WHEN toUpper is not passed', () => {
+      const {getByText} = render(<S.Text>Normal text</S.Text>);
+      const result = getByText('Normal text');
       expect(result).toBeInTheDocument();
     });
   });
 
   describe('Propriedades de Estilo', () => {
-    test('DEVE aplicar o tamanho da fonte corretamente QUANDO a propriedade tamanho for "16"', () => {
-      const {container} = render(<S.Text tamanho={16}>Texto com tamanho 16</S.Text>);
+    test('should apply font size correctly WHEN the size prop is "16"', () => {
+      const {container} = render(<S.Text size={16}>Text with size 16</S.Text>);
       expect(container.firstChild).toHaveStyle('font-size: 16px');
     });
 
-    test('DEVE aplicar a altura de linha corretamente QUANDO a propriedade alturaDeLinha for "24"', () => {
-      const {container} = render(<S.Text alturaDeLinha={24}>Texto com altura de linha 24</S.Text>);
+    test('should apply line-height correctly WHEN the lineHeight prop is "24"', () => {
+      const {container} = render(<S.Text lineHeight={24}>Text with line-height 24</S.Text>);
       expect(container.firstChild).toHaveStyle('line-height: 24px');
     });
 
-    test('DEVE aplicar a margem superior corretamente QUANDO a propriedade marginTop for "20"', () => {
-      const {container} = render(<S.Text marginTop={20}>Texto com margem</S.Text>);
+    test('should apply margin-top correctly WHEN the marginTop prop is "20"', () => {
+      const {container} = render(<S.Text marginTop={20}>Text with margin</S.Text>);
       expect(container.firstChild).toHaveStyle('margin-top: 20px');
     });
 
-    test('DEVE aplicar o cursor corretamente QUANDO a propriedade cursor for "pointer"', () => {
-      const {container} = render(<S.Text cursor="pointer">Texto com cursor pointer</S.Text>);
+    test('should apply cursor correctly WHEN the cursor prop is "pointer"', () => {
+      const {container} = render(<S.Text cursor="pointer">Text with cursor pointer</S.Text>);
       expect(container.firstChild).toHaveStyle('cursor: pointer');
     });
 
-    test('DEVE aplicar a cor corretamente QUANDO a propriedade color for passada', () => {
-      const {container} = render(<S.Text color="#ff0000">Texto colorido</S.Text>);
+    test('should apply color correctly WHEN the color prop is provided', () => {
+      const {container} = render(<S.Text color="#ff0000">Colored text</S.Text>);
       expect(container.firstChild).toHaveStyle('color: #ff0000');
     });
   });

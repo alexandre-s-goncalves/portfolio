@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TextStyled Component DEVE ser igual ao snapshot 1`] = `
+exports[`TextStyled Component should match the snapshot 1`] = `
 .c0 {
   font-size: 12px;
   font-family: AvertaStd-Regular;
@@ -14,6 +14,6 @@ exports[`TextStyled Component DEVE ser igual ao snapshot 1`] = `
 <p
   class="c0"
 >
-  Teste
+  Test
 </p>
 `;
