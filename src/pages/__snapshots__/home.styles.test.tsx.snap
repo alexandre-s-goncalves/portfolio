@@ -27,6 +27,6 @@ exports[`home.styles Title DEVE ser igual ao snapshot 1`] = `
 <h1
   class="c0 "
   color="#434645"
-  peso="bold"
+  weight="bold"
 />
 `;

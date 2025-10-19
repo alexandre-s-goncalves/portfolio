@@ -11,7 +11,7 @@ export const Container = styled.div`
 
 export const Title = styled(Text).attrs({
   type: 'h1',
-  tamanho: 24,
-  peso: 'bold',
+  size: 24,
+  weight: 'bold',
   color: colors.neutralDark,
 })``;
