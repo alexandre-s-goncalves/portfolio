@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`home.styles Container DEVE ser igual ao snapshot 1`] = `
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`home.styles Title DEVE ser igual ao snapshot 1`] = `
+.c0 {
+  font-size: 24px;
+  font-family: AvertaStd-Bold;
+  color: #434645;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: text;
+}
+
+<h1
+  class="c0 "
+  color="#434645"
+  peso="bold"
+/>
+`;
