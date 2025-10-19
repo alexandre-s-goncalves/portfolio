@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": ["DOM", "ESNext"],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["vite/client", "jest"],
+    "baseUrl": ".",
+    "paths": {
+      "resources/*": ["src/resources/*"],
+      "utils/*": ["src/utils/*"],
+      "helper/*": ["src/helper/*"],
+      "components/*": ["src/components/*"],
+      "context/*": ["src/context/*"],
+      "assets/*": ["src/assets/*"],
+      "pages/*": ["src/pages/*"]
+    }
+  },
+  "include": ["src", "tests", "setupTests.ts"],
+  "references": []
+}
