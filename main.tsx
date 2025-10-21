@@ -1,10 +1,10 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import { Home } from './src/pages/home'
+import React from 'react';
+import {createRoot} from 'react-dom/client';
+import {WebRoutes} from './src/routes/webRoutes';
 
-const root = createRoot(document.getElementById('root') as HTMLElement)
+const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Home />
-  </React.StrictMode>
-)
+    <WebRoutes />
+  </React.StrictMode>,
+);
