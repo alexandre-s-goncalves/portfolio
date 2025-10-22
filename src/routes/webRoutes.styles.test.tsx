@@ -5,7 +5,7 @@ import 'jest-styled-components';
 import {WebRoutesContainer} from './webRoutes.styles';
 
 describe('webRoutes.styles', () => {
-  test('WebRoutesContainer DEVE ser igual ao snapshot', () => {
+  test('WebRoutesContainer should match the snapshot', () => {
     const {container} = render(<WebRoutesContainer />);
     expect(container.firstChild).toMatchSnapshot();
   });

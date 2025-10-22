@@ -5,12 +5,12 @@ import 'jest-styled-components';
 import * as S from './home.styles';
 
 describe('home.styles', () => {
-  test('Container DEVE ser igual ao snapshot', () => {
+  test('Container should match the snapshot', () => {
     const {container} = render(<S.Container />);
     expect(container.firstChild).toMatchSnapshot();
   });
 
-  test('Title DEVE ser igual ao snapshot', () => {
+  test('Title should match the snapshot', () => {
     const {container} = render(<S.Title />);
     expect(container.firstChild).toMatchSnapshot();
   });

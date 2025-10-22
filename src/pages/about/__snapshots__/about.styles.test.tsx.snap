@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`about.styles Container DEVE ser igual ao snapshot 1`] = `
+exports[`about.styles Container should match the snapshot 1`] = `
 .c0 {
   display: flex;
   align-items: center;
@@ -13,7 +13,7 @@ exports[`about.styles Container DEVE ser igual ao snapshot 1`] = `
 />
 `;
 
-exports[`about.styles Title DEVE ser igual ao snapshot 1`] = `
+exports[`about.styles Title should match the snapshot 1`] = `
 .c0 {
   font-size: 24px;
   font-family: AvertaStd-Bold;

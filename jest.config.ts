@@ -24,6 +24,8 @@ const config: Config.InitialOptions = {
     '!src/documents/**/index.ts',
     '!src/components/text/index.ts',
     '!src/utils/index.ts',
+    '!src/context/index.ts',
+    '!src/utils/i18n/**',
     '!src/**/__snapshots__/**',
   ],
   coveragePathIgnorePatterns: ['<rootDir>/src/resources/'],

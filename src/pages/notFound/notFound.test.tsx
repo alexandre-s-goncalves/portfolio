@@ -4,13 +4,13 @@ import '@testing-library/jest-dom';
 import {NotFound} from './notFound';
 
 describe('NotFound', () => {
-  describe('Renderização', () => {
-    test('DEVE renderizar a pagina NotFound', () => {
+  describe('Rendering', () => {
+    test('should render the NotFound page (by test id)', () => {
       const {getByTestId} = render(<NotFound />);
       const result = getByTestId('notfound-page');
       expect(result).toBeDefined();
     });
-    test('DEVE renderizar a pagina NotFound', () => {
+    test('should render the NotFound page (by text)', () => {
       const {getByText} = render(<NotFound />);
       const result = getByText('NotFound');
       expect(result).toBeDefined();

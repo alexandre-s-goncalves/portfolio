@@ -64,25 +64,25 @@ describe('Text', () => {
   });
 
   describe('Comportamento de Children', () => {
-    test('DEVE renderizar elementos React passados como children', () => {
+    test('should render React elements passed as children', () => {
       const {getByText} = render(
         <S.Text>
-          <strong>Texto com elemento filho</strong>
+          <strong>Text with child element</strong>
         </S.Text>,
       );
-      const result = getByText('Texto com elemento filho');
+      const result = getByText('Text with child element');
       expect(result).toBeInTheDocument();
     });
 
-    test('DEVE renderizar corretamente múltiplos elementos React passados como children', () => {
+    test('should correctly render multiple React elements passed as children', () => {
       const {getByText} = render(
         <S.Text>
-          <span>Texto 1</span>
-          <span>Texto 2</span>
+          <span>Text 1</span>
+          <span>Text 2</span>
         </S.Text>,
       );
-      expect(getByText('Texto 1')).toBeInTheDocument();
-      expect(getByText('Texto 2')).toBeInTheDocument();
+      expect(getByText('Text 1')).toBeInTheDocument();
+      expect(getByText('Text 2')).toBeInTheDocument();
     });
   });
 });
