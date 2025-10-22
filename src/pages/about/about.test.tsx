@@ -4,13 +4,13 @@ import '@testing-library/jest-dom';
 import {About} from './about';
 
 describe('About', () => {
-  describe('Renderização', () => {
-    test('DEVE renderizar a pagina about', () => {
+  describe('Rendering', () => {
+    test('should render the about page (by test id)', () => {
       const {getByTestId} = render(<About />);
       const result = getByTestId('about-page');
       expect(result).toBeDefined();
     });
-    test('DEVE renderizar a pagina about', () => {
+    test('should render the about page (by text)', () => {
       const {getByText} = render(<About />);
       const result = getByText('About');
       expect(result).toBeDefined();
