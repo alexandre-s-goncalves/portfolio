@@ -26,7 +26,5 @@ exports[`home.styles Title should match the snapshot 1`] = `
 
 <h1
   class="c0 "
-  color="#434645"
-  weight="bold"
 />
 `;

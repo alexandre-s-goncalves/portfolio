@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`image.styles ContainerImage should match the snapshot 1`] = `
+.c0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`image.styles ImageStyled should match snapshot 1`] = `
+.c0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  cursor: default;
+  transform: rotate(0deg);
+}
+
+<img
+  class="c0"
+/>
+`;

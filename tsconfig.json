@@ -18,6 +18,7 @@
     "paths": {
       "resources/*": ["src/resources/*"],
       "utils/*": ["src/utils/*"],
+      "ui/*": ["src/components/ui/*"],
       "helper/*": ["src/helper/*"],
       "components/*": ["src/components/*"],
       "context/*": ["src/context/*"],

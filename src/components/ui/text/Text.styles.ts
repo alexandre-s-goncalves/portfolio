@@ -23,16 +23,19 @@ interface Props {
   $marginTop?: number;
   $toUpper?: boolean;
   $fontWeight?: number;
+  $weight?: 'bold' | 'medium';
+  $color?: string;
+  $cursor?: 'default' | 'pointer' | 'text';
 }
 
 export const TextStyled = styled.p<Props & TextProps>`
   font-size: ${({$size}) => $size ?? texts.tamanho.xxsmall}px;
-  font-family: ${({weight}) => (weight === 'bold' ? fonts.avertaBold : fonts.avertaRegular)};
-  color: ${({color}) => color ?? colors.background01};
+  font-family: ${({$weight}) => ($weight === 'bold' ? fonts.avertaBold : fonts.avertaRegular)};
+  color: ${({$color}) => $color ?? colors.background01};
   margin-top: ${({$marginTop}) => $marginTop ?? 0}px;
   font-weight: ${({$fontWeight}) => $fontWeight ?? 'normal'};
   text-transform: ${({$toUpper}) => ($toUpper ? 'uppercase' : 'none')};
-  cursor: ${({cursor}) => cursor ?? 'text'};
+  cursor: ${({$cursor}) => $cursor ?? 'text'};
 
   ${({$lineHeight}) =>
     $lineHeight &&

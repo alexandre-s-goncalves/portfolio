@@ -2,7 +2,18 @@ import React from 'react';
 import {TextStyled, TextProps} from './Text.styles';
 
 export function Text(props: TextProps) {
-  const {size, lineHeight, marginTop, toUpper, fontWeight, type = 'p', ...rest} = props;
+  const {
+    size,
+    lineHeight,
+    marginTop,
+    toUpper,
+    fontWeight,
+    type = 'p',
+    weight,
+    color,
+    cursor,
+    ...rest
+  } = props;
 
   return (
     <TextStyled
@@ -12,6 +23,9 @@ export function Text(props: TextProps) {
       $marginTop={marginTop}
       $toUpper={toUpper}
       $fontWeight={fontWeight}
+      $weight={weight}
+      $color={color}
+      $cursor={cursor}
       {...rest}
     />
   );

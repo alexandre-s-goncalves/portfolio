@@ -22,5 +22,8 @@
   "prettier.requireConfig": true,
   "prettier.enable": true,
   "explorer.compactFolders": false,
-  "explorer.indentMarkers.enabled": true
+  "explorer.indentMarkers.enabled": true,
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  }
 }

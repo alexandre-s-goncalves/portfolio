@@ -1,6 +1,9 @@
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 
+// Ensure i18n is initialized for tests
+import './src/utils/i18n';
+
 // Polyfill TextEncoder/TextDecoder for environments (some router internals rely on them)
 // Node provides these under util.TextEncoder/TextDecoder from v11+, but ensure globals exist for Jest
 import {TextEncoder, TextDecoder} from 'util';

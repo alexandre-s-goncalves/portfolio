@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Text} from 'components/text';
+import {Text} from 'components/ui/text';
 import {colors} from 'resources/colors';
 
 export const Container = styled.div`
