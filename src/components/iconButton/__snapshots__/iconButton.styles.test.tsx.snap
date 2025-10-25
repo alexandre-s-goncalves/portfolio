@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`iconButton.styles ButtonStyled should match the snapshot 1`] = `
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.c0:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.c0:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c0:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  outline-offset: 2px;
+}
+
+<button
+  class="c0"
+/>
+`;
