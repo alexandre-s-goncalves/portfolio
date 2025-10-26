@@ -1,5 +1,5 @@
-import {useTheme} from 'context/ThemeContext';
 import React from 'react';
+import {useTheme} from 'context/ThemeContext';
 import {useTranslation} from 'react-i18next';
 import {useNavigate, useLocation} from 'react-router-dom';
 import {namespaces} from 'utils/i18n/i18n.constants';
@@ -38,6 +38,7 @@ export const Header = () => {
   return (
     <S.HeaderContainer $themeDark={themeDark}>
       <S.LogoButton
+        testId={themeDark ? 'logo-clear' : 'logo-dark'}
         icon={themeDark ? LogoClearSVG : LogoDarkSVG}
         $isActivated={isHome}
         onClick={handleLogoClick}
@@ -45,7 +46,10 @@ export const Header = () => {
       />
       <S.Nav>
         {navigation.map(item => (
-          <S.NavLink key={item.href} to={item.href}>
+          <S.NavLink
+            key={item.href}
+            to={item.href}
+            data-testid={`navlink-${item.name.toLowerCase()}`}>
             <S.TextHeader $themeDark={themeDark} $isActivated={isActive(item.href)}>
               {item.name}
             </S.TextHeader>
@@ -55,6 +59,7 @@ export const Header = () => {
       <S.ButtonsContainer>
         <Dropdown />
         <S.ThemeToggleButton
+          testId={themeDark ? 'theme-toggle-sun' : 'theme-toggle-moon'}
           icon={themeDark ? SunSVG : MoonSVG}
           $themeDark={themeDark}
           onClick={handleToggle}
