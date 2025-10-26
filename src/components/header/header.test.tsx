@@ -1,13 +1,16 @@
 import React from 'react';
-import {render, screen, fireEvent} from '@testing-library/react';
+import {render, screen, fireEvent, waitFor} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import {BrowserRouter} from 'react-router-dom';
 import {Header} from './header';
+import {ThemeProvider} from 'context/ThemeContext';
 
 const MockedHeader = () => (
-  <BrowserRouter>
-    <Header />
-  </BrowserRouter>
+  <ThemeProvider>
+    <BrowserRouter>
+      <Header />
+    </BrowserRouter>
+  </ThemeProvider>
 );
 
 describe('Header component', () => {
@@ -130,5 +133,193 @@ describe('Header component', () => {
     expect(skillsLink).toHaveAttribute('href', '/skills');
     expect(projectsLink).toHaveAttribute('href', '/projects');
     expect(aboutLink).toHaveAttribute('href', '/about');
+  });
+
+  test('renders logo with correct testId in dark theme', () => {
+    render(<MockedHeader />);
+
+    const logoDark = screen.getByTestId('logo-dark');
+    expect(logoDark).toBeInTheDocument();
+  });
+
+  test('navigation array contains all four items', () => {
+    render(<MockedHeader />);
+
+    const homeNavLink = screen.getByTestId('navlink-home');
+    const skillsNavLink = screen.getByTestId('navlink-skills');
+    const projectsNavLink = screen.getByTestId('navlink-projects');
+    const aboutNavLink = screen.getByTestId('navlink-about us');
+
+    expect(homeNavLink).toBeInTheDocument();
+    expect(skillsNavLink).toBeInTheDocument();
+    expect(projectsNavLink).toBeInTheDocument();
+    expect(aboutNavLink).toBeInTheDocument();
+  });
+
+  test('each navigation item has correct href through testId', () => {
+    render(<MockedHeader />);
+
+    expect(screen.getByTestId('navlink-home')).toHaveAttribute('href', '/');
+    expect(screen.getByTestId('navlink-skills')).toHaveAttribute('href', '/skills');
+    expect(screen.getByTestId('navlink-projects')).toHaveAttribute('href', '/projects');
+    expect(screen.getByTestId('navlink-about us')).toHaveAttribute('href', '/about');
+  });
+
+  test('navigation items render in correct order', () => {
+    render(<MockedHeader />);
+
+    const navLinks = screen.getAllByTestId(/navlink-/);
+    expect(navLinks).toHaveLength(4);
+    expect(navLinks[0]).toHaveAttribute('data-testid', 'navlink-home');
+    expect(navLinks[1]).toHaveAttribute('data-testid', 'navlink-skills');
+    expect(navLinks[2]).toHaveAttribute('data-testid', 'navlink-projects');
+    expect(navLinks[3]).toHaveAttribute('data-testid', 'navlink-about us');
+  });
+
+  test('home navigation item has correct name and href', () => {
+    render(<MockedHeader />);
+    const homeLink = screen.getByTestId('navlink-home');
+    expect(homeLink).toHaveAttribute('href', '/');
+    expect(homeLink).toHaveTextContent(/home/i);
+  });
+
+  test('skills navigation item has correct name and href', () => {
+    render(<MockedHeader />);
+    const skillsLink = screen.getByTestId('navlink-skills');
+    expect(skillsLink).toHaveAttribute('href', '/skills');
+    expect(skillsLink).toHaveTextContent(/skills/i);
+  });
+
+  test('projects navigation item has correct name and href', () => {
+    render(<MockedHeader />);
+    const projectsLink = screen.getByTestId('navlink-projects');
+    expect(projectsLink).toHaveAttribute('href', '/projects');
+    expect(projectsLink).toHaveTextContent(/projects/i);
+  });
+
+  test('about navigation item has correct name and href', () => {
+    render(<MockedHeader />);
+    const aboutLink = screen.getByTestId('navlink-about us');
+    expect(aboutLink).toHaveAttribute('href', '/about');
+    expect(aboutLink).toHaveTextContent(/about/i);
+  });
+
+  test('all navigation items use correct translation keys', () => {
+    render(<MockedHeader />);
+
+    const homeLink = screen.getByTestId('navlink-home');
+    const skillsLink = screen.getByTestId('navlink-skills');
+    const projectsLink = screen.getByTestId('navlink-projects');
+    const aboutLink = screen.getByTestId('navlink-about us');
+
+    expect(homeLink.textContent).toBeTruthy();
+    expect(skillsLink.textContent).toBeTruthy();
+    expect(projectsLink.textContent).toBeTruthy();
+    expect(aboutLink.textContent).toBeTruthy();
+  });
+
+  test('navigation map renders all items with unique keys', () => {
+    render(<MockedHeader />);
+
+    const navLinks = screen.getAllByTestId(/navlink-/);
+    const hrefs = navLinks.map(link => link.getAttribute('href'));
+
+    expect(hrefs).toEqual(['/', '/skills', '/projects', '/about']);
+    expect(new Set(hrefs).size).toBe(4);
+  });
+
+  test('isActive function correctly identifies active route for home', () => {
+    window.history.pushState({}, '', '/');
+    render(<MockedHeader />);
+
+    const homeLink = screen.getByTestId('navlink-home');
+    const homeText = homeLink.querySelector('h3');
+
+    expect(homeText).toBeInTheDocument();
+  });
+
+  test('isActive function correctly identifies active route for skills', () => {
+    window.history.pushState({}, '', '/skills');
+    render(<MockedHeader />);
+
+    const skillsLink = screen.getByTestId('navlink-skills');
+    const skillsText = skillsLink.querySelector('h3');
+
+    expect(skillsText).toBeInTheDocument();
+  });
+
+  test('isActive function correctly identifies active route for projects', () => {
+    window.history.pushState({}, '', '/projects');
+    render(<MockedHeader />);
+
+    const projectsLink = screen.getByTestId('navlink-projects');
+    const projectsText = projectsLink.querySelector('h3');
+
+    expect(projectsText).toBeInTheDocument();
+  });
+
+  test('isActive function correctly identifies active route for about', () => {
+    window.history.pushState({}, '', '/about');
+    render(<MockedHeader />);
+
+    const aboutLink = screen.getByTestId('navlink-about us');
+    const aboutText = aboutLink.querySelector('h3');
+
+    expect(aboutText).toBeInTheDocument();
+  });
+
+  test('renders logo-dark testId in light theme', () => {
+    render(<MockedHeader />);
+
+    const logoDarkButton = screen.getByTestId('logo-dark');
+    expect(logoDarkButton).toBeInTheDocument();
+  });
+
+  test('switches to logo-clear testId when theme is toggled to dark', async () => {
+    render(<MockedHeader />);
+
+    expect(screen.getByTestId('logo-dark')).toBeInTheDocument();
+
+    const themeToggleButton = screen.getByTestId('theme-toggle-moon');
+    fireEvent.click(themeToggleButton);
+
+    await waitFor(() => {
+      expect(screen.getByTestId('logo-clear')).toBeInTheDocument();
+    });
+  });
+
+  test('renders moon icon in light theme', () => {
+    render(<MockedHeader />);
+
+    const moonToggle = screen.getByTestId('theme-toggle-moon');
+    expect(moonToggle).toBeInTheDocument();
+  });
+
+  test('renders sun icon when theme is toggled to dark', async () => {
+    render(<MockedHeader />);
+
+    expect(screen.getByTestId('theme-toggle-moon')).toBeInTheDocument();
+
+    const themeToggleButton = screen.getByTestId('theme-toggle-moon');
+    fireEvent.click(themeToggleButton);
+
+    await waitFor(() => {
+      expect(screen.getByTestId('theme-toggle-sun')).toBeInTheDocument();
+    });
+  });
+
+  test('logo button uses LogoDarkSVG in light theme and LogoClearSVG in dark theme', async () => {
+    render(<MockedHeader />);
+
+    const logoDarkButton = screen.getByTestId('logo-dark');
+    expect(logoDarkButton).toBeInTheDocument();
+
+    const themeToggleButton = screen.getByTestId('theme-toggle-moon');
+    fireEvent.click(themeToggleButton);
+
+    await waitFor(() => {
+      const logoClearButton = screen.getByTestId('logo-clear');
+      expect(logoClearButton).toBeInTheDocument();
+    });
   });
 });
