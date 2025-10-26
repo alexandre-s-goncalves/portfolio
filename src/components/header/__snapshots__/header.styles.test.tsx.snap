@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`header.styles ButtonsContainer should match the snapshot 1`] = `
+.c0 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+<div
+  class="c0"
+/>
+`;
+
+exports[`header.styles HeaderContainer should match the snapshot 1`] = `
+.c0 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 96px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #D9DDDB;
+}
+
+<header
+  class="c0"
+/>
+`;
+
+exports[`header.styles LogoButton should match the snapshot 1`] = `
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.c0:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.c0:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c0:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  outline-offset: 2px;
+}
+
+.c1 {
+  background: none;
+  padding: 8px;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.c1:hover {
+  opacity: 0.8;
+}
+
+<button
+  class="c0 c1"
+  data-testid="icon-button"
+>
+  <svg />
+</button>
+`;
+
+exports[`header.styles Nav should match the snapshot 1`] = `
+.c0 {
+  display: flex;
+  gap: 32px;
+}
+
+<nav
+  class="c0"
+/>
+`;
+
+exports[`header.styles NavLink should match the snapshot 1`] = `
+.c0 {
+  text-decoration: none;
+}
+
+<a
+  class="c0"
+  data-discover="true"
+  href="/"
+>
+  Home
+</a>
+`;
+
+exports[`header.styles TextHeader should match the snapshot with active state 1`] = `
+.c0 {
+  font-size: 14px;
+  font-family: AvertaStd-Bold;
+  color: #000000;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: default;
+}
+
+.c1 {
+  transition: color 0.3s ease;
+}
+
+.c1:hover {
+  color: #000000;
+}
+
+<h3
+  class="c0 c1"
+/>
+`;
+
+exports[`header.styles TextHeader should match the snapshot with inactive state 1`] = `
+.c0 {
+  font-size: 14px;
+  font-family: AvertaStd-Regular;
+  color: #8f95a3;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.c1 {
+  transition: color 0.3s ease;
+}
+
+.c1:hover {
+  color: #000000;
+}
+
+<h3
+  class="c0 c1"
+/>
+`;
+
+exports[`header.styles ThemeToggleButton should match the snapshot 1`] = `
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.c0:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.c0:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.c0:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.c0:focus-visible {
+  outline: 2px solid rgba(0, 0, 0, 0.3);
+  outline-offset: 2px;
+}
+
+.c1 {
+  background: none;
+  padding: 8px;
+}
+
+<button
+  class="c0 c1"
+  cursor="pointer"
+  data-testid="icon-button"
+>
+  <svg />
+</button>
+`;

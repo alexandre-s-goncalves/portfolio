@@ -5,19 +5,25 @@ import {Home} from 'pages/home';
 import {Projects} from 'pages/projects/projects';
 import {Skills} from 'pages/skills/skills';
 import {NotFound} from 'pages/notFound';
-import {WebRoutesContainer} from './webRoutes.styles';
+import {WebRoutesContainer, Content} from './webRoutes.styles';
+import {Header} from 'components/header';
+import {useTheme} from 'context/ThemeContext';
 
 export const WebRoutes = () => {
+  const {themeDark} = useTheme();
   return (
     <BrowserRouter>
-      <WebRoutesContainer>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+      <WebRoutesContainer $backgroundblack={themeDark}>
+        <Header />
+        <Content>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Content>
       </WebRoutesContainer>
     </BrowserRouter>
   );

@@ -15,7 +15,7 @@ interface IOption {
 }
 
 export const Dropdown = () => {
-  const {theme} = useTheme();
+  const {themeDark} = useTheme();
   const {t, i18n} = useTranslation(namespaces.components.dropdown);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<IOption | null>(null);
@@ -92,7 +92,7 @@ export const Dropdown = () => {
     <S.DropdownContainer ref={dropdownRef}>
       <S.Select
         data-testid="dropdown-select"
-        $theme={theme}
+        $theme={themeDark}
         $clicked={isOpen}
         onClick={handleSelectClick}>
         <S.Selected>
@@ -100,25 +100,25 @@ export const Dropdown = () => {
             <S.IconGlobe
               data-testid={`selected-${selectedOption.testId}`}
               $clicked={isOpen}
-              $theme={theme}
+              $theme={themeDark}
             />
           )}
-          <S.Texto $theme={!theme} $clicked={isOpen}>
+          <S.Texto $theme={!themeDark} $clicked={isOpen}>
             {selectedOption ? selectedOption.abbreviation.toUpperCase() : t('select')}
           </S.Texto>
         </S.Selected>
       </S.Select>
-      <S.Menu data-testid="dropdown-menu" $theme={theme} $open={isOpen}>
+      <S.Menu data-testid="dropdown-menu" $theme={themeDark} $open={isOpen}>
         {options.map(option => (
           <S.MenuItem
             key={option.testId}
             $active={activeOption === option}
-            $theme={theme}
+            $theme={themeDark}
             onClick={() => handleOptionClick(option)}
             data-testid={option.testId}>
             <S.ContainerOption>
               <S.Flag icon={option.icon} data-testid={`flag-${option.testId}`} />
-              <S.Texto $theme={!theme} $active={activeOption === option}>
+              <S.Texto $theme={!themeDark} $active={activeOption === option}>
                 {option.label()}
               </S.Texto>
             </S.ContainerOption>

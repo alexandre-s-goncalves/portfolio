@@ -20,7 +20,6 @@ export const ContainerOption = styled.div`
 `;
 
 export const DropdownContainer = styled.div`
-  min-width: 150px;
   position: relative;
   margin: ${margin.xsmall}px;
 `;
@@ -47,8 +46,8 @@ export const Menu = styled.ul<ExtraProps>`
   border-radius: ${margin.xsmall}px;
   color: ${colors.cadetGrey};
   top: ${margin.xxlarge}px;
-  left: 50%;
-  width: 100%;
+  left: 100%;
+  min-width: 150px;
   transform: translateX(-50%);
   opacity: ${({$open}) => ($open ? 1 : 0)};
   transition: opacity 0.2s;

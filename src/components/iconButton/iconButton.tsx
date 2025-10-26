@@ -26,6 +26,7 @@ export const IconButton = ({
     rotation: iconRotation,
     width: iconWidth,
     height: iconHeight,
+    cursor: 'inherit',
   };
 
   return (

@@ -14,7 +14,6 @@ exports[`dropdown.styles ContainerOption should match the snapshot 1`] = `
 
 exports[`dropdown.styles DropdownContainer should match the snapshot 1`] = `
 .c0 {
-  min-width: 150px;
   position: relative;
   margin: 8px;
 }
@@ -81,8 +80,8 @@ exports[`dropdown.styles Menu should match snapshot when closed and not themed 1
   border-radius: 8px;
   color: #9fa5b5;
   top: 64px;
-  left: 50%;
-  width: 100%;
+  left: 100%;
+  min-width: 150px;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.2s;
@@ -104,8 +103,8 @@ exports[`dropdown.styles Menu should match snapshot when closed and themed 1`] =
   border-radius: 8px;
   color: #9fa5b5;
   top: 64px;
-  left: 50%;
-  width: 100%;
+  left: 100%;
+  min-width: 150px;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.2s;
@@ -127,8 +126,8 @@ exports[`dropdown.styles Menu should match snapshot when open and not themed 1`]
   border-radius: 8px;
   color: #9fa5b5;
   top: 64px;
-  left: 50%;
-  width: 100%;
+  left: 100%;
+  min-width: 150px;
   transform: translateX(-50%);
   opacity: 1;
   transition: opacity 0.2s;
@@ -150,8 +149,8 @@ exports[`dropdown.styles Menu should match snapshot when open and themed 1`] = `
   border-radius: 8px;
   color: #9fa5b5;
   top: 64px;
-  left: 50%;
-  width: 100%;
+  left: 100%;
+  min-width: 150px;
   transform: translateX(-50%);
   opacity: 1;
   transition: opacity 0.2s;
