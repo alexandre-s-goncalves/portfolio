@@ -47,7 +47,7 @@ describe('header.styles', () => {
     test('should have correct padding', () => {
       const {getByTestId} = render(<S.HeaderContainer data-testid="header" $themeDark={false} />);
       const header = getByTestId('header');
-      expect(header).toHaveStyle('padding: 8px 96px');
+      expect(header).toHaveStyle('padding: 8px 200px');
     });
   });
 
@@ -216,8 +216,8 @@ describe('header.styles', () => {
       const MockIcon = (props: any) => <svg data-testid="icon" {...props} />;
       const {getByTestId} = render(<S.LogoButton icon={MockIcon} $isActivated={false} />);
       const icon = getByTestId('icon');
-      expect(icon).toHaveAttribute('width', '48');
-      expect(icon).toHaveAttribute('height', '48');
+      expect(icon).toHaveAttribute('width', '40');
+      expect(icon).toHaveAttribute('height', '40');
     });
   });
 

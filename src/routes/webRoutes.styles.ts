@@ -10,7 +10,7 @@ export const WebRoutesContainer = styled.main<ExtraProps>`
   flex-direction: column;
   height: 100vh;
   background-color: ${({$backgroundblack}) =>
-    $backgroundblack ? colors.black : colors.background01};
+    $backgroundblack ? colors.background05 : colors.background01};
 `;
 
 export const Content = styled.div`

@@ -40,7 +40,7 @@ export const IconGlobe = styled(Icon).attrs<ExtraProps>(({$clicked, $theme}) => 
 
 export const Menu = styled.ul<ExtraProps>`
   position: absolute;
-  background: ${({$theme}) => ($theme ? colors.black : colors.background01)};
+  background: ${({$theme}) => ($theme ? colors.background05 : colors.background01)};
   border: 1px solid ${({$theme}) => ($theme ? colors.charcoal : colors.neutralLight)};
   box-shadow: 0 ${margin.xsmall}px ${margin.small}px rgba(0, 0, 0, 0.2);
   border-radius: ${margin.xsmall}px;
@@ -76,20 +76,11 @@ export const MenuItem = styled.li<ExtraProps>`
 `;
 
 export const Select = styled.div<ExtraProps>`
-  background: ${({$theme}) => ($theme ? colors.black : colors.background01)};
+  background: ${({$theme}) => ($theme ? colors.background05 : colors.background01)};
   display: flex;
   justify-content: center;
   align-items: center;
   width: ${margin.xlarge}px;
-  border: 1px solid
-    ${({$clicked, $theme}) =>
-      $theme
-        ? $clicked
-          ? 'transparent'
-          : colors.charcoalBlue
-        : $clicked
-          ? 'transparent'
-          : colors.black};
   border-radius: ${margin.xsmall}px;
   padding: 8px 12px;
   cursor: ${({$clicked}) => ($clicked ? 'default' : 'pointer')};
@@ -98,7 +89,7 @@ export const Select = styled.div<ExtraProps>`
     background: ${({$theme, $clicked}) =>
       $clicked
         ? $theme
-          ? colors.black
+          ? colors.background05
           : colors.background01
         : $theme
           ? colors.gunmetal

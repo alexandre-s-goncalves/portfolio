@@ -21,11 +21,10 @@ export const ThemeToggleButton = styled(IconButton).attrs<ExtraProps>(({$themeDa
 `;
 
 export const LogoButton = styled(IconButton).attrs<ExtraProps>(({$isActivated}) => ({
-  iconWidth: 48,
-  iconHeight: 48,
+  iconWidth: 40,
+  iconHeight: 40,
 }))<ExtraProps>`
-  background: none;
-  padding: ${margin.xsmall}px;
+  background: transparent;
   cursor: ${({$isActivated}) => ($isActivated ? 'default' : 'pointer')};
   pointer-events: ${({$isActivated}) => ($isActivated ? 'none' : 'auto')};
 
@@ -60,7 +59,7 @@ export const HeaderContainer = styled.header<ExtraProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${margin.xsmall}px ${margin.xxxlarge}px;
+  padding: ${margin.xsmall}px 200px;
   box-sizing: border-box;
   border-bottom: 1px solid ${({$themeDark}) => ($themeDark ? colors.gunmetal : colors.neutralLight)};
 `;

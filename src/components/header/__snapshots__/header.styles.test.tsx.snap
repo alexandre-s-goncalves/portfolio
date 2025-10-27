@@ -19,7 +19,7 @@ exports[`header.styles HeaderContainer should match the snapshot 1`] = `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 96px;
+  padding: 8px 200px;
   box-sizing: border-box;
   border-bottom: 1px solid #D9DDDB;
 }
@@ -59,8 +59,7 @@ exports[`header.styles LogoButton should match the snapshot 1`] = `
 }
 
 .c1 {
-  background: none;
-  padding: 8px;
+  background: transparent;
   cursor: pointer;
   pointer-events: auto;
 }

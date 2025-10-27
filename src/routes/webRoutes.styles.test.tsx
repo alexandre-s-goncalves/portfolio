@@ -24,7 +24,7 @@ describe('webRoutes.styles', () => {
         <S.WebRoutesContainer data-testid="container" $backgroundblack={true} />,
       );
       const container = getByTestId('container');
-      expect(container).toHaveStyle('background-color: #000000');
+      expect(container).toHaveStyle('background-color: rgb(10, 10, 10)');
     });
 
     test('should render as main element', () => {
