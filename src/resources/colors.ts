@@ -3,6 +3,7 @@ export const colors = {
   background02: '#F7F5F2',
   background03: '#F2F2F2',
   background04: '#EDF2F0',
+  background05: '#0A0A0A',
   black: '#000000',
   black50per: '#00000080',
   blue: '#15154E',
