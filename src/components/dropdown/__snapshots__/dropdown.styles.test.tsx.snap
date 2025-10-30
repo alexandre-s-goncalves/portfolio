@@ -338,7 +338,7 @@ exports[`dropdown.styles Selected should match snapshot 1`] = `
 exports[`dropdown.styles Texto should match snapshot when not themed, active and clicked 1`] = `
 .c0 {
   font-size: 12px;
-  font-family: AvertaStd-Regular;
+  font-family: Inter-Regular;
   color: #ffffff;
   margin-top: 0px;
   font-weight: normal;
@@ -354,7 +354,7 @@ exports[`dropdown.styles Texto should match snapshot when not themed, active and
 exports[`dropdown.styles Texto should match snapshot when not themed, not active and not clicked 1`] = `
 .c0 {
   font-size: 12px;
-  font-family: AvertaStd-Regular;
+  font-family: Inter-Regular;
   color: #ffffff;
   margin-top: 0px;
   font-weight: normal;
@@ -370,7 +370,7 @@ exports[`dropdown.styles Texto should match snapshot when not themed, not active
 exports[`dropdown.styles Texto should match snapshot when themed, active and clicked 1`] = `
 .c0 {
   font-size: 12px;
-  font-family: AvertaStd-Regular;
+  font-family: Inter-Regular;
   color: #000000;
   margin-top: 0px;
   font-weight: normal;
@@ -386,7 +386,7 @@ exports[`dropdown.styles Texto should match snapshot when themed, active and cli
 exports[`dropdown.styles Texto should match snapshot when themed, not active and not clicked 1`] = `
 .c0 {
   font-size: 12px;
-  font-family: AvertaStd-Regular;
+  font-family: Inter-Regular;
   color: #000000;
   margin-top: 0px;
   font-weight: normal;

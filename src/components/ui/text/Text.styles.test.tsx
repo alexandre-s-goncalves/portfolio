@@ -62,17 +62,17 @@ describe('TextStyled Component', () => {
   describe('Weight prop', () => {
     test('should have font-family equal to "AvertaStd-Bold" WHEN the $weight prop is "bold"', () => {
       const {container} = render(<TextStyled $weight="bold">Test</TextStyled>);
-      expect(container.firstChild).toHaveStyleRule('font-family', fonts.avertaBold);
+      expect(container.firstChild).toHaveStyleRule('font-family', fonts.InterBold);
     });
 
     test('should have font-family equal to "AvertaStd-Regular" WHEN the $weight prop is "medium"', () => {
       const {container} = render(<TextStyled $weight="medium">Test</TextStyled>);
-      expect(container.firstChild).toHaveStyleRule('font-family', fonts.avertaRegular);
+      expect(container.firstChild).toHaveStyleRule('font-family', fonts.InterRegular);
     });
 
     test('should have font-family equal to "AvertaStd-Regular" WHEN the $weight prop is not provided', () => {
       const {container} = render(<TextStyled>Test</TextStyled>);
-      expect(container.firstChild).toHaveStyleRule('font-family', fonts.avertaRegular);
+      expect(container.firstChild).toHaveStyleRule('font-family', fonts.InterRegular);
     });
   });
 

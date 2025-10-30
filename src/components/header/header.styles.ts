@@ -38,14 +38,14 @@ export const TextHeader = styled(Text).attrs<ExtraProps>(({$themeDark, $isActiva
   type: 'h3',
   color: $isActivated
     ? $themeDark
-      ? colors.background01
+      ? colors.neutralXLight
       : colors.black
     : $themeDark
-      ? colors.midGray
+      ? colors.grayLight
       : colors.darkerCadetGrey,
   marginTop: 0,
   cursor: $isActivated ? 'default' : 'pointer',
-  weight: $isActivated ? 'bold' : 'medium',
+  weight: $isActivated ? 'semi-bold' : 'medium',
 }))`
   transition: color 0.3s ease;
 
@@ -59,7 +59,7 @@ export const HeaderContainer = styled.header<ExtraProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${margin.xsmall}px 200px;
+  padding: ${margin.xsmall}px 120px;
   box-sizing: border-box;
   border-bottom: 1px solid ${({$themeDark}) => ($themeDark ? colors.gunmetal : colors.neutralLight)};
 `;

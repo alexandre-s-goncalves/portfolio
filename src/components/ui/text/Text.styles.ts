@@ -7,11 +7,11 @@ export type TextProps = {
   id?: string;
   type?: 'p' | 'h1' | 'h2' | 'h3' | 'h4';
   color?: string;
-  size?: 12 | 14 | 16 | 18 | 24;
-  lineHeight?: 18 | 22 | 24 | 26 | 34;
+  size?: 12 | 14 | 16 | 18 | 20 | 24;
+  lineHeight?: 18 | 20 | 22 | 24 | 26 | 34;
   marginTop?: number;
   children?: string | React.ReactNode;
-  weight?: 'bold' | 'medium';
+  weight?: 'bold' | 'semi-bold' | 'medium';
   fontWeight?: 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
   toUpper?: boolean;
   cursor?: 'default' | 'pointer' | 'text';
@@ -23,14 +23,14 @@ interface Props {
   $marginTop?: number;
   $toUpper?: boolean;
   $fontWeight?: number;
-  $weight?: 'bold' | 'medium';
+  $weight?: 'bold' | 'semi-bold' | 'medium';
   $color?: string;
   $cursor?: 'default' | 'pointer' | 'text';
 }
 
 export const TextStyled = styled.p<Props & TextProps>`
   font-size: ${({$size}) => $size ?? texts.tamanho.xxsmall}px;
-  font-family: ${({$weight}) => ($weight === 'bold' ? fonts.avertaBold : fonts.avertaRegular)};
+  font-family: ${({$weight}) => ($weight === 'bold' ? fonts.InterBold : fonts.InterRegular)};
   color: ${({$color}) => $color ?? colors.background01};
   margin-top: ${({$marginTop}) => $marginTop ?? 0}px;
   font-weight: ${({$fontWeight}) => $fontWeight ?? 'normal'};

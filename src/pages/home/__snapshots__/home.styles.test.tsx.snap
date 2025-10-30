@@ -16,7 +16,7 @@ exports[`home.styles Container should match the snapshot 1`] = `
 exports[`home.styles Title should match the snapshot 1`] = `
 .c0 {
   font-size: 24px;
-  font-family: AvertaStd-Bold;
+  font-family: Inter-Bold;
   color: #434645;
   margin-top: 0px;
   font-weight: normal;

@@ -8,6 +8,7 @@ import {NotFound} from 'pages/notFound';
 import {WebRoutesContainer, Content} from './webRoutes.styles';
 import {Header} from 'components/header';
 import {useTheme} from 'context/ThemeContext';
+import {Footer} from 'components/footer';
 
 export const WebRoutes = () => {
   const {themeDark} = useTheme();
@@ -24,6 +25,7 @@ export const WebRoutes = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Content>
+        <Footer />
       </WebRoutesContainer>
     </BrowserRouter>
   );

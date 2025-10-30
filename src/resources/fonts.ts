@@ -1,4 +1,5 @@
 export default {
-  avertaRegular: 'AvertaStd-Regular',
-  avertaBold: 'AvertaStd-Bold',
+  InterRegular: 'Inter-Regular',
+  InterSemiBold: 'Inter-SemiBold',
+  InterBold: 'Inter-Bold',
 };

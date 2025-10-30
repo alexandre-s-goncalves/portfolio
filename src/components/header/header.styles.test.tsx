@@ -47,7 +47,7 @@ describe('header.styles', () => {
     test('should have correct padding', () => {
       const {getByTestId} = render(<S.HeaderContainer data-testid="header" $themeDark={false} />);
       const header = getByTestId('header');
-      expect(header).toHaveStyle('padding: 8px 200px');
+      expect(header).toHaveStyle('padding: 8px 120px');
     });
   });
 
@@ -253,7 +253,7 @@ describe('header.styles', () => {
         <S.TextHeader data-testid="text" $themeDark={true} $isActivated={true} />,
       );
       const text = getByTestId('text');
-      expect(text).toHaveStyle('color: #ffffff');
+      expect(text).toHaveStyle('color: #F0F2F1');
     });
 
     test('should apply inactive color in dark theme', () => {
@@ -261,7 +261,7 @@ describe('header.styles', () => {
         <S.TextHeader data-testid="text" $themeDark={true} $isActivated={false} />,
       );
       const text = getByTestId('text');
-      expect(text).toHaveStyle('color: #b9bcc4');
+      expect(text).toHaveStyle('color: #a3a3a3');
     });
 
     test('should have pointer cursor when not activated', () => {
