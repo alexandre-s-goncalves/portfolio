@@ -8,7 +8,6 @@ export const pt = {
     settings: 'Configurações',
   },
   [namespaces.pages.footer]: {
-    title: 'Desenvolvedor Full-Stack',
     name: 'Alexandre dos Santos Gonçalves',
     bio: 'Desenvolvedor apaixonado por tecnologia com experiência em React.js, React Native, .NET e Java. Focado em criar soluções elegantes e eficientes.',
     location: 'São Paulo, Brasil',
@@ -19,6 +18,15 @@ export const pt = {
     contact: 'Contato',
     rights: 'Todos os direitos reservados',
     built_with: 'Construído com',
+  },
+  [namespaces.pages.home]: {
+    greeting: 'Olá, eu sou',
+    name: 'Alexandre Gonçalves',
+    role: 'Desenvolvedor Full-Stack',
+    description:
+      'Desenvolvedor apaixonado por tecnologia com experiência em React.js, React Native, .NET e Java. Focado em criar soluções elegantes e eficientes.',
+    view_projects: 'Ver Meus Projetos',
+    contact: 'Entre em Contato',
   },
   [namespaces.components.dropdown]: {
     portuguese: 'Português',

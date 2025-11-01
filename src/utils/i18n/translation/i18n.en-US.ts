@@ -8,7 +8,6 @@ export const en = {
     settings: 'Settings',
   },
   [namespaces.pages.footer]: {
-    title: 'Full-Stack Developer',
     name: 'Alexandre dos Santos Gonçalves',
     bio: 'Technology-passionate developer with experience in React.js, React Native, .NET and Java. Focused on creating elegant and efficient solutions.',
     location: 'São Paulo, Brazil',
@@ -19,6 +18,15 @@ export const en = {
     contact: 'Contact',
     rights: 'All rights reserved',
     built_with: 'Built with',
+  },
+  [namespaces.pages.home]: {
+    greeting: 'Hello, I am',
+    name: 'Alexandre Gonçalves',
+    role: 'Full-Stack Developer',
+    description:
+      'Technology-passionate developer with experience in React.js, React Native, .NET and Java. Focused on creating elegant and efficient solutions.',
+    view_projects: 'View My Projects',
+    contact: 'Get In Touch',
   },
   [namespaces.components.dropdown]: {
     portuguese: 'Portuguese',

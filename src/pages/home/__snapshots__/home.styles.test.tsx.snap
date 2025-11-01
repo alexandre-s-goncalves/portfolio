@@ -1,11 +1,139 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`home.styles Container should match the snapshot 1`] = `
+exports[`home.styles ContactButton should match the snapshot with dark theme 1`] = `
+.c2 {
+  font-size: 14px;
+  font-family: Inter-Regular;
+  color: #ffffff;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: text;
+}
+
 .c0 {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  transition: all 0.2s ease;
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.c0:hover {
+  opacity: 0.9;
+}
+
+.c0:active {
+  transform: scale(0.98);
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0:disabled:hover {
+  opacity: 1;
+}
+
+.c3 {
+  white-space: nowrap;
+  cursor: inherit;
+}
+
+.c1 {
+  background-color: transparent;
+  border: 1px solid #D9DDDB;
+}
+
+<button
+  aria-label="Contact"
+  class="c0 c1"
+  type="button"
+>
+  <p
+    class="c2 c3"
+  >
+    Contact
+  </p>
+</button>
+`;
+
+exports[`home.styles ContactButton should match the snapshot with light theme 1`] = `
+.c2 {
+  font-size: 14px;
+  font-family: Inter-Regular;
+  color: #0a0a0a;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: text;
+}
+
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  transition: all 0.2s ease;
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.c0:hover {
+  opacity: 0.9;
+}
+
+.c0:active {
+  transform: scale(0.98);
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0:disabled:hover {
+  opacity: 1;
+}
+
+.c3 {
+  white-space: nowrap;
+  cursor: inherit;
+}
+
+.c1 {
+  background-color: transparent;
+  border: 1px solid #D9DDDB;
+}
+
+<button
+  aria-label="Contact"
+  class="c0 c1"
+  type="button"
+>
+  <p
+    class="c2 c3"
+  >
+    Contact
+  </p>
+</button>
+`;
+
+exports[`home.styles Container should match the snapshot 1`] = `
+.c0 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
 }
 
 <div
@@ -13,18 +141,184 @@ exports[`home.styles Container should match the snapshot 1`] = `
 />
 `;
 
-exports[`home.styles Title should match the snapshot 1`] = `
+exports[`home.styles Name should match the snapshot with dark theme 1`] = `
 .c0 {
-  font-size: 24px;
+  font-size: 40px;
   font-family: Inter-Bold;
-  color: #434645;
+  color: #ffffff;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: text;
+  line-height: 40px;
+}
+
+.c1 {
+  margin-bottom: 16px;
+}
+
+<h1
+  class="c0 c1"
+/>
+`;
+
+exports[`home.styles Name should match the snapshot with light theme 1`] = `
+.c0 {
+  font-size: 40px;
+  font-family: Inter-Bold;
+  color: #0a0a0a;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: text;
+  line-height: 40px;
+}
+
+.c1 {
+  margin-bottom: 16px;
+}
+
+<h1
+  class="c0 c1"
+/>
+`;
+
+exports[`home.styles ViewProjectsButton should match the snapshot with dark theme 1`] = `
+.c2 {
+  font-size: 14px;
+  font-family: Inter-Regular;
+  color: #0a0a0a;
   margin-top: 0px;
   font-weight: normal;
   text-transform: none;
   cursor: text;
 }
 
-<h1
-  class="c0 "
-/>
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  transition: all 0.2s ease;
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.c0:hover {
+  opacity: 0.9;
+}
+
+.c0:active {
+  transform: scale(0.98);
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0:disabled:hover {
+  opacity: 1;
+}
+
+.c3 {
+  white-space: nowrap;
+  cursor: inherit;
+}
+
+.c1 {
+  background-color: #ffffff;
+}
+
+<button
+  aria-label="View Projects"
+  class="c0 c1"
+  type="button"
+>
+  <p
+    class="c2 c3"
+  >
+    View Projects
+  </p>
+  <svg
+    class=""
+    fill="#0a0a0a"
+    height="24"
+    style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;"
+    width="24"
+  />
+</button>
+`;
+
+exports[`home.styles ViewProjectsButton should match the snapshot with light theme 1`] = `
+.c2 {
+  font-size: 14px;
+  font-family: Inter-Regular;
+  color: #ffffff;
+  margin-top: 0px;
+  font-weight: normal;
+  text-transform: none;
+  cursor: text;
+}
+
+.c0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  border: none;
+  height: 40px;
+  transition: all 0.2s ease;
+  background-color: #d3d3d3;
+  cursor: pointer;
+}
+
+.c0:hover {
+  opacity: 0.9;
+}
+
+.c0:active {
+  transform: scale(0.98);
+}
+
+.c0:disabled {
+  cursor: default;
+}
+
+.c0:disabled:hover {
+  opacity: 1;
+}
+
+.c3 {
+  white-space: nowrap;
+  cursor: inherit;
+}
+
+.c1 {
+  background-color: #0a0a0a;
+}
+
+<button
+  aria-label="View Projects"
+  class="c0 c1"
+  type="button"
+>
+  <p
+    class="c2 c3"
+  >
+    View Projects
+  </p>
+  <svg
+    class=""
+    fill="#ffffff"
+    height="24"
+    style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;"
+    width="24"
+  />
+</button>
 `;

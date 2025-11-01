@@ -7,8 +7,8 @@ export type TextProps = {
   id?: string;
   type?: 'p' | 'h1' | 'h2' | 'h3' | 'h4';
   color?: string;
-  size?: 12 | 14 | 16 | 18 | 20 | 24;
-  lineHeight?: 18 | 20 | 22 | 24 | 26 | 34;
+  size?: 12 | 14 | 16 | 18 | 20 | 24 | 26 | 32 | 36 | 40;
+  lineHeight?: 16 | 18 | 20 | 22 | 24 | 26 | 34 | 40;
   marginTop?: number;
   children?: string | React.ReactNode;
   weight?: 'bold' | 'semi-bold' | 'medium';

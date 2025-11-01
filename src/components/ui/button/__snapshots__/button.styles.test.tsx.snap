@@ -59,6 +59,7 @@ exports[`button.styles ButtonText should match snapshot 1`] = `
 
 .c1 {
   white-space: nowrap;
+  cursor: inherit;
 }
 
 <p

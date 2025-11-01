@@ -46,4 +46,5 @@ export const ButtonText = styled(Text).attrs(props => ({
   color: props.color || colors.white,
 }))`
   white-space: nowrap;
+  cursor: inherit;
 `;

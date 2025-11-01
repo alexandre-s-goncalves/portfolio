@@ -5,6 +5,7 @@ export const colors = {
   background04: '#EDF2F0',
   background05: '#0A0A0A',
   black: '#000000',
+  white: '#ffffff',
   black50per: '#00000080',
   blue: '#15154E',
   cadetGrey: '#9fa5b5',

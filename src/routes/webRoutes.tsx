@@ -14,9 +14,9 @@ export const WebRoutes = () => {
   const {themeDark} = useTheme();
   return (
     <BrowserRouter>
-      <WebRoutesContainer $backgroundblack={themeDark}>
+      <WebRoutesContainer data-testid="web-routes-container" $backgroundblack={themeDark}>
         <Header />
-        <Content>
+        <Content data-testid="web-routes-content">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/skills" element={<Skills />} />

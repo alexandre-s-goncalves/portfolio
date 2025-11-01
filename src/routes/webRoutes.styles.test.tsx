@@ -47,7 +47,7 @@ describe('webRoutes.styles', () => {
         <S.WebRoutesContainer data-testid="container" $backgroundblack={false} />,
       );
       const container = getByTestId('container');
-      expect(container).toHaveStyle('height: 100vh');
+      expect(container).toHaveStyle('min-height: 100vh');
     });
   });
 
@@ -71,11 +71,11 @@ describe('webRoutes.styles', () => {
       expect(content).toHaveStyle('height: 100%');
     });
 
-    test('should have proper margins', () => {
+    test('should not have margins', () => {
       const {getByTestId} = render(<S.Content data-testid="content" />);
       const content = getByTestId('content');
-      expect(content).toHaveStyle('margin-top: 116px');
-      expect(content).toHaveStyle('margin-bottom: 70px');
+      expect(content).not.toHaveStyle('margin-top: 116px');
+      expect(content).not.toHaveStyle('margin-bottom: 70px');
     });
 
     test('should have vertical scroll', () => {
