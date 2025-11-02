@@ -61,6 +61,8 @@ Este projeto está sob a licença MIT — veja [LICENSE](LICENSE).
 
 **Feito com ❤️ por Alexandre Gonçalves**
 
+<a href="#top">⬆ voltar ao topo</a>
+
 </div>
 
 <br/>
@@ -112,6 +114,8 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
 **Made with ❤️ by Alexandre Gonçalves**
 
+<a href="#top">⬆ back to top</a>
+
 </div>
 
 <br/>
@@ -162,5 +166,7 @@ Ce projet est sous licence MIT — voir [LICENSE](LICENSE).
 <div align="center">
 
 **Fait avec ❤️ par Alexandre Gonçalves**
+
+<a href="#top">⬆ retour en haut</a>
 
 </div>

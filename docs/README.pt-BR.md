@@ -672,7 +672,6 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](../L
 - 🌐 [LinkedIn](https://www.linkedin.com/in/alexandre-sgoncalves)
 - 🐙 [GitHub](https://github.com/alexandre-s-goncalves)
 - 📧 [Email](mailto:alexandre.sgoncalves@outlook.com)
-- 💼 São Paulo, Brasil
 
 ---
 
