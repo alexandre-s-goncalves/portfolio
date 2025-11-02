@@ -55,6 +55,9 @@ export const TextHeader = styled(Text).attrs<ExtraProps>(({$themeDark, $isActiva
 `;
 
 export const HeaderContainer = styled.header<ExtraProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -62,6 +65,11 @@ export const HeaderContainer = styled.header<ExtraProps>`
   padding: ${margin.xsmall}px 120px;
   box-sizing: border-box;
   border-bottom: 1px solid ${({$themeDark}) => ($themeDark ? colors.gunmetal : colors.neutralLight)};
+  background-color: ${({$themeDark}) =>
+    $themeDark ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)'};
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 1000;
 `;
 
 export const Nav = styled.nav`

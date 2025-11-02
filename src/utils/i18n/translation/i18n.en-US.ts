@@ -3,6 +3,7 @@ import {namespaces} from '../i18n.constants';
 export const en = {
   [namespaces.pages.header]: {
     home: 'Home',
+    skills: 'Skills',
     projects: 'Projects',
     about: 'About us',
     settings: 'Settings',
@@ -35,5 +36,10 @@ export const en = {
     altFlagEUA: 'USA flag',
     french: 'French',
     altFragFrance: 'France flag',
+  },
+  [namespaces.components.stats]: {
+    projects: 'Completed Projects',
+    experience: 'Years of Experience',
+    technologies: 'Technologies',
   },
 };

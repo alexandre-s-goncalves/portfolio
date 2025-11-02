@@ -6,6 +6,7 @@ exports[`webRoutes.styles Content should match the snapshot 1`] = `
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  padding-top: 73px;
 }
 
 <div

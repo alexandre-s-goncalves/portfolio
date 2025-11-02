@@ -133,6 +133,7 @@ exports[`home.styles Container should match the snapshot 1`] = `
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 64px 0;
   width: 100vw;
 }
 

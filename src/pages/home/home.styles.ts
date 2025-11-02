@@ -20,10 +20,17 @@ export const ContactButton = styled(Button).attrs<ThemeProps>(({$themeDark}) => 
   border: 1px solid ${colors.neutralLight};
 `;
 
+export const PageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: ${margin.xxlarge}px 0;
   width: 100vw;
 `;
 

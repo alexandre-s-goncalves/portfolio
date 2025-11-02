@@ -6,6 +6,7 @@ export const namespaces = {
   },
   components: {
     dropdown: 'components.dropdown',
+    stats: 'components.stats',
   },
 };
 
