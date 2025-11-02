@@ -672,8 +672,7 @@ Ce projet est sous licence MIT - voir le fichier [LICENSE](../LICENSE) pour plus
 - 🌐 [LinkedIn](https://www.linkedin.com/in/alexandre-sgoncalves)
 - 🐙 [GitHub](https://github.com/alexandre-s-goncalves)
 - 📧 [Email](mailto:alexandre.sgoncalves@outlook.com)
-- 📱 Téléphone: +55 11 94500-8992
-- 📍 São Paulo, Brésil
+- 💼 São Paulo, Brésil
 
 ---
 
