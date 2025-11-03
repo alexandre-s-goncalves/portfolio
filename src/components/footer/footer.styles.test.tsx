@@ -48,7 +48,7 @@ describe('footer.styles', () => {
     test('should have correct padding', () => {
       const {getByTestId} = render(<S.FooterContainer data-testid="footer" $themeDark={false} />);
       const footer = getByTestId('footer');
-      expect(footer).toHaveStyle('padding: 32px 120px');
+      expect(footer).toHaveStyle('padding: 32px 210px');
     });
   });
 

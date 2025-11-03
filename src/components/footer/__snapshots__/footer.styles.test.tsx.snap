@@ -272,7 +272,7 @@ exports[`footer.styles FooterContainer should match the snapshot 1`] = `
   flex-direction: column;
   width: 100%;
   background-color: #ffffff;
-  padding: 32px 120px;
+  padding: 32px 210px;
   border-top: 1px solid #e5e5e5;
   box-sizing: border-box;
 }

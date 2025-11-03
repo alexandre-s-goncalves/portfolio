@@ -13,6 +13,7 @@ interface ImageProps {
   spinnerSpeed?: number;
   color?: string;
   keepColors?: boolean;
+  borderRadius?: string;
 }
 
 export const Image = ({
@@ -27,6 +28,7 @@ export const Image = ({
   spinnerSpeed = 0,
   color,
   keepColors = false,
+  borderRadius,
   ...props
 }: Readonly<ImageProps>) => {
   const containerStyles: React.CSSProperties = {
@@ -41,6 +43,7 @@ export const Image = ({
       data-testid="container-image"
       $width={`${width}px`}
       $height={`${height}px`}
+      $borderRadius={borderRadius}
       style={containerStyles}
       {...props}>
       <ImageStyled
@@ -53,6 +56,7 @@ export const Image = ({
         $spinnerSpeed={spinnerSpeed}
         $color={color}
         $keepColors={keepColors}
+        $borderRadius={borderRadius}
       />
     </ContainerImage>
   );

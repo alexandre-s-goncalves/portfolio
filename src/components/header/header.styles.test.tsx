@@ -47,7 +47,7 @@ describe('header.styles', () => {
     test('should have correct padding', () => {
       const {getByTestId} = render(<S.HeaderContainer data-testid="header" $themeDark={false} />);
       const header = getByTestId('header');
-      expect(header).toHaveStyle('padding: 8px 120px');
+      expect(header).toHaveStyle('padding: 8px 210px');
     });
   });
 

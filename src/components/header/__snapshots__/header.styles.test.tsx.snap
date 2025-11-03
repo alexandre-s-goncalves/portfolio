@@ -22,7 +22,7 @@ exports[`header.styles HeaderContainer should match the snapshot 1`] = `
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 120px;
+  padding: 8px 210px;
   box-sizing: border-box;
   border-bottom: 1px solid #D9DDDB;
   background-color: rgba(255, 255, 255, 0.7);

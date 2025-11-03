@@ -14,7 +14,7 @@ export const FooterContainer = styled.footer<ThemeProps>`
   flex-direction: column;
   width: 100%;
   background-color: ${({$themeDark}) => ($themeDark ? colors.background05 : colors.background01)};
-  padding: ${margin.large}px 120px;
+  padding: ${margin.large}px 210px;
   border-top: 1px solid ${({$themeDark}) => ($themeDark ? colors.darkerGray : colors.lighterGray)};
   box-sizing: border-box;
 `;

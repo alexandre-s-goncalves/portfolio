@@ -9,6 +9,7 @@ interface ExtraProps {
   $rotation?: number;
   $spinner?: boolean;
   $spinnerSpeed?: number;
+  $borderRadius?: string;
 }
 
 const spin = keyframes`
@@ -30,6 +31,8 @@ export const ContainerImage = styled.div<ExtraProps>`
   align-items: center;
   width: ${({$width}) => $width};
   height: ${({$height}) => $height};
+  border-radius: ${({$borderRadius}) => $borderRadius ?? '0'};
+  overflow: hidden;
   box-sizing: border-box;
 `;
 
@@ -42,8 +45,13 @@ export const ImageStyled = styled.img.attrs(
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: ${({$borderRadius}) => $borderRadius ?? '0'};
   pointer-events: ${({$cursor}) => ($cursor === 'default' ? 'none' : 'auto')};
   cursor: ${({$cursor}) => $cursor ?? 'default'};
   transform: rotate(${({$rotation = 0}) => $rotation}deg);
   ${({$spinner, $spinnerSpeed}) => $spinner && $spinnerSpeed && spinnerAnimation($spinnerSpeed)}
+  box-sizing: border-box;
 `;
