@@ -8,6 +8,7 @@ export const colors = {
   background07: '#fcfcfc',
   black: '#000000',
   white: '#ffffff',
+  offWhite: '#fafafa',
   black50per: '#00000080',
   blue: '#15154E',
   cadetGrey: '#9fa5b5',

@@ -31,7 +31,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   padding: ${margin.xxlarge}px 0;
-  width: 100vw;
+  width: 100%;
 `;
 
 export const ContentWrapper = styled.div`

@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import {useTheme} from 'context/ThemeContext';
 import {namespaces} from 'utils/i18n/i18n.constants';
@@ -9,6 +10,7 @@ import {Stats} from 'components/stats';
 import * as S from './home.styles';
 
 export const Home = () => {
+  const navigate = useNavigate();
   const {t: tFooter} = useTranslation(namespaces.pages.footer);
   const {t} = useTranslation(namespaces.pages.home);
   const {themeDark} = useTheme();
@@ -28,7 +30,9 @@ export const Home = () => {
         </S.ContentWrapper>
         <S.ContentWrapper>
           <S.ViewProjectsButton $themeDark={themeDark}>{t('view_projects')}</S.ViewProjectsButton>
-          <S.ContactButton $themeDark={themeDark}>{t('contact')}</S.ContactButton>
+          <S.ContactButton $themeDark={themeDark} onClick={() => navigate('/about')}>
+            {t('contact')}
+          </S.ContactButton>
         </S.ContentWrapper>
         <S.SocialLinks>
           <S.SocialLink

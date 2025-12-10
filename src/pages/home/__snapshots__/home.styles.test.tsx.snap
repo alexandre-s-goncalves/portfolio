@@ -1,14 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`home.styles ContactButton should match the snapshot with dark theme 1`] = `
+exports[`home.styles ContactButton dark theme snapshot 1`] = `
 .c2 {
   font-size: 14px;
-  font-family: Inter-Regular;
   color: #ffffff;
   margin-top: 0px;
   font-weight: normal;
   text-transform: none;
   cursor: text;
+  font-family: Inter-SemiBold;
 }
 
 .c0 {
@@ -64,15 +64,15 @@ exports[`home.styles ContactButton should match the snapshot with dark theme 1`]
 </button>
 `;
 
-exports[`home.styles ContactButton should match the snapshot with light theme 1`] = `
+exports[`home.styles ContactButton light theme snapshot 1`] = `
 .c2 {
   font-size: 14px;
-  font-family: Inter-Regular;
   color: #0a0a0a;
   margin-top: 0px;
   font-weight: normal;
   text-transform: none;
   cursor: text;
+  font-family: Inter-SemiBold;
 }
 
 .c0 {
@@ -128,29 +128,55 @@ exports[`home.styles ContactButton should match the snapshot with light theme 1`
 </button>
 `;
 
-exports[`home.styles Container should match the snapshot 1`] = `
-.c0 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 64px 0;
-  width: 100vw;
-}
-
-<div
-  class="c0"
+exports[`home.styles EmailIcon dark theme snapshot 1`] = `
+<svg
+  class=""
+  fill="#a3a3a3"
+  height="32"
+  style="min-width: 32px; min-height: 32px; max-width: 32px; max-height: 32px; color: rgb(163, 163, 163);"
+  width="32"
 />
 `;
 
-exports[`home.styles Name should match the snapshot with dark theme 1`] = `
+exports[`home.styles EmailIcon light theme snapshot 1`] = `
+<svg
+  class=""
+  fill="#000000"
+  height="32"
+  style="min-width: 32px; min-height: 32px; max-width: 32px; max-height: 32px; color: rgb(0, 0, 0);"
+  width="32"
+/>
+`;
+
+exports[`home.styles GithubIcon dark theme snapshot 1`] = `
+<svg
+  class=""
+  fill="#a3a3a3"
+  height="24"
+  style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px; color: rgb(163, 163, 163);"
+  width="24"
+/>
+`;
+
+exports[`home.styles GithubIcon light theme snapshot 1`] = `
+<svg
+  class=""
+  fill="#000000"
+  height="24"
+  style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px; color: rgb(0, 0, 0);"
+  width="24"
+/>
+`;
+
+exports[`home.styles Name dark theme snapshot 1`] = `
 .c0 {
   font-size: 40px;
-  font-family: Inter-Bold;
   color: #ffffff;
   margin-top: 0px;
   font-weight: normal;
   text-transform: none;
   cursor: text;
+  font-family: Inter-Bold;
   line-height: 40px;
 }
 
@@ -160,18 +186,20 @@ exports[`home.styles Name should match the snapshot with dark theme 1`] = `
 
 <h1
   class="c0 c1"
-/>
+>
+  Name
+</h1>
 `;
 
-exports[`home.styles Name should match the snapshot with light theme 1`] = `
+exports[`home.styles Name light theme snapshot 1`] = `
 .c0 {
   font-size: 40px;
-  font-family: Inter-Bold;
   color: #0a0a0a;
   margin-top: 0px;
   font-weight: normal;
   text-transform: none;
   cursor: text;
+  font-family: Inter-Bold;
   line-height: 40px;
 }
 
@@ -181,18 +209,20 @@ exports[`home.styles Name should match the snapshot with light theme 1`] = `
 
 <h1
   class="c0 c1"
-/>
+>
+  Name
+</h1>
 `;
 
-exports[`home.styles ViewProjectsButton should match the snapshot with dark theme 1`] = `
+exports[`home.styles ViewProjectsButton dark theme snapshot 1`] = `
 .c2 {
   font-size: 14px;
-  font-family: Inter-Regular;
   color: #0a0a0a;
   margin-top: 0px;
   font-weight: normal;
   text-transform: none;
   cursor: text;
+  font-family: Inter-SemiBold;
 }
 
 .c0 {
@@ -235,34 +265,34 @@ exports[`home.styles ViewProjectsButton should match the snapshot with dark them
 }
 
 <button
-  aria-label="View Projects"
+  aria-label="View"
   class="c0 c1"
   type="button"
 >
   <p
     class="c2 c3"
   >
-    View Projects
+    View
   </p>
   <svg
     class=""
     fill="#0a0a0a"
     height="24"
-    style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;"
+    style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px; color: rgb(10, 10, 10);"
     width="24"
   />
 </button>
 `;
 
-exports[`home.styles ViewProjectsButton should match the snapshot with light theme 1`] = `
+exports[`home.styles ViewProjectsButton light theme snapshot 1`] = `
 .c2 {
   font-size: 14px;
-  font-family: Inter-Regular;
   color: #ffffff;
   margin-top: 0px;
   font-weight: normal;
   text-transform: none;
   cursor: text;
+  font-family: Inter-SemiBold;
 }
 
 .c0 {
@@ -305,20 +335,20 @@ exports[`home.styles ViewProjectsButton should match the snapshot with light the
 }
 
 <button
-  aria-label="View Projects"
+  aria-label="View"
   class="c0 c1"
   type="button"
 >
   <p
     class="c2 c3"
   >
-    View Projects
+    View
   </p>
   <svg
     class=""
     fill="#ffffff"
     height="24"
-    style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px;"
+    style="min-width: 24px; min-height: 24px; max-width: 24px; max-height: 24px; color: rgb(255, 255, 255);"
     width="24"
   />
 </button>
