@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Husky cache
+--version
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
