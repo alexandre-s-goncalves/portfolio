@@ -11,7 +11,7 @@ import {defineConfig} from 'eslint/config';
 
 export default defineConfig([
   {
-    ignores: ['dist', 'build', '.vite', '**/*.log'],
+    ignores: ['dist/**', 'build/**', '.vite/**', 'node_modules/**', '**/*.log'],
     files: ['**/*.{js,jsx,ts,tsx}'],
     extends: [
       js.configs.recommended,
