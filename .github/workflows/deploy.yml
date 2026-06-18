@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - main
-
-concurrency:
-  group: github-pages
-  cancel-in-progress: false
+  release:
+    types:
+      - published
 
 jobs:
   lint-and-format:
@@ -60,6 +59,7 @@ jobs:
     environment:
       name: Homologation
     needs: [tests, lint-and-format]
+    if: github.event_name == 'push'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -81,12 +81,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           destination_dir: qas
+          keep_files: true
 
   deploy-Production:
     runs-on: ubuntu-latest
     environment:
       name: Production
-    needs: deploy-Homologation
+    needs: [tests, lint-and-format]
+    if: github.event_name == 'release'
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -107,3 +109,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          keep_files: true
