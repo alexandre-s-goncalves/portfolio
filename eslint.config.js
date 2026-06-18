@@ -39,4 +39,10 @@ export default defineConfig([
       },
     },
   },
+  {
+    files: ['vite.config.*', 'vite.config.{js,cjs,mjs,ts}'],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ]);
