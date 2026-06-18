@@ -78,7 +78,7 @@ jobs:
       - name: Install Dependencies & Build QAS
         run: |
           npm ci
-          npm run build -- --base=/qas/
+          npm run build -- --base=/portfolio/qas/
 
       - name: Deploy to QAS URL
         uses: peaceiris/actions-gh-pages@v4
@@ -108,7 +108,7 @@ jobs:
       - name: Install Dependencies & Build Prod
         run: |
           npm ci
-          npm run build
+          npm run build -- --base=/portfolio/
 
       - name: Deploy to Production
         uses: peaceiris/actions-gh-pages@v4
