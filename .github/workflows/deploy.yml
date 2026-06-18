@@ -5,10 +5,11 @@ on:
     branches:
       - main
 
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
 jobs:
-  ################################
-  #       Qualidade de Código    #
-  ################################
   lint-and-format:
     runs-on: ubuntu-latest
     steps:
@@ -30,9 +31,6 @@ jobs:
       - name: Check Code Formatting
         run: npm run format -- --check
 
-  ################################
-  #        testes/coverage       #
-  ################################
   tests:
     runs-on: ubuntu-latest
     steps:
@@ -57,9 +55,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           path-to-lcov: coverage/lcov.info
 
-  ################################
-  #      deploy-Homologation     #
-  ################################
   deploy-Homologation:
     runs-on: ubuntu-latest
     environment:
@@ -87,9 +82,6 @@ jobs:
           publish_dir: ./dist
           destination_dir: qas
 
-  ################################
-  #       deploy-Production      #
-  ################################
   deploy-Production:
     runs-on: ubuntu-latest
     environment:
