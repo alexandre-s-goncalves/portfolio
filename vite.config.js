@@ -1,17 +1,19 @@
 import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
 import {VitePWA} from 'vite-plugin-pwa';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   base: process.env.VITE_BASE || '/',
   plugins: [
     react(),
+    tailwindcss(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
+      includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
         name: 'Alexandre Gonçalves | Portfolio',
-        short_name: 'Portfolio',
+        short_name: 'Alexandre G.',
         description: 'Portfolio pessoal moderno de desenvolvimento software',
         theme_color: '#1a1a1a',
         background_color: '#1a1a1a',
