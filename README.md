@@ -18,23 +18,25 @@
 
 ## 🌍 Choose your language | Escolha seu idioma | Choisissez votre langue | Elija su idioma
 
-[🇧🇷 Português](#português) • [🇺🇸 English](#english) • [🇫🇷 Français](#français) • [🇪🇸 Español](#español)
+[🇧🇷 Português](#portugues) • [🇺🇸 English](#english) • [🇫🇷 Français](#francais) • [🇪🇸 Español](#espanol)
 
 ---
 
-<h2 id="português">🇧🇷 Português</h2>
+<h2 id="portugues">🇧🇷 Português</h2>
 
 <div align="center">
-  <img src="https://geps.dev" alt="Evolução do Projeto" />
+  Progresso do Projeto: <b>74%</b>
+  <br />
+  <code>██████████████████████████░░░░░░░░░</code>
 </div>
 
 <br/>
 
 Portfolio pessoal moderno e responsivo construído com React, TypeScript e Tailwind CSS. Apresenta projetos, habilidades e experiência profissional com suporte a internacionalização (português, inglês, francês e espanhol), tema claro/escuro, Progressive Web App (PWA) e automação de testes com cobertura integrada.
 
-🚀 **[Acessar Ambiente de Produção](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 **[Acessar Ambiente de Produção](https://github.io)**
 
-🧪 **[Acessar Ambiente de QAS](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 **[Acessar Ambiente de QAS](https://github.ioqas/)**
 
 **📚 [Ver documentação completa em Português](./docs/README.pt-BR.md)** — estrutura do projeto, padrões de desenvolvimento, convenções de commits e guia de testes com exemplos.
 
@@ -54,7 +56,7 @@ Portfolio pessoal moderno e responsivo construído com React, TypeScript e Tailw
 Clone, instale e execute localmente:
 
 ```bash
-git clone https://github.com/alexandre-s-goncalves/portfolio.git
+git clone https://github.com
 cd portfolio
 npm install
 npm run dev
@@ -65,7 +67,7 @@ npm run dev
 **Alexandre dos Santos Gonçalves**
 
 - 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 Licença
@@ -88,16 +90,18 @@ Este projeto está sob a licença MIT — veja [LICENSE](LICENSE).
 <h2 id="english">🇺🇸 English</h2>
 
 <div align="center">
-  <img src="https://geps.dev" alt="Project Evolution" />
+  Project Progress: <b>74%</b>
+  <br />
+  <code>██████████████████████████░░░░░░░░░</code>
 </div>
 
 <br/>
 
 Modern and responsive personal portfolio built with React, TypeScript and Tailwind CSS. Showcases projects, skills, and professional experience with internationalization support (Portuguese, English, French, and Spanish), light/dark theme, Progressive Web App (PWA) configurations, and test coverage automation.
 
-🚀 **[Access Production Environment](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 **[Access Production Environment](https://github.io)**
 
-🧪 **[Access QAS Environment](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 **[Access QAS Environment](https://github.ioqas/)**
 
 **📚 [See full documentation in English](./docs/README.en-US.md)** — project structure, development standards, commit conventions and testing guide with examples.
 
@@ -117,7 +121,7 @@ Modern and responsive personal portfolio built with React, TypeScript and Tailwi
 Clone, install and run locally:
 
 ```bash
-git clone git@github.com:alexandre-s-goncalves/portfolio.git
+git clone https://github.com
 cd portfolio
 npm install
 npm run dev
@@ -128,7 +132,7 @@ npm run dev
 **Alexandre dos Santos Gonçalves**
 
 - 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 License
@@ -148,19 +152,21 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
 ---
 
-<h2 id="français">🇫🇷 Français</h2>
+<h2 id="francais">🇫🇷 Français</h2>
 
 <div align="center">
-  <img src="https://geps.dev" alt="Évolution du Projet" />
+  Avancement du Projet: <b>74%</b>
+  <br />
+  <code>██████████████████████████░░░░░░░░░</code>
 </div>
 
 <br/>
 
 Portfolio personnel moderne et fonctionnel construit avec React, TypeScript et Tailwind CSS. Présente des projets, compétences et expérience professionnelle avec support de l'internationalisation (portugais, anglais, français et espagnol), thème clair/sombre, Progressive Web App (PWA) et couverture de tests automatisée.
 
-🚀 **[Accéder à l'Environnement de Production](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 **[Accéder à l'Environnement de Production](https://github.io)**
 
-🧪 **[Accéder à l'Environnement de QAS](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 **[Accéder à l'Environnement de QAS](https://github.ioqas/)**
 
 **📚 [Voir la documentation complète en Français](./docs/README.fr-FR.md)** — structure du projet, standards de développement, conventions de commits et guide de tests avec exemples.
 
@@ -180,7 +186,7 @@ Portfolio personnel moderne et fonctionnel construit avec React, TypeScript et T
 Cloner, installer et exécuter localement:
 
 ```bash
-git clone git@github.com:alexandre-s-goncalves/portfolio.git
+git clone https://github.com
 cd portfolio
 npm install
 npm run dev
@@ -191,7 +197,7 @@ npm run dev
 **Alexandre dos Santos Gonçalves**
 
 - 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 Licence
@@ -211,21 +217,23 @@ Ce projet est sous licence MIT — voir [LICENSE](LICENSE).
 
 ---
 
-<h2 id="español">🇪🇸 Español</h2>
+<h2 id="espanol">🇪🇸 Español</h2>
 
 <div align="center">
-  <img src="https://geps.dev" alt="Evolución del Proyecto" />
+  Progreso del Proyecto: <b>74%</b>
+  <br />
+  <code>██████████████████████████░░░░░░░░░</code>
 </div>
 
 <br/>
 
 Portafolio personal moderno y responsivo construido con React, TypeScript y Tailwind CSS. Presenta proyectos, habilidades y experiencia profesional con soporte de internacionalización (portugués, inglés, francés y español), tema claro/oscuro, Progressive Web App (PWA) y automatización de pruebas con cobertura integrada.
 
-🚀 **[Acceder al Entorno de Producción](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 **[Acceder al Entorno de Producción](https://github.io)**
 
-🧪 **[Acceder al Entorno de QAS](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 **[Acceder al Entorno de QAS](https://github.ioqas/)**
 
-**📚 [Ver documentación completa en Español](./docs/README.es-ES.md)** — estructura del proyecto, estándares de desarrollo, convenciones de commits y guía de pruebas con ejemplos.
+**📚 [Ver documentación completa en Español](./docs/README.es-ES.md)** — estructura del proyecto, estándares de desarrollo, convenciones de commits y guía de pruebas con exemplos.
 
 **📋 [Ver Checklist de Evolución del Proyecto](./docs/project-checklist.md)** — seguimiento detallado de todas las etapas de desarrollo, infraestructura de CI/CD y módulos mobile.
 
@@ -243,7 +251,7 @@ Portafolio personal moderno y responsivo construido con React, TypeScript y Tail
 Clonar, instalar y ejecutar localmente:
 
 ```bash
-git clone git@github.com:alexandre-s-goncalves/portfolio.git
+git clone https://github.com
 cd portfolio
 npm install
 npm run dev
@@ -254,7 +262,7 @@ npm run dev
 **Alexandre dos Santos Gonçalves**
 
 - 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 Licencia
