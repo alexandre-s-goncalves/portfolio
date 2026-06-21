@@ -11,7 +11,15 @@ import {defineConfig} from 'eslint/config';
 
 export default defineConfig([
   {
-    ignores: ['dist/**', 'build/**', '.vite/**', 'node_modules/**', '**/*.log'],
+    ignores: [
+      'dist/**',
+      'build/**',
+      '.vite/**',
+      'node_modules/**',
+      'coverage/**',
+      '**/*.log',
+      '.DS_Store',
+    ],
     files: ['**/*.{js,jsx,ts,tsx}'],
     extends: [
       js.configs.recommended,
@@ -28,6 +36,16 @@ export default defineConfig([
     rules: {
       'prettier/prettier': 'warn',
       'sonarjs/cognitive-complexity': ['warn', 15],
+      'no-inline-comments': 'error',
+      'line-comment-position': ['error', {position: 'above'}],
+      'multiline-comment-style': ['error', 'starred-block'],
+      'no-warning-comments': [
+        'error',
+        {
+          terms: ['todo', 'fixme', 'bug', 'ajuste', 'remover', 'nota'],
+          location: 'anywhere',
+        },
+      ],
     },
     languageOptions: {
       globals: globals.browser,
