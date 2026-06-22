@@ -13,4 +13,7 @@ export const namespaces = {
       subtitle: 'subtitle',
     },
   },
+  components: {
+    languageSelector: 'components.languageSelector',
+  },
 } as const;

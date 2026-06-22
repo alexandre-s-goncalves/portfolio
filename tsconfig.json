@@ -21,7 +21,16 @@
     "noImplicitReturns": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "assets/*": ["./src/assets/*"],
+      "components/*": ["./src/components/*"],
+      "context/*": ["./src/context/*"],
+      "pages/*": ["./src/pages/*"],
+      "utils/*": ["./src/utils/*"],
+      "i18n": ["./src/i18n/index.ts"],
+      "i18n/*": ["./src/i18n/*"]
+    }
   },
   "include": ["src"],
   "references": []
