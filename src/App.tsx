@@ -6,12 +6,13 @@ function App() {
   const {t, i18n} = useTranslation(namespaces.home.name);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-900 p-4 text-white">
-      <h1 className="mb-2 text-center text-4xl font-bold text-sky-400">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 p-4 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
+      <h1 className="mb-2 text-center text-4xl font-bold text-sky-500 dark:text-sky-400">
         {t('welcome')} 🚀
       </h1>
-      <p className="mb-4 text-xl font-medium text-slate-400">{t('subtitle')}</p>
-
+      <p className="mb-4 text-xl font-medium text-slate-500 dark:text-slate-400">
+        {t('subtitle')}
+      </p>
       <div className="flex flex-wrap justify-center gap-3">
         <ButtonLanguage
           language={languages.pt}
@@ -60,10 +61,10 @@ const ButtonLanguage = ({
       onClick={() => onChangeLanguage(language)}
       disabled={isActive}
       className={clsx(
-        'rounded-lg px-4 py-2 font-semibold transition-colors',
-        'cursor-pointer bg-slate-800 hover:bg-slate-700',
-        'disabled:cursor-default disabled:opacity-40',
-        'disabled:hover:bg-slate-800',
+        'rounded-lg border px-4 py-2 font-semibold transition-all duration-150 outline-none',
+        'cursor-pointer border-slate-200 bg-white text-slate-700 hover:bg-slate-50 focus:bg-slate-50',
+        'dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:focus:bg-slate-800',
+        'disabled:cursor-default disabled:opacity-40 disabled:hover:bg-white dark:disabled:hover:bg-slate-900',
       )}>
       {label}
     </button>
