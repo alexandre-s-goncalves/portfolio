@@ -6,6 +6,16 @@ export const languages = {
 } as const;
 
 export const namespaces = {
+  header: {
+    name: 'header',
+    keys: {
+      navHome: 'navHome',
+      navSkills: 'navSkills',
+      navProjects: 'navProjects',
+      navAbout: 'navAbout',
+      logoAlt: 'logoAlt',
+    },
+  },
   home: {
     name: 'home',
     keys: {
