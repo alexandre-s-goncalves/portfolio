@@ -4,13 +4,22 @@ import {pt} from './translation';
 
 describe('Portuguese Translation Content Assertions', () => {
   const homeName = namespaces.home.name;
-  const keys = namespaces.home.keys;
+  const homeKeys = namespaces.home.keys;
+  const headerName = namespaces.header.name;
+  const headerKeys = namespaces.header.keys;
   const languageSelectorName = namespaces.components.languageSelector;
 
-  test('should verify that home namespace contains all required keys', () => {
+  test('should verify that namespaces contain all required keys', () => {
     expect(pt).toHaveProperty(homeName);
-    expect(pt[homeName]).toHaveProperty(keys.welcome);
-    expect(pt[homeName]).toHaveProperty(keys.subtitle);
+    expect(pt[homeName]).toHaveProperty(homeKeys.welcome);
+    expect(pt[homeName]).toHaveProperty(homeKeys.subtitle);
+
+    expect(pt).toHaveProperty(headerName);
+    expect(pt[headerName]).toHaveProperty(headerKeys.navHome);
+    expect(pt[headerName]).toHaveProperty(headerKeys.navSkills);
+    expect(pt[headerName]).toHaveProperty(headerKeys.navProjects);
+    expect(pt[headerName]).toHaveProperty(headerKeys.navAbout);
+    expect(pt[headerName]).toHaveProperty(headerKeys.logoAlt);
   });
 
   test('should ensure all portuguese strings are valid and filled', () => {
@@ -18,11 +27,21 @@ describe('Portuguese Translation Content Assertions', () => {
     expect(pt[homeName].welcome.length).toBeGreaterThan(0);
     expect(typeof pt[homeName].subtitle).toBe('string');
     expect(pt[homeName].subtitle.length).toBeGreaterThan(0);
+
+    expect(typeof pt[headerName].navHome).toBe('string');
+    expect(pt[headerName].navHome.length).toBeGreaterThan(0);
   });
 
   test('should lock exact official text values for portuguese language', () => {
     expect(pt[homeName].welcome).toBe('Bem-vindo ao meu Portfólio');
     expect(pt[homeName].subtitle).toBe('Desenvolvedor de Software');
+
+    expect(pt[headerName].navHome).toBe('Início');
+    expect(pt[headerName].navSkills).toBe('Habilidades');
+    expect(pt[headerName].navProjects).toBe('Projetos');
+    expect(pt[headerName].navAbout).toBe('Sobre');
+    expect(pt[headerName].logoAlt).toBe('Logotipo do portfólio');
+
     expect(pt[languageSelectorName].portuguese).toBe('Português');
     expect(pt[languageSelectorName].altFlagBrazil).toBe('Bandeira do Brasil');
     expect(pt[languageSelectorName].english).toBe('Inglês');

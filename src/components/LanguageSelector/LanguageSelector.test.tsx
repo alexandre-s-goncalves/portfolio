@@ -33,9 +33,9 @@ describe('LanguageSelector Component', () => {
       expect(triggerButton).toHaveClass(
         'flex',
         'items-center',
-        'rounded-lg',
+        'rounded-xl',
         'dark:text-slate-300',
-        'dark:hover:bg-slate-800',
+        'dark:hover:bg-slate-800/80',
       );
     });
   });

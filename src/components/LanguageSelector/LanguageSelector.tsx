@@ -140,16 +140,18 @@ export const LanguageSelector = () => {
         aria-expanded={isOpen}
         aria-controls="language-menu"
         className={clsx(
-          'group flex items-center gap-2 rounded-lg px-3 py-1.5 font-medium transition-all duration-200 outline-none',
-          'cursor-pointer text-slate-700 hover:bg-slate-100 focus:bg-slate-100 focus:ring-2 focus:ring-sky-500/40',
-          'dark:text-slate-300 dark:hover:bg-slate-800 dark:focus:bg-slate-800',
+          'group flex items-center gap-2 rounded-xl border border-transparent px-3 py-1.5 font-medium transition-all duration-200 outline-none',
+          'cursor-pointer text-slate-700 hover:bg-slate-100/80',
+          'dark:text-slate-300 dark:hover:bg-slate-800/80',
+          'focus-visible:border-current focus-visible:ring-2 focus-visible:ring-current/20',
+          isOpen && 'bg-slate-100/80 dark:bg-slate-800/80',
         )}>
         <Icon
           size="lg"
           icon={GlobeIcon}
-          color="text-slate-700 dark:text-slate-300 group-hover:text-sky-500 group-hover:rotate-90 transition-all"
+          color="text-slate-700 dark:text-slate-300 transition-colors duration-200"
         />
-        <span className="text-sm font-semibold tracking-wide uppercase">
+        <span className="text-sm font-semibold tracking-wide uppercase transition-colors duration-200">
           {currentLanguageCode}
         </span>
       </button>
@@ -177,10 +179,11 @@ export const LanguageSelector = () => {
                 data-testid={lang.testId}
                 className={clsx(
                   'flex w-full items-center gap-3 rounded-lg border border-transparent px-4 py-2.5 text-left text-sm font-medium transition-colors outline-none',
-                  'focus:border-slate-200 focus:bg-slate-50 focus:text-slate-900 dark:focus:border-slate-700 dark:focus:bg-slate-800 dark:focus:text-white',
+                  'focus-visible:border-slate-200 focus-visible:bg-slate-50/60 focus-visible:text-slate-900',
+                  'dark:focus-visible:border-slate-700 dark:focus-visible:bg-slate-800/50 dark:focus-visible:text-white',
                   isSelected
                     ? 'cursor-default bg-slate-50 font-semibold text-slate-900 dark:bg-slate-800 dark:text-white'
-                    : 'cursor-pointer text-slate-600 hover:bg-slate-50 dark:text-slate-400 dark:hover:bg-slate-800',
+                    : 'cursor-pointer text-slate-400 hover:bg-slate-50/60 hover:text-slate-600 dark:text-slate-400 dark:hover:bg-slate-800/50 dark:hover:text-slate-200',
                 )}>
                 <Icon size="md" icon={lang.icon} alt={lang.alt} color="none" />
                 <span className={clsx(isSelected && 'font-bold')}>

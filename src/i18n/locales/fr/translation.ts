@@ -1,6 +1,13 @@
 import {namespaces} from '../../i18n.constants';
 
 export const fr = {
+  [namespaces.header.name]: {
+    navHome: 'Accueil',
+    navSkills: 'Compétences',
+    navProjects: 'Projetos',
+    navAbout: 'À propos',
+    logoAlt: 'Logo du portfolio',
+  },
   [namespaces.home.name]: {
     welcome: 'Bienvenue sur mon Portfolio',
     subtitle: 'Développeur de Logiciel',
