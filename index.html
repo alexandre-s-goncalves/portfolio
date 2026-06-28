@@ -1,5 +1,27 @@
 <!doctype html>
 <html lang="en">
+  <script type="text/javascript">
+    (function (l) {
+      if (l.search[1] === 'p') {
+        var pairs = l.search.slice(1).split('&');
+        var query = pairs
+          .find(function (q) {
+            return q.startsWith('p=');
+          })
+          .split('=')[1]
+          .replace(/~and~/g, '&');
+        window.history.replaceState(
+          null,
+          null,
+          l.pathname.slice(0, l.pathname.lastIndexOf('/')) +
+            '/' +
+            query +
+            l.hash,
+        );
+      }
+    })(window.location);
+  </script>
+
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
