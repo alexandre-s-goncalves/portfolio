@@ -1,28 +1,29 @@
 <!doctype html>
 <html lang="en">
-  <script type="text/javascript">
-    (function (l) {
-      if (l.search[1] === 'p') {
-        var pairs = l.search.slice(1).split('&');
-        var query = pairs
-          .find(function (q) {
-            return q.startsWith('p=');
-          })
-          .split('=')[1]
-          .replace(/~and~/g, '&');
-        window.history.replaceState(
-          null,
-          null,
-          l.pathname.slice(0, l.pathname.lastIndexOf('/')) +
-            '/' +
-            query +
-            l.hash,
-        );
-      }
-    })(window.location);
-  </script>
-
   <head>
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search) {
+          var q = {};
+          l.search
+            .slice(1)
+            .split('&')
+            .forEach(function (v) {
+              var a = v.split('=');
+              q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+            });
+          if (q.p !== undefined) {
+            window.history.replaceState(
+              null,
+              null,
+              l.pathname.slice(0, l.pathname.lastIndexOf('/')) +
+                decodeURIComponent(q.p) +
+                l.hash,
+            );
+          }
+        }
+      })(window.location);
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/portfolio/qas/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -34,7 +35,7 @@
       content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Portfolio" />
     <title>portfolio</title>
-    <script type="module" crossorigin src="/portfolio/qas/assets/index-Lhi4IuJG.js"></script>
+    <script type="module" crossorigin src="/portfolio/qas/assets/index-CBQh0tTv.js"></script>
     <link rel="stylesheet" crossorigin href="/portfolio/qas/assets/index-CYgdOqjz.css">
   <link rel="manifest" href="/portfolio/qas/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/portfolio/qas/registerSW.js"></script></head>
   <body>
