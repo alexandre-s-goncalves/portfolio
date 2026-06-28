@@ -1,3 +1,4 @@
+import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {Header} from 'components/Header/Header';
 import {Home} from 'pages/Home';
@@ -7,8 +8,10 @@ import {About} from 'pages/About';
 import {NotFound} from 'pages/NotFound';
 
 export const WebRoutes = () => {
+  const baseName = import.meta.env.VITE_BASE || '/';
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={baseName}>
       <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
         <Header />
 
