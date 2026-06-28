@@ -9,8 +9,20 @@ export const en = {
     logoAlt: 'Portfolio logo',
   },
   [namespaces.home.name]: {
-    welcome: 'Welcome to my Portfolio',
-    subtitle: 'Software Developer',
+    title: 'Home Page',
+  },
+  [namespaces.skills.name]: {
+    title: 'Skills Page',
+  },
+  [namespaces.projects.name]: {
+    title: 'Projects Page',
+  },
+  [namespaces.about.name]: {
+    title: 'About Page',
+  },
+  [namespaces.notFound.name]: {
+    title: '404',
+    message: 'Page not found',
   },
   [namespaces.components.languageSelector]: {
     portuguese: 'Portuguese',

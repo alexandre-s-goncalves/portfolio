@@ -5,14 +5,34 @@ import {pt} from './translation';
 describe('Portuguese Translation Content Assertions', () => {
   const homeName = namespaces.home.name;
   const homeKeys = namespaces.home.keys;
+  const skillsName = namespaces.skills.name;
+  const skillsKeys = namespaces.skills.keys;
+  const projectsName = namespaces.projects.name;
+  const projectsKeys = namespaces.projects.keys;
+  const aboutName = namespaces.about.name;
+  const aboutKeys = namespaces.about.keys;
+  const notFoundName = namespaces.notFound.name;
+  const notFoundKeys = namespaces.notFound.keys;
   const headerName = namespaces.header.name;
   const headerKeys = namespaces.header.keys;
   const languageSelectorName = namespaces.components.languageSelector;
 
   test('should verify that namespaces contain all required keys', () => {
     expect(pt).toHaveProperty(homeName);
-    expect(pt[homeName]).toHaveProperty(homeKeys.welcome);
-    expect(pt[homeName]).toHaveProperty(homeKeys.subtitle);
+    expect(pt[homeName]).toHaveProperty(homeKeys.title);
+
+    expect(pt).toHaveProperty(skillsName);
+    expect(pt[skillsName]).toHaveProperty(skillsKeys.title);
+
+    expect(pt).toHaveProperty(projectsName);
+    expect(pt[projectsName]).toHaveProperty(projectsKeys.title);
+
+    expect(pt).toHaveProperty(aboutName);
+    expect(pt[aboutName]).toHaveProperty(aboutKeys.title);
+
+    expect(pt).toHaveProperty(notFoundName);
+    expect(pt[notFoundName]).toHaveProperty(notFoundKeys.title);
+    expect(pt[notFoundName]).toHaveProperty(notFoundKeys.message);
 
     expect(pt).toHaveProperty(headerName);
     expect(pt[headerName]).toHaveProperty(headerKeys.navHome);
@@ -23,18 +43,20 @@ describe('Portuguese Translation Content Assertions', () => {
   });
 
   test('should ensure all portuguese strings are valid and filled', () => {
-    expect(typeof pt[homeName].welcome).toBe('string');
-    expect(pt[homeName].welcome.length).toBeGreaterThan(0);
-    expect(typeof pt[homeName].subtitle).toBe('string');
-    expect(pt[homeName].subtitle.length).toBeGreaterThan(0);
+    expect(typeof pt[homeName].title).toBe('string');
+    expect(pt[homeName].title.length).toBeGreaterThan(0);
 
     expect(typeof pt[headerName].navHome).toBe('string');
     expect(pt[headerName].navHome.length).toBeGreaterThan(0);
   });
 
   test('should lock exact official text values for portuguese language', () => {
-    expect(pt[homeName].welcome).toBe('Bem-vindo ao meu Portfólio');
-    expect(pt[homeName].subtitle).toBe('Desenvolvedor de Software');
+    expect(pt[homeName].title).toBe('Página Início');
+    expect(pt[skillsName].title).toBe('Página Habilidades');
+    expect(pt[projectsName].title).toBe('Página Projetos');
+    expect(pt[aboutName].title).toBe('Página Sobre');
+    expect(pt[notFoundName].title).toBe('404');
+    expect(pt[notFoundName].message).toBe('Página não encontrada');
 
     expect(pt[headerName].navHome).toBe('Início');
     expect(pt[headerName].navSkills).toBe('Habilidades');
