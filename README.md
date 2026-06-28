@@ -15,7 +15,7 @@
 
 ---
 
-## 🌍 Choose your language | Escolha seu idioma | Choisissez votre langue | Elija su idioma
+## 🌍 Escolha seu idioma | Choose your language | Choisissez votre langue | Elija su idioma
 
 [🇧🇷 Português](#portugues) • [🇺🇸 English](#english) • [🇫🇷 Français](#francais) • [🇪🇸 Español](#espanol)
 
@@ -33,9 +33,9 @@
 
 Portfolio pessoal moderno e responsivo construído com React, TypeScript e Tailwind CSS. Apresenta projetos, habilidades e experiência profissional com suporte a internacionalização (português, inglês, francês e espanhol), tema claro/escuro, Progressive Web App (PWA) e automação de testes com cobertura integrada.
 
-🚀 **[Acessar Ambiente de Produção](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 <a href="https://alexandre-s-goncalves.github.io/portfolio/" target="_blank" rel="noopener noreferrer">**Acessar Ambiente de Produção**</a>
 
-🧪 **[Acessar Ambiente de QAS](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 <a href="https://alexandre-s-goncalves.github.io/portfolio/qas/" target="_blank" rel="noopener noreferrer">**Acessar Ambiente de QAS**</a>
 
 **📚 [Ver documentação completa em Português](./docs/README.pt-BR.md)** — estrutura do projeto, padrões de desenvolvimento, convenções de commits e guia de testes com exemplos.
 
@@ -98,9 +98,9 @@ Este projeto está sob a licença MIT — veja [LICENSE](LICENSE).
 
 Modern and responsive personal portfolio built with React, TypeScript and Tailwind CSS. Showcases projects, skills, and professional experience with internationalization support (Portuguese, English, French, and Spanish), light/dark theme, Progressive Web App (PWA) configurations, and test coverage automation.
 
-🚀 **[Access Production Environment](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 <a href="https://alexandre-s-goncalves.github.io/portfolio/" target="_blank" rel="noopener noreferrer">**Access Production Environment**</a>
 
-🧪 **[Access QAS Environment](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 <a href="https://alexandre-s-goncalves.github.io/portfolio/qas/" target="_blank" rel="noopener noreferrer">**Access QAS Environment**</a>
 
 **📚 [See full documentation in English](./docs/README.en-US.md)** — project structure, development standards, commit conventions and testing guide with examples.
 
@@ -163,9 +163,9 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 
 Portfolio personnel moderne et fonctionnel construit avec React, TypeScript et Tailwind CSS. Présente des projets, compétences et expérience professionnelle avec support de l'internationalisation (portugais, anglais, français et espagnol), thème clair/sombre, Progressive Web App (PWA) et couverture de tests automatisée.
 
-🚀 **[Accéder à l'Environnement de Production](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 <a href="https://alexandre-s-goncalves.github.io/portfolio/" target="_blank" rel="noopener noreferrer">**Accéder à l'Environnement de Production**</a>
 
-🧪 **[Accéder à l'Environnement de QAS](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 <a href="https://alexandre-s-goncalves.github.io/portfolio/qas/" target="_blank" rel="noopener noreferrer">**Accéder à l'Environnement de QAS**</a>
 
 **📚 [Voir la documentation complète en Français](./docs/README.fr-FR.md)** — structure du projet, standards de développement, conventions de commits et guide de tests avec exemples.
 
@@ -228,9 +228,9 @@ Ce projet est sous licence MIT — voir [LICENSE](LICENSE).
 
 Portafolio personal moderno y responsivo construido con React, TypeScript y Tailwind CSS. Presenta proyectos, habilidades y experiencia profesional con soporte de internacionalización (portugués, inglés, francés y español), tema claro/oscuro, Progressive Web App (PWA) y automatización de pruebas con cobertura integrada.
 
-🚀 **[Acceder al Entorno de Producción](https://alexandre-s-goncalves.github.io/portfolio/)**
+🚀 <a href="https://alexandre-s-goncalves.github.io/portfolio/" target="_blank" rel="noopener noreferrer">**Acceder al Entorno de Producción**</a>
 
-🧪 **[Acceder al Entorno de QAS](https://alexandre-s-goncalves.github.io/portfolio/qas/)**
+🧪 <a href="https://alexandre-s-goncalves.github.io/portfolio/qas/" target="_blank" rel="noopener noreferrer">**Acceder al Entorno de QAS**</a>
 
 **📚 [Ver documentación completa en Español](./docs/README.es-ES.md)** — estructura del proyecto, estándares de desarrollo, convenciones de commits y guía de pruebas con exemplos.
 
