@@ -4,13 +4,25 @@ export const fr = {
   [namespaces.header.name]: {
     navHome: 'Accueil',
     navSkills: 'Compétences',
-    navProjects: 'Projetos',
+    navProjects: 'Projets',
     navAbout: 'À propos',
     logoAlt: 'Logo du portfolio',
   },
   [namespaces.home.name]: {
-    welcome: 'Bienvenue sur mon Portfolio',
-    subtitle: 'Développeur de Logiciel',
+    title: "Page d'accueil",
+  },
+  [namespaces.skills.name]: {
+    title: 'Page des compétences',
+  },
+  [namespaces.projects.name]: {
+    title: 'Page des projets',
+  },
+  [namespaces.about.name]: {
+    title: 'Page à propos',
+  },
+  [namespaces.notFound.name]: {
+    title: '404',
+    message: 'Page non trouvée',
   },
   [namespaces.components.languageSelector]: {
     portuguese: 'Portugais',

@@ -1,4 +1,5 @@
 import {clsx} from 'clsx';
+import {NavLink} from 'react-router-dom';
 import {Icon} from '../Icon/Icon';
 import {LanguageSelector} from '../LanguageSelector/LanguageSelector';
 import {ThemeToggle} from '../ThemeToggle/ThemeToggle';
@@ -10,10 +11,10 @@ export const Header = () => {
   const {t} = useTranslation(namespaces.header.name);
 
   const navItems = [
-    {label: t('navHome'), active: true},
-    {label: t('navSkills'), active: false},
-    {label: t('navProjects'), active: false},
-    {label: t('navAbout'), active: false},
+    {label: t('navHome'), path: '/'},
+    {label: t('navSkills'), path: '/skills'},
+    {label: t('navProjects'), path: '/projects'},
+    {label: t('navAbout'), path: '/about'},
   ];
 
   return (
@@ -39,16 +40,19 @@ export const Header = () => {
           role="navigation"
           className="hidden items-center gap-8 select-none md:flex">
           {navItems.map(item => (
-            <button
-              key={item.label}
-              className={clsx(
-                'cursor-pointer text-sm font-medium transition-colors outline-none focus-visible:text-sky-500 focus-visible:underline',
-                item.active
-                  ? 'font-bold text-slate-900 dark:text-white'
-                  : 'text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300',
-              )}>
+            <NavLink
+              key={item.path}
+              to={item.path}
+              className={({isActive}) =>
+                clsx(
+                  'cursor-pointer text-sm font-medium transition-colors outline-none focus-visible:text-sky-500 focus-visible:underline',
+                  isActive
+                    ? 'font-bold text-slate-900 dark:text-white'
+                    : 'text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300',
+                )
+              }>
               {item.label}
-            </button>
+            </NavLink>
           ))}
         </nav>
         <div className="flex items-center gap-4">

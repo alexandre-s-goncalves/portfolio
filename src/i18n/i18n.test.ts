@@ -27,11 +27,11 @@ describe('i18n Core Configuration', () => {
   });
 
   test('should successfully register and execute the custom postProcessor module', () => {
-    const welcomeWithPostProcessor = i18n.t('home:welcome', {
+    const titleWithPostProcessor = i18n.t('home:title', {
       postProcess: 'customAttribute',
     });
 
-    expect(welcomeWithPostProcessor).toBe('Welcome to my Portfolio');
+    expect(titleWithPostProcessor).toBe('Home Page');
   });
 
   test('should trigger languageChanged event and dynamically update document lang attribute', async () => {
@@ -50,7 +50,7 @@ describe('i18n Core Configuration', () => {
   test('should retain functional translation execution for base language keys', async () => {
     await i18n.changeLanguage('pt');
 
-    const welcomeText = i18n.t('home:welcome');
-    expect(welcomeText).toBe('Bem-vindo ao meu Portfólio');
+    const titleText = i18n.t('home:title');
+    expect(titleText).toBe('Página Início');
   });
 });

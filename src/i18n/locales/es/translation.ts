@@ -9,8 +9,20 @@ export const es = {
     logoAlt: 'Logotipo del portafolio',
   },
   [namespaces.home.name]: {
-    welcome: 'Bienvenido a mi Portafolio',
-    subtitle: 'Desarrollador de Software',
+    title: 'Página de Inicio',
+  },
+  [namespaces.skills.name]: {
+    title: 'Página de Habilidades',
+  },
+  [namespaces.projects.name]: {
+    title: 'Página de Proyectos',
+  },
+  [namespaces.about.name]: {
+    title: 'Página Sobre mí',
+  },
+  [namespaces.notFound.name]: {
+    title: '404',
+    message: 'Página no encontrada',
   },
   [namespaces.components.languageSelector]: {
     portuguese: 'Portugués',

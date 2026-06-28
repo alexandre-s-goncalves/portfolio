@@ -27,9 +27,18 @@
 - [x] Setup Internationalization (i18n) engine
   - [x] Install `i18next` and `react-i18next`
   - [x] Configure English (EN) dictionary resources
-  - [x] Configure Portuguese (PT-BR) dictionary resources
+  - [x] Configure Portuguese (PT) dictionary resources
+  - [x] Configure French (FR) dictionary resources
   - [x] Configure Spanish (ES) dictionary resources
-  - [x] Implement language switcher component in global interface
+  - [x] Implement language switcher component with focus-visible accessibility
+- [x] Setup Global Theme State Management
+  - [x] Create highly resilient decoupled `ThemeProvider` and `useTheme` hooks
+  - [x] Connect core engine to mirror class selectors matching `.dark` attributes
+  - [x] Support persistent local properties binding user preferences through storage
+  - [x] Build customized `ThemeToggle` element with interactive current border focus
+- [ ] Integrate Core Single Page Application Routing
+  - [ ] Install `react-router-dom` and configure core structural history providers
+  - [ ] Setup type-safe router browser configurations matching portfolio sections
 - [x] Create Static Maintenance Page
   - [x] Design lightweight standalone fallback view
   - [x] Configure routing interceptor for emergency lockouts
@@ -41,29 +50,27 @@
 
 ### 🖥️ Desktop Web View (Screen Width >= 1024px)
 
-- [ ] Global Header Layout
-  - [ ] Desktop navigation menu bar
-  - [ ] Brand logo animation element
-  - [ ] Language selection dropdown toggle
+- [x] Global Header Layout
+  - [x] Desktop navigation menu bar with active design states
+  - [x] Brand logo wrapper component with scale triggers
+  - [x] Language selection dropdown toggle filtering click focus artifacts
+  - [x] Theme toggle icon wrapper acing browser outline actions
 - [ ] Global Footer Layout
   - [ ] Technical stack indicator badges
   - [ ] Copyright and project build version details
 
-### 📐 Tablet View (Screen Width 768px - 1023px)
+### 📐 Tablet & Mobile View (Screen Width < 1024px)
 
 - [ ] Global Header Layout
-  - [ ] Adaptive compact grid navigation
-  - [ ] Floating action menu triggers
+  - [ ] Compact header layout containing brand identity elements
+  - [ ] Hamburger menu trigger toggle for sidebar execution
+- [ ] Interactive Sidebar Navigation
+  - [ ] Slide-out drawer navigation canvas overlay
+  - [ ] Focused stacked grid containing localized router anchors
+  - [ ] Centralized layout utilities managing language and theme buttons
+  - [ ] Accessible close triggers and focus-trap management (WAI-ARIA)
 - [ ] Global Footer Layout
-  - [ ] Simplified stacked layout row
-
-### 📱 Mobile Phone View (Screen Width <= 767px)
-
-- [ ] Global Header Layout
-  - [ ] Slide-out drawer navigation menu
-  - [ ] Floating quick-access system utilities
-- [ ] Global Footer Layout
-  - [ ] Sticky bottom tab bar navigation module
+  - [ ] Simplified stacked layout row matching mobile grids
 
 ---
 
@@ -109,6 +116,13 @@
 - [ ] External Network Link Group
   - [ ] LinkedIn profile direct target anchor
   - [ ] GitHub main user link connection
+
+### ⚠️ 404 Error Page
+
+- [ ] Standalone Fallback View
+  - [ ] Missing route error status presentation template
+  - [ ] Localized messaging guidance helping lost recruiters
+  - [ ] Return anchor safely rerouting traffic to core home container
 
 ---
 

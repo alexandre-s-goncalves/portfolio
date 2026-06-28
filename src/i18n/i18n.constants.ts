@@ -19,8 +19,32 @@ export const namespaces = {
   home: {
     name: 'home',
     keys: {
-      welcome: 'welcome',
-      subtitle: 'subtitle',
+      title: 'title',
+    },
+  },
+  skills: {
+    name: 'skills',
+    keys: {
+      title: 'title',
+    },
+  },
+  projects: {
+    name: 'projects',
+    keys: {
+      title: 'title',
+    },
+  },
+  about: {
+    name: 'about',
+    keys: {
+      title: 'title',
+    },
+  },
+  notFound: {
+    name: 'notFound',
+    keys: {
+      title: 'title',
+      message: 'message',
     },
   },
   components: {
