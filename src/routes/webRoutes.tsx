@@ -1,4 +1,3 @@
-import React from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import {Header} from 'components/Header/Header';
 import {Home} from 'pages/Home';
@@ -8,7 +7,7 @@ import {About} from 'pages/About';
 import {NotFound} from 'pages/NotFound';
 
 export const WebRoutes = () => {
-  const baseName = import.meta.env.VITE_BASE || '/';
+  const baseName = import.meta.env.BASE_URL || '/';
 
   return (
     <BrowserRouter basename={baseName}>

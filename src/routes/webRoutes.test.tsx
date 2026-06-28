@@ -1,4 +1,4 @@
-import {describe, test, expect, beforeEach} from 'vitest';
+import {describe, test, expect, beforeEach, vi, afterEach} from 'vitest';
 import {render, screen, fireEvent} from '@testing-library/react';
 import {I18nextProvider} from 'react-i18next';
 import {ThemeProvider} from 'context/ThemeContext';
@@ -11,6 +11,10 @@ describe('WebRoutes System Integration', () => {
     localStorage.clear();
     document.documentElement.className = '';
     window.history.pushState({}, '', '/');
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   const renderWithProviders = () => {
@@ -28,6 +32,13 @@ describe('WebRoutes System Integration', () => {
       renderWithProviders();
 
       expect(screen.getByRole('banner')).toBeInTheDocument();
+      expect(screen.getByText('Página Início')).toBeInTheDocument();
+    });
+
+    test('should fallback to root directory route when environment base url is empty', () => {
+      vi.stubEnv('BASE_URL', '');
+      renderWithProviders();
+
       expect(screen.getByText('Página Início')).toBeInTheDocument();
     });
   });

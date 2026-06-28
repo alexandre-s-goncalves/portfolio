@@ -4,21 +4,25 @@
     <meta charset="utf-8" />
     <title>Alexandre Gonçalves | Portfolio</title>
     <script type="text/javascript">
-      var pathSegmentsToKeep = window.location.pathname.startsWith(
-        '/portfolio/qas/',
-      )
-        ? 3
-        : 1;
       var l = window.location;
+      var isQas = l.pathname.includes('/portfolio/qas/');
+      var pathSegmentsToKeep = isQas ? 3 : 2;
+
+      var repoPath = l.pathname
+        .split('/')
+        .slice(0, pathSegmentsToKeep)
+        .join('/');
+      var routePath = l.pathname.slice(repoPath.length);
+
       l.replace(
         l.protocol +
           '//' +
           l.hostname +
           (l.port ? ':' + l.port : '') +
-          l.pathname.split('/').slice(0, pathSegmentsToKeep).join('/') +
+          repoPath +
           '/?p=' +
-          l.pathname.slice(1).replace(/&/g, '~and~') +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          encodeURIComponent(routePath) +
+          (l.search ? '&' + l.search.slice(1) : '') +
           l.hash,
       );
     </script>
