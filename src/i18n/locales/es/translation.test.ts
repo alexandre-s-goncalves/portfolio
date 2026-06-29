@@ -15,6 +15,8 @@ describe('Spanish Translation Content Assertions', () => {
   const notFoundKeys = namespaces.notFound.keys;
   const headerName = namespaces.header.name;
   const headerKeys = namespaces.header.keys;
+  const footerName = namespaces.footer.name;
+  const footerKeys = namespaces.footer.keys;
   const languageSelectorName = namespaces.components.languageSelector;
 
   test('should verify that namespaces contain all required keys', () => {
@@ -40,6 +42,13 @@ describe('Spanish Translation Content Assertions', () => {
     expect(es[headerName]).toHaveProperty(headerKeys.navProjects);
     expect(es[headerName]).toHaveProperty(headerKeys.navAbout);
     expect(es[headerName]).toHaveProperty(headerKeys.logoAlt);
+
+    expect(es).toHaveProperty(footerName);
+    expect(es[footerName]).toHaveProperty(footerKeys.bio);
+    expect(es[footerName]).toHaveProperty(footerKeys.contactTitle);
+    expect(es[footerName]).toHaveProperty(footerKeys.location);
+    expect(es[footerName]).toHaveProperty(footerKeys.rights);
+    expect(es[footerName]).toHaveProperty(footerKeys.builtWith);
   });
 
   test('should ensure all spanish strings are valid and filled', () => {
@@ -48,6 +57,9 @@ describe('Spanish Translation Content Assertions', () => {
 
     expect(typeof es[headerName].navHome).toBe('string');
     expect(es[headerName].navHome.length).toBeGreaterThan(0);
+
+    expect(typeof es[footerName].bio).toBe('string');
+    expect(es[footerName].bio.length).toBeGreaterThan(0);
   });
 
   test('should lock exact official text values for spanish language', () => {
@@ -71,5 +83,13 @@ describe('Spanish Translation Content Assertions', () => {
     expect(es[languageSelectorName].french).toBe('Francés');
     expect(es[languageSelectorName].altFragFrance).toBe('Bandera de Francia');
     expect(es[languageSelectorName].spanish).toBe('Español');
+
+    expect(es[footerName].bio).toBe(
+      'Desarrollador apasionado por la tecnología con experiencia en React.js y React Native. Enfocado en crear soluciones elegantes y eficientes.',
+    );
+    expect(es[footerName].contactTitle).toBe('Contacto');
+    expect(es[footerName].location).toBe('São Paulo, Brasil');
+    expect(es[footerName].rights).toBe('Todos los derechos reservados.');
+    expect(es[footerName].builtWith).toBe('Construido con');
   });
 });

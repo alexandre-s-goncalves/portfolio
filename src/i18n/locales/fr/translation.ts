@@ -8,6 +8,13 @@ export const fr = {
     navAbout: 'À propos',
     logoAlt: 'Logo du portfolio',
   },
+  [namespaces.footer.name]: {
+    bio: 'Développeur passionné par la technologie avec de l’expérience en React.js et React Native. Axé sur la création de solutions élégantes et efficaces.',
+    contactTitle: 'Contact',
+    location: 'São Paulo, Brésil',
+    rights: 'Tous droits réservés.',
+    builtWith: 'Propulsé par',
+  },
   [namespaces.home.name]: {
     title: "Page d'accueil",
   },

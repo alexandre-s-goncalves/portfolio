@@ -15,7 +15,8 @@ describe('English Translation Content Assertions', () => {
   const notFoundKeys = namespaces.notFound.keys;
   const headerName = namespaces.header.name;
   const headerKeys = namespaces.header.keys;
-  const languageSelectorName = namespaces.components.languageSelector;
+  const footerName = namespaces.footer.name;
+  const footerKeys = namespaces.footer.keys;
 
   test('should verify that namespaces contain all required keys', () => {
     expect(en).toHaveProperty(homeName);
@@ -40,6 +41,13 @@ describe('English Translation Content Assertions', () => {
     expect(en[headerName]).toHaveProperty(headerKeys.navProjects);
     expect(en[headerName]).toHaveProperty(headerKeys.navAbout);
     expect(en[headerName]).toHaveProperty(headerKeys.logoAlt);
+
+    expect(en).toHaveProperty(footerName);
+    expect(en[footerName]).toHaveProperty(footerKeys.bio);
+    expect(en[footerName]).toHaveProperty(footerKeys.contactTitle);
+    expect(en[footerName]).toHaveProperty(footerKeys.location);
+    expect(en[footerName]).toHaveProperty(footerKeys.rights);
+    expect(en[footerName]).toHaveProperty(footerKeys.builtWith);
   });
 
   test('should ensure all english strings are valid and filled', () => {
@@ -48,6 +56,9 @@ describe('English Translation Content Assertions', () => {
 
     expect(typeof en[headerName].navHome).toBe('string');
     expect(en[headerName].navHome.length).toBeGreaterThan(0);
+
+    expect(typeof en[footerName].bio).toBe('string');
+    expect(en[footerName].bio.length).toBeGreaterThan(0);
   });
 
   test('should lock exact official text values for english language', () => {
@@ -64,12 +75,12 @@ describe('English Translation Content Assertions', () => {
     expect(en[headerName].navAbout).toBe('About');
     expect(en[headerName].logoAlt).toBe('Portfolio logo');
 
-    expect(en[languageSelectorName].portuguese).toBe('Portuguese');
-    expect(en[languageSelectorName].altFlagBrazil).toBe('Flag of Brazil');
-    expect(en[languageSelectorName].english).toBe('English');
-    expect(en[languageSelectorName].altFlagEUA).toBe('Flag of the USA');
-    expect(en[languageSelectorName].french).toBe('French');
-    expect(en[languageSelectorName].altFragFrance).toBe('Flag of France');
-    expect(en[languageSelectorName].spanish).toBe('Spanish');
+    expect(en[footerName].bio).toBe(
+      'Developer passionate about technology with experience in React.js and React Native. Focused on creating elegant and efficient solutions.',
+    );
+    expect(en[footerName].contactTitle).toBe('Contact');
+    expect(en[footerName].location).toBe('São Paulo, Brazil');
+    expect(en[footerName].rights).toBe('All rights reserved.');
+    expect(en[footerName].builtWith).toBe('Built with');
   });
 });
