@@ -1,3 +1,4 @@
+import {useState, useEffect, useRef} from 'react';
 import {clsx} from 'clsx';
 import {NavLink} from 'react-router-dom';
 import {Icon} from '../Icon/Icon';
@@ -6,9 +7,13 @@ import {ThemeToggle} from '../ThemeToggle/ThemeToggle';
 import {useTranslation} from 'react-i18next';
 import {namespaces} from 'i18n';
 import iLogo from 'assets/icons/iLogo.svg';
+import iMenu from 'assets/icons/iMenu.svg';
+import iClose from 'assets/icons/iClose.svg';
 
 export const Header = () => {
   const {t} = useTranslation(namespaces.header.name);
+  const [isOpen, setIsOpen] = useState(false);
+  const headerRef = useRef<HTMLDivElement>(null);
 
   const navItems = [
     {label: t('navHome'), path: '/'},
@@ -17,49 +22,122 @@ export const Header = () => {
     {label: t('navAbout'), path: '/about'},
   ];
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        headerRef.current &&
+        !headerRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   return (
-    <header
-      className={clsx(
-        'sticky top-0 z-50 w-full border-b backdrop-blur-md transition-colors duration-200',
-        'border-slate-100 bg-white/80 text-slate-900',
-        'dark:border-slate-800 dark:bg-slate-950/80 dark:text-slate-50',
-      )}>
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <div className="flex items-center gap-2 text-lg font-bold tracking-tight select-none">
-          <Icon
-            size="lg"
-            icon={iLogo}
-            color="none"
-            className="transition-transform duration-200 hover:scale-105"
-          />
-          <span className="font-semibold text-slate-800 dark:text-slate-200">
-            Alexandre Gonçalves
-          </span>
+    <div ref={headerRef} className="sticky top-0 z-50 w-full">
+      <header
+        className={clsx(
+          'w-full border-b backdrop-blur-md transition-colors duration-200',
+          'border-slate-100 bg-white/80 text-slate-900',
+          'dark:border-slate-800 dark:bg-slate-950/80 dark:text-slate-50',
+        )}>
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+          <div className="flex items-center gap-2 text-lg font-bold tracking-tight select-none">
+            <Icon
+              size="lg"
+              icon={iLogo}
+              color="none"
+              className="transition-transform duration-200 hover:scale-105"
+            />
+            <span className="font-semibold text-slate-800 dark:text-slate-200">
+              Alexandre Gonçalves
+            </span>
+          </div>
+
+          <nav
+            role="navigation"
+            aria-label="Main Navigation"
+            className="hidden items-center gap-8 select-none md:flex">
+            {navItems.map(item => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                className={({isActive}) =>
+                  clsx(
+                    'cursor-pointer text-sm font-medium transition-colors outline-none focus-visible:text-sky-500 focus-visible:underline',
+                    isActive
+                      ? 'font-bold text-slate-900 dark:text-white'
+                      : 'text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300',
+                  )
+                }>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-4">
+            <LanguageSelector />
+            <ThemeToggle />
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-expanded={isOpen}
+              aria-controls="mobile-menu"
+              aria-label={isOpen ? t('closeMenuAlt') : t('openMenuAlt')}
+              className={clsx(
+                'group flex h-9 w-9 items-center justify-center rounded-xl border border-transparent transition-all duration-200 outline-none md:hidden',
+                'cursor-pointer text-slate-700 hover:bg-slate-100/80',
+                'dark:text-slate-300 dark:hover:bg-slate-800/80',
+                'focus-visible:border-current focus-visible:ring-2 focus-visible:ring-current/20',
+              )}>
+              <Icon
+                size="md"
+                icon={isOpen ? iClose : iMenu}
+                color="text-slate-700 dark:text-slate-300 transition-colors duration-200"
+              />
+            </button>
+          </div>
         </div>
-        <nav
-          role="navigation"
-          className="hidden items-center gap-8 select-none md:flex">
-          {navItems.map(item => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({isActive}) =>
-                clsx(
-                  'cursor-pointer text-sm font-medium transition-colors outline-none focus-visible:text-sky-500 focus-visible:underline',
-                  isActive
-                    ? 'font-bold text-slate-900 dark:text-white'
-                    : 'text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300',
-                )
-              }>
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
-        <div className="flex items-center gap-4">
-          <LanguageSelector />
-          <ThemeToggle />
+      </header>
+
+      {isOpen && (
+        <div
+          id="mobile-menu"
+          className={clsx(
+            'absolute top-16 left-0 w-full border-b p-4 shadow-xl backdrop-blur-lg transition-colors duration-200 md:hidden',
+            'border-slate-100 bg-white/95 text-slate-900 shadow-slate-200/50',
+            'dark:border-slate-800 dark:bg-slate-950/95 dark:text-slate-50 dark:shadow-none',
+          )}>
+          <nav
+            aria-label="Mobile Navigation"
+            className="flex flex-col gap-1 select-none">
+            {navItems.map(item => (
+              <NavLink
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={({isActive}) =>
+                  clsx(
+                    'rounded-lg px-4 py-3 text-sm font-medium transition-colors outline-none focus-visible:bg-slate-100 dark:focus-visible:bg-slate-900',
+                    isActive
+                      ? 'bg-slate-100 font-bold text-slate-900 dark:bg-slate-900 dark:text-white'
+                      : 'text-slate-500 hover:bg-slate-50 hover:text-slate-800 dark:text-slate-400 dark:hover:bg-slate-900/50 dark:hover:text-slate-200',
+                  )
+                }>
+                {item.label}
+              </NavLink>
+            ))}
+          </nav>
         </div>
-      </div>
-    </header>
+      )}
+    </div>
   );
 };
