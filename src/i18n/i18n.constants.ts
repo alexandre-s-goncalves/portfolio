@@ -16,6 +16,16 @@ export const namespaces = {
       logoAlt: 'logoAlt',
     },
   },
+  footer: {
+    name: 'footer',
+    keys: {
+      bio: 'bio',
+      contactTitle: 'contactTitle',
+      location: 'location',
+      rights: 'rights',
+      builtWith: 'builtWith',
+    },
+  },
   home: {
     name: 'home',
     keys: {

@@ -5,16 +5,16 @@ import {Skills} from 'pages/Skills';
 import {Projects} from 'pages/Projects';
 import {About} from 'pages/About';
 import {NotFound} from 'pages/NotFound';
+import {Footer} from 'components/Footer';
 
 export const WebRoutes = () => {
   const baseName = import.meta.env.BASE_URL || '/';
 
   return (
     <BrowserRouter basename={baseName}>
-      <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
+      <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
         <Header />
-
-        <main className="mx-auto max-w-7xl px-6">
+        <main className="mx-auto w-full max-w-7xl flex-1 px-6">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/skills" element={<Skills />} />
@@ -23,6 +23,7 @@ export const WebRoutes = () => {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   );

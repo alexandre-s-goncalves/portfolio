@@ -9,6 +9,7 @@ import {namespaces} from 'i18n';
 import iLogo from 'assets/icons/iLogo.svg';
 import iMenu from 'assets/icons/iMenu.svg';
 import iClose from 'assets/icons/iClose.svg';
+import {profile} from 'constants/profile';
 
 export const Header = () => {
   const {t} = useTranslation(namespaces.header.name);
@@ -58,7 +59,7 @@ export const Header = () => {
               className="transition-transform duration-200 hover:scale-105"
             />
             <span className="font-semibold text-slate-800 dark:text-slate-200">
-              Alexandre Gonçalves
+              {profile.name}
             </span>
           </div>
 
