@@ -87,7 +87,7 @@ export const Header = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <div className="hidden items-center gap-4 lg:flex">
+            <div className="hidden items-center gap-4 md:flex">
               <LanguageSelector />
               <ThemeToggle />
             </div>
