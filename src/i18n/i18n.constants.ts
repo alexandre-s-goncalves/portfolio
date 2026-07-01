@@ -6,14 +6,22 @@ export const languages = {
 } as const;
 
 export const namespaces = {
+  navigation: {
+    name: 'navigation',
+    keys: {
+      home: 'home',
+      skills: 'skills',
+      projects: 'projects',
+      about: 'about',
+      settings: 'settings',
+    },
+  },
   header: {
     name: 'header',
     keys: {
-      navHome: 'navHome',
-      navSkills: 'navSkills',
-      navProjects: 'navProjects',
-      navAbout: 'navAbout',
       logoAlt: 'logoAlt',
+      openMenuAlt: 'openMenuAlt',
+      closeMenuAlt: 'closeMenuAlt',
     },
   },
   footer: {
@@ -55,6 +63,16 @@ export const namespaces = {
     keys: {
       title: 'title',
       message: 'message',
+    },
+  },
+  settings: {
+    name: 'settings',
+    keys: {
+      title: 'title',
+      langTitle: 'langTitle',
+      langDesc: 'langDesc',
+      themeTitle: 'themeTitle',
+      themeDesc: 'themeDesc',
     },
   },
   components: {

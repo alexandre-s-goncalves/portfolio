@@ -1,5 +1,5 @@
 import {describe, test, expect, beforeEach} from 'vitest';
-import {render, screen} from '@testing-library/react';
+import {render, screen, act} from '@testing-library/react';
 import {I18nextProvider} from 'react-i18next';
 import {Footer} from './Footer';
 import i18n from '../../i18n/i18n';
@@ -48,7 +48,7 @@ describe('Footer Component', () => {
 
       expect(githubLink).toBeDefined();
       expect(linkedinLink).toBeDefined();
-      expect(mailLinks.length).toBe(2);
+      expect(mailLinks.length).toBe(3);
 
       expect(githubLink).toHaveAttribute('target', '_blank');
       expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
@@ -82,7 +82,9 @@ describe('Footer Component', () => {
     test('should dynamically react and switch content when language context is changed', async () => {
       renderWithI18n();
 
-      await i18n.changeLanguage('en');
+      await act(async () => {
+        await i18n.changeLanguage('en');
+      });
 
       expect(screen.getByText('Contact')).toBeInTheDocument();
       expect(

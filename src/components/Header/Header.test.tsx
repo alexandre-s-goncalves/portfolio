@@ -43,12 +43,16 @@ describe('Header Component', () => {
       expect(
         screen.getByRole('navigation', {name: /Main Navigation/i}),
       ).toBeInTheDocument();
-      expect(screen.getByRole('link', {name: /Início/i})).toBeInTheDocument();
-      expect(
-        screen.getByRole('link', {name: /Habilidades/i}),
-      ).toBeInTheDocument();
-      expect(screen.getByRole('link', {name: /Projetos/i})).toBeInTheDocument();
-      expect(screen.getByRole('link', {name: /Sobre/i})).toBeInTheDocument();
+
+      const homeLinks = screen.getAllByRole('link', {name: /Início/i});
+      const skillsLinks = screen.getAllByRole('link', {name: /Habilidades/i});
+      const projectsLinks = screen.getAllByRole('link', {name: /Projetos/i});
+      const aboutLinks = screen.getAllByRole('link', {name: /Sobre/i});
+
+      expect(homeLinks[0]).toBeInTheDocument();
+      expect(skillsLinks[0]).toBeInTheDocument();
+      expect(projectsLinks[0]).toBeInTheDocument();
+      expect(aboutLinks[0]).toBeInTheDocument();
     });
 
     test('should mount the auxiliary language selector and theme toggle controllers', () => {
@@ -78,7 +82,7 @@ describe('Header Component', () => {
     test('should toggle mobile navigation drawer and switch aria attributes upon toggle button interaction', () => {
       renderWithProviders();
 
-      const toggleButton = screen.getByRole('button', {name: /openMenuAlt/i});
+      const toggleButton = screen.getByRole('button', {name: /Abrir menu/i});
       expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
       expect(
         screen.queryByRole('navigation', {name: /Mobile Navigation/i}),
@@ -95,7 +99,7 @@ describe('Header Component', () => {
       const mobileHomeLinks = screen.getAllByRole('link', {name: /Início/i});
       expect(mobileHomeLinks[1]).toHaveClass('bg-slate-100', 'font-bold');
 
-      fireEvent.click(toggleButton);
+      fireEvent.click(screen.getByRole('button', {name: /Fechar menu/i}));
       expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
       expect(
         screen.queryByRole('navigation', {name: /Mobile Navigation/i}),
@@ -105,7 +109,7 @@ describe('Header Component', () => {
     test('should automatically collapse mobile navigation drawer when clicking a navigation link route', () => {
       renderWithProviders();
 
-      const toggleButton = screen.getByRole('button', {name: /openMenuAlt/i});
+      const toggleButton = screen.getByRole('button', {name: /Abrir menu/i});
       fireEvent.click(toggleButton);
 
       const mobileAboutLinks = screen.getAllByRole('link', {name: /Sobre/i});
@@ -120,7 +124,7 @@ describe('Header Component', () => {
     test('should automatically collapse mobile navigation drawer when intercepting a click outside the component container', () => {
       renderWithProviders();
 
-      const toggleButton = screen.getByRole('button', {name: /openMenuAlt/i});
+      const toggleButton = screen.getByRole('button', {name: /Abrir menu/i});
       fireEvent.click(toggleButton);
       expect(
         screen.getByRole('navigation', {name: /Mobile Navigation/i}),
@@ -137,7 +141,7 @@ describe('Header Component', () => {
     test('should ignore external click interactions if the mobile navigation drawer is already closed', () => {
       renderWithProviders();
 
-      const toggleButton = screen.getByRole('button', {name: /openMenuAlt/i});
+      const toggleButton = screen.getByRole('button', {name: /Abrir menu/i});
       expect(toggleButton).toHaveAttribute('aria-expanded', 'false');
 
       fireEvent.mouseDown(document.body);
@@ -151,7 +155,7 @@ describe('Header Component', () => {
     test('should NOT collapse mobile navigation drawer when a click interaction happens inside the component container', () => {
       renderWithProviders();
 
-      const toggleButton = screen.getByRole('button', {name: /openMenuAlt/i});
+      const toggleButton = screen.getByRole('button', {name: /Abrir menu/i});
       fireEvent.click(toggleButton);
 
       const mobileMenu = screen.getByRole('navigation', {
@@ -172,7 +176,7 @@ describe('Header Component', () => {
       expect(removeSpy).toHaveBeenCalledWith('mousedown', expect.any(Function));
 
       const {unmount: unmountOpen} = renderWithProviders();
-      const toggleButton = screen.getByRole('button', {name: /openMenuAlt/i});
+      const toggleButton = screen.getByRole('button', {name: /Abrir menu/i});
       fireEvent.click(toggleButton);
       unmountOpen();
       expect(removeSpy).toHaveBeenCalledWith('mousedown', expect.any(Function));

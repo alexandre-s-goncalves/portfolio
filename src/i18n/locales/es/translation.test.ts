@@ -3,6 +3,8 @@ import {namespaces} from '../../i18n.constants';
 import {es} from './translation';
 
 describe('Spanish Translation Content Assertions', () => {
+  const navigationName = namespaces.navigation.name;
+  const navigationKeys = namespaces.navigation.keys;
   const homeName = namespaces.home.name;
   const homeKeys = namespaces.home.keys;
   const skillsName = namespaces.skills.name;
@@ -17,9 +19,18 @@ describe('Spanish Translation Content Assertions', () => {
   const headerKeys = namespaces.header.keys;
   const footerName = namespaces.footer.name;
   const footerKeys = namespaces.footer.keys;
+  const settingsName = namespaces.settings.name;
+  const settingsKeys = namespaces.settings.keys;
   const languageSelectorName = namespaces.components.languageSelector;
 
   test('should verify that namespaces contain all required keys', () => {
+    expect(es).toHaveProperty(navigationName);
+    expect(es[navigationName]).toHaveProperty(navigationKeys.home);
+    expect(es[navigationName]).toHaveProperty(navigationKeys.skills);
+    expect(es[navigationName]).toHaveProperty(navigationKeys.projects);
+    expect(es[navigationName]).toHaveProperty(navigationKeys.about);
+    expect(es[navigationName]).toHaveProperty(navigationKeys.settings);
+
     expect(es).toHaveProperty(homeName);
     expect(es[homeName]).toHaveProperty(homeKeys.title);
 
@@ -37,10 +48,6 @@ describe('Spanish Translation Content Assertions', () => {
     expect(es[notFoundName]).toHaveProperty(notFoundKeys.message);
 
     expect(es).toHaveProperty(headerName);
-    expect(es[headerName]).toHaveProperty(headerKeys.navHome);
-    expect(es[headerName]).toHaveProperty(headerKeys.navSkills);
-    expect(es[headerName]).toHaveProperty(headerKeys.navProjects);
-    expect(es[headerName]).toHaveProperty(headerKeys.navAbout);
     expect(es[headerName]).toHaveProperty(headerKeys.logoAlt);
 
     expect(es).toHaveProperty(footerName);
@@ -49,20 +56,36 @@ describe('Spanish Translation Content Assertions', () => {
     expect(es[footerName]).toHaveProperty(footerKeys.location);
     expect(es[footerName]).toHaveProperty(footerKeys.rights);
     expect(es[footerName]).toHaveProperty(footerKeys.builtWith);
+
+    expect(es).toHaveProperty(settingsName);
+    expect(es[settingsName]).toHaveProperty(settingsKeys.title);
+    expect(es[settingsName]).toHaveProperty(settingsKeys.langTitle);
+    expect(es[settingsName]).toHaveProperty(settingsKeys.langDesc);
+    expect(es[settingsName]).toHaveProperty(settingsKeys.themeTitle);
+    expect(es[settingsName]).toHaveProperty(settingsKeys.themeDesc);
   });
 
   test('should ensure all spanish strings are valid and filled', () => {
     expect(typeof es[homeName].title).toBe('string');
     expect(es[homeName].title.length).toBeGreaterThan(0);
 
-    expect(typeof es[headerName].navHome).toBe('string');
-    expect(es[headerName].navHome.length).toBeGreaterThan(0);
+    expect(typeof es[navigationName].home).toBe('string');
+    expect(es[navigationName].home.length).toBeGreaterThan(0);
 
     expect(typeof es[footerName].bio).toBe('string');
     expect(es[footerName].bio.length).toBeGreaterThan(0);
+
+    expect(typeof es[settingsName].title).toBe('string');
+    expect(es[settingsName].title.length).toBeGreaterThan(0);
   });
 
   test('should lock exact official text values for spanish language', () => {
+    expect(es[navigationName].home).toBe('Inicio');
+    expect(es[navigationName].skills).toBe('Habilidades');
+    expect(es[navigationName].projects).toBe('Proyectos');
+    expect(es[navigationName].about).toBe('Sobre mí');
+    expect(es[navigationName].settings).toBe('Configuración');
+
     expect(es[homeName].title).toBe('Página de Inicio');
     expect(es[skillsName].title).toBe('Página de Habilidades');
     expect(es[projectsName].title).toBe('Página de Proyectos');
@@ -70,10 +93,6 @@ describe('Spanish Translation Content Assertions', () => {
     expect(es[notFoundName].title).toBe('404');
     expect(es[notFoundName].message).toBe('Página no encontrada');
 
-    expect(es[headerName].navHome).toBe('Inicio');
-    expect(es[headerName].navSkills).toBe('Habilidades');
-    expect(es[headerName].navProjects).toBe('Proyectos');
-    expect(es[headerName].navAbout).toBe('Sobre mí');
     expect(es[headerName].logoAlt).toBe('Logotipo del portafolio');
 
     expect(es[languageSelectorName].portuguese).toBe('Portugués');
@@ -91,5 +110,15 @@ describe('Spanish Translation Content Assertions', () => {
     expect(es[footerName].location).toBe('São Paulo, Brasil');
     expect(es[footerName].rights).toBe('Todos los derechos reservados.');
     expect(es[footerName].builtWith).toBe('Construido con');
+
+    expect(es[settingsName].title).toBe('Configuración');
+    expect(es[settingsName].langTitle).toBe('Idioma de la interfaz');
+    expect(es[settingsName].langDesc).toBe(
+      'Cambiar el diccionario global del sitio',
+    );
+    expect(es[settingsName].themeTitle).toBe('Tema Visual');
+    expect(es[settingsName].themeDesc).toBe(
+      'Alternar entre Modo Claro y Oscuro',
+    );
   });
 });

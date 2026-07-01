@@ -3,6 +3,8 @@ import {namespaces} from '../../i18n.constants';
 import {en} from './translation';
 
 describe('English Translation Content Assertions', () => {
+  const navName = namespaces.navigation.name;
+  const navKeys = namespaces.navigation.keys;
   const homeName = namespaces.home.name;
   const homeKeys = namespaces.home.keys;
   const skillsName = namespaces.skills.name;
@@ -17,8 +19,17 @@ describe('English Translation Content Assertions', () => {
   const headerKeys = namespaces.header.keys;
   const footerName = namespaces.footer.name;
   const footerKeys = namespaces.footer.keys;
+  const settingsName = namespaces.settings.name;
+  const settingsKeys = namespaces.settings.keys;
 
   test('should verify that namespaces contain all required keys', () => {
+    expect(en).toHaveProperty(navName);
+    expect(en[navName]).toHaveProperty(navKeys.home);
+    expect(en[navName]).toHaveProperty(navKeys.skills);
+    expect(en[navName]).toHaveProperty(navKeys.projects);
+    expect(en[navName]).toHaveProperty(navKeys.about);
+    expect(en[navName]).toHaveProperty(navKeys.settings);
+
     expect(en).toHaveProperty(homeName);
     expect(en[homeName]).toHaveProperty(homeKeys.title);
 
@@ -36,11 +47,9 @@ describe('English Translation Content Assertions', () => {
     expect(en[notFoundName]).toHaveProperty(notFoundKeys.message);
 
     expect(en).toHaveProperty(headerName);
-    expect(en[headerName]).toHaveProperty(headerKeys.navHome);
-    expect(en[headerName]).toHaveProperty(headerKeys.navSkills);
-    expect(en[headerName]).toHaveProperty(headerKeys.navProjects);
-    expect(en[headerName]).toHaveProperty(headerKeys.navAbout);
     expect(en[headerName]).toHaveProperty(headerKeys.logoAlt);
+    expect(en[headerName]).toHaveProperty(headerKeys.openMenuAlt);
+    expect(en[headerName]).toHaveProperty(headerKeys.closeMenuAlt);
 
     expect(en).toHaveProperty(footerName);
     expect(en[footerName]).toHaveProperty(footerKeys.bio);
@@ -48,20 +57,33 @@ describe('English Translation Content Assertions', () => {
     expect(en[footerName]).toHaveProperty(footerKeys.location);
     expect(en[footerName]).toHaveProperty(footerKeys.rights);
     expect(en[footerName]).toHaveProperty(footerKeys.builtWith);
+
+    expect(en).toHaveProperty(settingsName);
+    expect(en[settingsName]).toHaveProperty(settingsKeys.title);
+    expect(en[settingsName]).toHaveProperty(settingsKeys.langTitle);
+    expect(en[settingsName]).toHaveProperty(settingsKeys.langDesc);
+    expect(en[settingsName]).toHaveProperty(settingsKeys.themeTitle);
+    expect(en[settingsName]).toHaveProperty(settingsKeys.themeDesc);
   });
 
   test('should ensure all english strings are valid and filled', () => {
+    expect(typeof en[navName].home).toBe('string');
+    expect(en[navName].home.length).toBeGreaterThan(0);
     expect(typeof en[homeName].title).toBe('string');
     expect(en[homeName].title.length).toBeGreaterThan(0);
-
-    expect(typeof en[headerName].navHome).toBe('string');
-    expect(en[headerName].navHome.length).toBeGreaterThan(0);
-
     expect(typeof en[footerName].bio).toBe('string');
     expect(en[footerName].bio.length).toBeGreaterThan(0);
+    expect(typeof en[settingsName].title).toBe('string');
+    expect(en[settingsName].title.length).toBeGreaterThan(0);
   });
 
   test('should lock exact official text values for english language', () => {
+    expect(en[navName].home).toBe('Home');
+    expect(en[navName].skills).toBe('Skills');
+    expect(en[navName].projects).toBe('Projects');
+    expect(en[navName].about).toBe('About');
+    expect(en[navName].settings).toBe('Settings');
+
     expect(en[homeName].title).toBe('Home Page');
     expect(en[skillsName].title).toBe('Skills Page');
     expect(en[projectsName].title).toBe('Projects Page');
@@ -69,11 +91,9 @@ describe('English Translation Content Assertions', () => {
     expect(en[notFoundName].title).toBe('404');
     expect(en[notFoundName].message).toBe('Page not found');
 
-    expect(en[headerName].navHome).toBe('Home');
-    expect(en[headerName].navSkills).toBe('Skills');
-    expect(en[headerName].navProjects).toBe('Projects');
-    expect(en[headerName].navAbout).toBe('About');
     expect(en[headerName].logoAlt).toBe('Portfolio logo');
+    expect(en[headerName].openMenuAlt).toBe('Open menu');
+    expect(en[headerName].closeMenuAlt).toBe('Close menu');
 
     expect(en[footerName].bio).toBe(
       'Developer passionate about technology with experience in React.js and React Native. Focused on creating elegant and efficient solutions.',
@@ -82,5 +102,15 @@ describe('English Translation Content Assertions', () => {
     expect(en[footerName].location).toBe('São Paulo, Brazil');
     expect(en[footerName].rights).toBe('All rights reserved.');
     expect(en[footerName].builtWith).toBe('Built with');
+
+    expect(en[settingsName].title).toBe('Settings');
+    expect(en[settingsName].langTitle).toBe('Interface Language');
+    expect(en[settingsName].langDesc).toBe(
+      'Change the global website dictionary',
+    );
+    expect(en[settingsName].themeTitle).toBe('Visual Theme');
+    expect(en[settingsName].themeDesc).toBe(
+      'Switch between Light and Dark Mode',
+    );
   });
 });
