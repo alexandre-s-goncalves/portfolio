@@ -1,12 +1,17 @@
 import {namespaces} from '../../i18n.constants';
 
 export const es = {
+  [namespaces.navigation.name]: {
+    home: 'Inicio',
+    skills: 'Habilidades',
+    projects: 'Proyectos',
+    about: 'Sobre mí',
+    settings: 'Configuración',
+  },
   [namespaces.header.name]: {
-    navHome: 'Inicio',
-    navSkills: 'Habilidades',
-    navProjects: 'Proyectos',
-    navAbout: 'Sobre mí',
     logoAlt: 'Logotipo del portafolio',
+    openMenuAlt: 'Abrir menú',
+    closeMenuAlt: 'Cerrar menú',
   },
   [namespaces.footer.name]: {
     bio: 'Desarrollador apasionado por la tecnología con experiencia en React.js y React Native. Enfocado en crear soluciones elegantes y eficientes.',
@@ -26,6 +31,13 @@ export const es = {
   },
   [namespaces.about.name]: {
     title: 'Página Sobre mí',
+  },
+  [namespaces.settings.name]: {
+    title: 'Configuración',
+    langTitle: 'Idioma de la interfaz',
+    langDesc: 'Cambiar el diccionario global del sitio',
+    themeTitle: 'Tema Visual',
+    themeDesc: 'Alternar entre Modo Claro y Oscuro',
   },
   [namespaces.notFound.name]: {
     title: '404',

@@ -32,6 +32,9 @@ describe('WebRoutes System Integration', () => {
       renderWithProviders();
 
       expect(screen.getByRole('banner')).toBeInTheDocument();
+      expect(
+        screen.getByRole('navigation', {name: /Mobile Bottom Navigation/i}),
+      ).toBeInTheDocument();
       expect(screen.getByText('Página Início')).toBeInTheDocument();
     });
 
@@ -47,20 +50,24 @@ describe('WebRoutes System Integration', () => {
     test('should seamlessly transition view states when click handlers fire across links', async () => {
       renderWithProviders();
 
-      const skillsLink = screen.getByRole('link', {name: /Habilidades/i});
-      fireEvent.click(skillsLink);
+      const skillsLinks = screen.getAllByRole('link', {name: /Habilidades/i});
+      fireEvent.click(skillsLinks[0]!);
       expect(screen.getByText('Página Habilidades')).toBeInTheDocument();
 
-      const projectsLink = screen.getByRole('link', {name: /Projetos/i});
-      fireEvent.click(projectsLink);
+      const projectsLinks = screen.getAllByRole('link', {name: /Projetos/i});
+      fireEvent.click(projectsLinks[0]!);
       expect(screen.getByText('Página Projetos')).toBeInTheDocument();
 
-      const aboutLink = screen.getByRole('link', {name: /Sobre/i});
-      fireEvent.click(aboutLink);
+      const aboutLinks = screen.getAllByRole('link', {name: /Sobre/i});
+      fireEvent.click(aboutLinks[0]!);
       expect(screen.getByText('Página Sobre')).toBeInTheDocument();
 
-      const homeLink = screen.getByRole('link', {name: /Início/i});
-      fireEvent.click(homeLink);
+      const settingsLinks = screen.getAllByRole('link', {name: /Ajustes/i});
+      fireEvent.click(settingsLinks[0]!);
+      expect(screen.getByText('Configurações')).toBeInTheDocument();
+
+      const homeLinks = screen.getAllByRole('link', {name: /Início/i});
+      fireEvent.click(homeLinks[0]!);
       expect(screen.getByText('Página Início')).toBeInTheDocument();
     });
 

@@ -47,6 +47,7 @@ export default defineConfig({
       pages: path.resolve(__dirname, 'src/pages'),
       utils: path.resolve(__dirname, 'src/utils'),
       constants: path.resolve(__dirname, 'src/constants'),
+      resources: path.resolve(__dirname, 'src/resources'),
       routes: path.resolve(__dirname, 'src/routes'),
       i18n: path.resolve(__dirname, 'src/i18n/index.ts'),
     },

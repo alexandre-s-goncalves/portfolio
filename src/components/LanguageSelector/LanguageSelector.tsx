@@ -162,7 +162,7 @@ export const LanguageSelector = () => {
           role="menu"
           className={clsx(
             'absolute right-0 mt-2 w-48 rounded-xl border p-1 shadow-lg transition-all duration-150',
-            'border-slate-100 bg-white shadow-slate-200/50',
+            'z-50 border-slate-100 bg-white shadow-slate-200/50',
             'dark:border-slate-800 dark:bg-slate-900 dark:shadow-none',
           )}>
           {languageOptions.map((lang, index) => {

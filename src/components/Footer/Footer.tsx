@@ -1,13 +1,13 @@
 import {clsx} from 'clsx';
 import {useTranslation} from 'react-i18next';
 import {namespaces} from 'i18n';
+import {profile} from 'constants/profile';
 import {Icon} from '../Icon/Icon';
 import iLogo from 'assets/icons/iLogo.svg';
 import iGithub from 'assets/icons/iGithub.svg';
 import iLinkedin from 'assets/icons/iLinkedin.svg';
 import iMail from 'assets/icons/iMail.svg';
 import iHeart from 'assets/icons/iHeart.svg';
-import {profile} from 'constants/profile';
 
 export const Footer = () => {
   const {t} = useTranslation(namespaces.footer.name);
@@ -15,12 +15,12 @@ export const Footer = () => {
   return (
     <footer
       className={clsx(
-        'mt-auto w-full border-t transition-colors duration-200',
+        'mt-auto w-full border-t pb-24 transition-colors duration-200 lg:pb-4',
         'border-slate-100 bg-white text-slate-600',
         'dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400',
       )}>
       <div className="mx-auto w-full max-w-7xl px-6 py-4">
-        <div className="grid w-full grid-cols-1 gap-4 lg:grid-cols-2">
+        <div className="mb-4 hidden w-full grid-cols-1 gap-4 lg:grid lg:grid-cols-2">
           <div className="flex flex-col gap-2 text-left">
             <div className="flex items-center gap-2 text-lg font-bold tracking-tight select-none">
               <Icon
@@ -77,19 +77,46 @@ export const Footer = () => {
             </ul>
           </div>
         </div>
+
+        <div className="mb-4 flex flex-col items-center justify-center gap-4 text-center lg:hidden">
+          <div className="flex items-center gap-6">
+            <a
+              href={profile.links.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
+              <Icon size="md" icon={iGithub} color="currentColor" />
+            </a>
+            <a
+              href={profile.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
+              <Icon size="md" icon={iLinkedin} color="currentColor" />
+            </a>
+            <a
+              href={`mailto:${profile.email}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-lg transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
+              <Icon size="md" icon={iMail} color="currentColor" />
+            </a>
+          </div>
+        </div>
+
         <div
           className={clsx(
-            'mt-4 flex flex-col items-center justify-center gap-2 border-t pt-3 text-center text-xs lg:flex-row lg:items-center lg:justify-between lg:text-left',
-            'border-slate-100 dark:border-slate-800',
+            'flex flex-col items-center justify-center gap-2 text-center text-xs lg:flex-row lg:justify-between lg:text-left',
+            'lg:border-t lg:pt-3',
           )}>
           <p>
             &copy; 2026 {profile.name}. {t('rights')}
           </p>
-          <p className="flex items-center justify-center gap-1">
+          <div className="flex items-center justify-center gap-1">
             <span>{t('builtWith')}</span>
             <Icon size="sm" icon={iHeart} color="text-red-400" />
             <span>React &amp; Tailwind</span>
-          </p>
+          </div>
         </div>
       </div>
     </footer>
