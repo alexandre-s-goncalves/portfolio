@@ -8,6 +8,12 @@ export default mergeConfig(
       environment: 'jsdom',
       globals: true,
       setupFiles: ['./src/test/setup.ts'],
+      exclude: [
+        'node_modules/**',
+        'dist/**',
+        'E2E/**',
+        '**/.{idea,git,cache,output,temp}/**',
+      ],
       coverage: {
         provider: 'v8',
         reporter: ['text', 'json', 'html', 'lcov'],
@@ -19,6 +25,7 @@ export default mergeConfig(
           'src/vite-env.d.ts',
           '**/*.test.{ts,tsx}',
           'src/assets/**',
+          'E2E/**',
         ],
       },
     },

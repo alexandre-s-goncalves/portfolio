@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "composite": true,
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ES2020"],
     "allowJs": false,
@@ -15,7 +16,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["vite/client", "vitest/globals"],
+    "types": ["vite/client", "vitest/globals", "node"],
     "exactOptionalPropertyTypes": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitReturns": true,
@@ -35,6 +36,6 @@
       "i18n/*": ["./src/i18n/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "playwright.config.ts", "E2E/**/*"],
   "references": []
 }
