@@ -8,6 +8,7 @@
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat&logo=prettier&logoColor=black)
 ![Vitest](https://img.shields.io/badge/Vitest-7B9B00?style=flat&logo=vitest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-🎭-2EAD33?style=flat)
 [![Coverage Status](https://coveralls.io/repos/github/alexandre-s-goncalves/portfolio/badge.svg?branch=main)](https://coveralls.io/github/alexandre-s-goncalves/portfolio?branch=main)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
@@ -65,8 +66,8 @@ npm run dev
 
 **Alexandre dos Santos Gonçalves**
 
-- 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🌐 <a href="https://www.linkedin.com/in/alexandre-sgoncalves/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 Licença
@@ -130,8 +131,8 @@ npm run dev
 
 **Alexandre dos Santos Gonçalves**
 
-- 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🌐 <a href="https://www.linkedin.com/in/alexandre-sgoncalves/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 License
@@ -195,8 +196,8 @@ npm run dev
 
 **Alexandre dos Santos Gonçalves**
 
-- 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🌐 <a href="https://www.linkedin.com/in/alexandre-sgoncalves/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 Licence
@@ -260,8 +261,8 @@ npm run dev
 
 **Alexandre dos Santos Gonçalves**
 
-- 🌐 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-- 🐙 <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+- 🌐 <a href="https://www.linkedin.com/in/alexandre-sgoncalves/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+- 🐙 <a href="https://github.com/alexandre-s-goncalves" target="_blank" rel="noopener noreferrer">GitHub</a>
 - 📧 <a href="mailto:alexandre.sgoncalves@outlook.com" target="_blank" rel="noopener noreferrer">Email</a>
 
 ### 📄 Licencia

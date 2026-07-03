@@ -256,7 +256,7 @@ feat: add dark mode toggle to header
 - Persist theme preference in localStorage
 ```
 
-## 🧪 Estándares de Pruebas (Vitest + RTL)
+## 🧪 Estándares de Pruebas
 
 El ecosistema de pruebas se basa en **Vitest** junto con **React Testing Library**. Para componentes con internacionalización, utiliza la función de ayuda para montar el componente dentro del contexto de `i18next`.
 
@@ -368,6 +368,41 @@ test('should apply dark theme style tokens when root has dark class', () => {
   expect(element).toHaveClass('dark:bg-slate-900', 'dark:text-sky-400');
 });
 ```
+
+### 🎭 Pruebas End-to-End con Playwright
+
+Además de las pruebas unitarias con Vitest, el proyecto también incluye una suite de pruebas end-to-end con Playwright para validar flujos reales de navegación e internacionalización. El escenario principal se encuentra en `E2E/i18n.spec.ts` y cubre el cambio de idioma en la página de configuración, así como la verificación de contenido en la página principal.
+
+```typescript
+import {test, expect} from '@playwright/test';
+
+test('should dynamically translate interface when user updates language on settings page', async ({
+  page,
+}) => {
+  await page.goto('/settings');
+
+  const languageButton = page
+    .locator('main button[aria-haspopup="true"]')
+    .or(page.locator('main button'))
+    .first();
+
+  await expect(languageButton).toBeVisible();
+  await languageButton.click();
+
+  const esOption = page.locator('[data-testid="idioma-espanhol"]').first();
+  await expect(esOption).toBeVisible();
+  await esOption.click();
+  await expect(page.getByRole('heading', {level: 1})).toContainText(
+    /Configur/i,
+  );
+});
+```
+
+#### Buenas prácticas
+
+- Valida rutas reales, navegación e interacciones de usuario.
+- Prefiere selectores accesibles y `data-testid` para elementos específicos.
+- Mantén los escenarios de internacionalización y regresión en ejecución continua.
 
 ---
 
