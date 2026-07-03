@@ -17,9 +17,13 @@ export default defineConfig([
       '.vite/**',
       'node_modules/**',
       'coverage/**',
+      'playwright-report/**',
+      'test-results/**',
       '**/*.log',
       '.DS_Store',
     ],
+  },
+  {
     files: ['**/*.{js,jsx,ts,tsx}'],
     extends: [
       js.configs.recommended,

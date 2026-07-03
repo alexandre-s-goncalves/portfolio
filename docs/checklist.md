@@ -137,3 +137,12 @@
 - [x] Implement automated execution instructions for local environments
 - [x] Document architecture diagrams detailing multi-environment CI/CD workflow
 - [x] Setup dynamic badges showcasing real-time build and coverage parameters
+
+---
+
+## 🤖 Módulo 5: Automação e Qualidade E2E
+
+- [x] **Etapa 1:** Instalação do Playwright e criação do arquivo `playwright.config.ts` unificado.
+- [x] **Etapa 2:** Desenvolvimento do teste E2E de Fluxo de Navegação Responsiva (`navigation.spec.ts`).
+- [x] **Etapa 3:** Desenvolvimento do teste E2E de Reatividade de Idiomas (`i18n.spec.ts`).
+- [x] **Etapa 4:** Desenvolvimento do teste E2E de Persistência de Tema e LocalStorage (`theme.spec.ts`).

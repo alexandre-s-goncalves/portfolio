@@ -35,7 +35,10 @@ export const LanguageSelector = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const menuItemsRef = useRef<(HTMLButtonElement | null)[]>([]);
 
-  const currentLanguageCode = (i18n.language as LanguageCode) || 'pt';
+  const rawLanguage = i18n.language || 'pt';
+  const currentLanguageCode = rawLanguage
+    .slice(0, 2)
+    .toLowerCase() as LanguageCode;
 
   const languageOptions = useMemo<LanguageOption[]>(
     () => [
