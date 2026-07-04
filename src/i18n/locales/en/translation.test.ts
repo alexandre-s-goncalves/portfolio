@@ -1,116 +1,143 @@
 import {describe, test, expect} from 'vitest';
-import {namespaces} from '../../i18n.constants';
 import {en} from './translation';
+import {namespaces} from '../../i18n.constants';
 
-describe('English Translation Content Assertions', () => {
-  const navName = namespaces.navigation.name;
-  const navKeys = namespaces.navigation.keys;
-  const homeName = namespaces.home.name;
-  const homeKeys = namespaces.home.keys;
-  const skillsName = namespaces.skills.name;
-  const skillsKeys = namespaces.skills.keys;
-  const projectsName = namespaces.projects.name;
-  const projectsKeys = namespaces.projects.keys;
-  const aboutName = namespaces.about.name;
-  const aboutKeys = namespaces.about.keys;
-  const notFoundName = namespaces.notFound.name;
-  const notFoundKeys = namespaces.notFound.keys;
-  const headerName = namespaces.header.name;
-  const headerKeys = namespaces.header.keys;
-  const footerName = namespaces.footer.name;
-  const footerKeys = namespaces.footer.keys;
-  const settingsName = namespaces.settings.name;
-  const settingsKeys = namespaces.settings.keys;
+describe('English Translation Integrity System', () => {
+  describe('Navigation Namespace', () => {
+    const {name, keys} = namespaces.navigation;
 
-  test('should verify that namespaces contain all required keys', () => {
-    expect(en).toHaveProperty(navName);
-    expect(en[navName]).toHaveProperty(navKeys.home);
-    expect(en[navName]).toHaveProperty(navKeys.skills);
-    expect(en[navName]).toHaveProperty(navKeys.projects);
-    expect(en[navName]).toHaveProperty(navKeys.about);
-    expect(en[navName]).toHaveProperty(navKeys.settings);
+    test('should verify all structural navigation dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
 
-    expect(en).toHaveProperty(homeName);
-    expect(en[homeName]).toHaveProperty(homeKeys.title);
-
-    expect(en).toHaveProperty(skillsName);
-    expect(en[skillsName]).toHaveProperty(skillsKeys.title);
-
-    expect(en).toHaveProperty(projectsName);
-    expect(en[projectsName]).toHaveProperty(projectsKeys.title);
-
-    expect(en).toHaveProperty(aboutName);
-    expect(en[aboutName]).toHaveProperty(aboutKeys.title);
-
-    expect(en).toHaveProperty(notFoundName);
-    expect(en[notFoundName]).toHaveProperty(notFoundKeys.title);
-    expect(en[notFoundName]).toHaveProperty(notFoundKeys.message);
-
-    expect(en).toHaveProperty(headerName);
-    expect(en[headerName]).toHaveProperty(headerKeys.logoAlt);
-    expect(en[headerName]).toHaveProperty(headerKeys.openMenuAlt);
-    expect(en[headerName]).toHaveProperty(headerKeys.closeMenuAlt);
-
-    expect(en).toHaveProperty(footerName);
-    expect(en[footerName]).toHaveProperty(footerKeys.bio);
-    expect(en[footerName]).toHaveProperty(footerKeys.contactTitle);
-    expect(en[footerName]).toHaveProperty(footerKeys.location);
-    expect(en[footerName]).toHaveProperty(footerKeys.rights);
-    expect(en[footerName]).toHaveProperty(footerKeys.builtWith);
-
-    expect(en).toHaveProperty(settingsName);
-    expect(en[settingsName]).toHaveProperty(settingsKeys.title);
-    expect(en[settingsName]).toHaveProperty(settingsKeys.langTitle);
-    expect(en[settingsName]).toHaveProperty(settingsKeys.langDesc);
-    expect(en[settingsName]).toHaveProperty(settingsKeys.themeTitle);
-    expect(en[settingsName]).toHaveProperty(settingsKeys.themeDesc);
+    test('should lock exact structural value parameters for navigation', () => {
+      expect(en[name].home).toBe('Home');
+      expect(en[name].skills).toBe('Skills');
+      expect(en[name].projects).toBe('Projects');
+      expect(en[name].about).toBe('About');
+      expect(en[name].settings).toBe('Settings');
+    });
   });
 
-  test('should ensure all english strings are valid and filled', () => {
-    expect(typeof en[navName].home).toBe('string');
-    expect(en[navName].home.length).toBeGreaterThan(0);
-    expect(typeof en[homeName].title).toBe('string');
-    expect(en[homeName].title.length).toBeGreaterThan(0);
-    expect(typeof en[footerName].bio).toBe('string');
-    expect(en[footerName].bio.length).toBeGreaterThan(0);
-    expect(typeof en[settingsName].title).toBe('string');
-    expect(en[settingsName].title.length).toBeGreaterThan(0);
+  describe('Header Namespace', () => {
+    const {name, keys} = namespaces.header;
+
+    test('should verify all structural header dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
+
+    test('should lock exact structural value parameters for header', () => {
+      expect(en[name].logoAlt).toBe('Portfolio logo');
+      expect(en[name].openMenuAlt).toBe('Open menu');
+      expect(en[name].closeMenuAlt).toBe('Close menu');
+    });
   });
 
-  test('should lock exact official text values for english language', () => {
-    expect(en[navName].home).toBe('Home');
-    expect(en[navName].skills).toBe('Skills');
-    expect(en[navName].projects).toBe('Projects');
-    expect(en[navName].about).toBe('About');
-    expect(en[navName].settings).toBe('Settings');
+  describe('Footer Namespace', () => {
+    const {name, keys} = namespaces.footer;
 
-    expect(en[homeName].title).toBe('Home Page');
-    expect(en[skillsName].title).toBe('Skills Page');
-    expect(en[projectsName].title).toBe('Projects Page');
-    expect(en[aboutName].title).toBe('About Page');
-    expect(en[notFoundName].title).toBe('404');
-    expect(en[notFoundName].message).toBe('Page not found');
+    test('should verify all structural footer dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
 
-    expect(en[headerName].logoAlt).toBe('Portfolio logo');
-    expect(en[headerName].openMenuAlt).toBe('Open menu');
-    expect(en[headerName].closeMenuAlt).toBe('Close menu');
+    test('should lock exact structural value parameters for footer', () => {
+      expect(en[name].bio).toBe(
+        'Developer passionate about technology with experience in React.js and React Native. Focused on creating elegant and efficient solutions.',
+      );
+      expect(en[name].contactTitle).toBe('Contact');
+      expect(en[name].location).toBe('Sao Paulo, Brazil');
+      expect(en[name].rights).toBe('All rights reserved.');
+      expect(en[name].builtWith).toBe('Built with');
+    });
+  });
 
-    expect(en[footerName].bio).toBe(
-      'Developer passionate about technology with experience in React.js and React Native. Focused on creating elegant and efficient solutions.',
-    );
-    expect(en[footerName].contactTitle).toBe('Contact');
-    expect(en[footerName].location).toBe('São Paulo, Brazil');
-    expect(en[footerName].rights).toBe('All rights reserved.');
-    expect(en[footerName].builtWith).toBe('Built with');
+  describe('Settings Namespace', () => {
+    const {name, keys} = namespaces.settings;
 
-    expect(en[settingsName].title).toBe('Settings');
-    expect(en[settingsName].langTitle).toBe('Interface Language');
-    expect(en[settingsName].langDesc).toBe(
-      'Change the global website dictionary',
-    );
-    expect(en[settingsName].themeTitle).toBe('Visual Theme');
-    expect(en[settingsName].themeDesc).toBe(
-      'Switch between Light and Dark Mode',
-    );
+    test('should verify all structural settings dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
+
+    test('should lock exact structural value parameters for settings', () => {
+      expect(en[name].title).toBe('Settings');
+      expect(en[name].langTitle).toBe('Interface Language');
+      expect(en[name].langDesc).toBe('Change the global website dictionary');
+      expect(en[name].themeTitle).toBe('Visual Theme');
+      expect(en[name].themeDesc).toBe('Switch between Light and Dark Mode');
+    });
+  });
+
+  describe('NotFound Namespace', () => {
+    const {name, keys} = namespaces.notFound;
+
+    test('should verify all structural notFound dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
+
+    test('should lock exact structural value parameters for notFound', () => {
+      expect(en[name].title).toBe('404');
+      expect(en[name].message).toBe('Page not found');
+      expect(en[name].description).toBe(
+        'The link you tried to access was not found or the route was moved in space-time. Use the button below to return safely.',
+      );
+      expect(en[name].backButton).toBe('Back to Home');
+    });
+  });
+
+  describe('Home Page Namespace', () => {
+    const {name, keys} = namespaces.home;
+
+    test('should verify all structural home dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
+
+    test('should lock exact structural value parameters for home page content', () => {
+      expect(en[name].title).toBe('Home Page');
+    });
+  });
+
+  describe('Skills Page Namespace', () => {
+    const {name, keys} = namespaces.skills;
+
+    test('should verify all structural skills dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
+
+    test('should lock exact structural value parameters for skills page content', () => {
+      expect(en[name].title).toBe('Skills Page');
+    });
+  });
+
+  describe('Projects Page Namespace', () => {
+    const {name, keys} = namespaces.projects;
+
+    test('should verify all structural projects dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
+
+    test('should lock exact structural value parameters for projects page content', () => {
+      expect(en[name].title).toBe('Projects Page');
+    });
+  });
+
+  describe('About Page Namespace', () => {
+    const {name, keys} = namespaces.about;
+
+    test('should verify all structural about dictionary keys exist', () => {
+      expect(en).toHaveProperty(name);
+      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+    });
+
+    test('should lock exact structural value parameters for about page content', () => {
+      expect(en[name].title).toBe('About Page');
+    });
   });
 });

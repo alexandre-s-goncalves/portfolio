@@ -32,16 +32,20 @@ export const pt = {
   [namespaces.about.name]: {
     title: 'Página Sobre',
   },
+  [namespaces.notFound.name]: {
+    title: '404',
+    message: 'Página não encontrada',
+    description:
+      'O link que você tentou acessar não foi encontrado ou a rota foi movida no espaço-tempo. Use o botão abaixo para retornar em segurança.',
+    backButton: 'Voltar ao Início',
+  },
+
   [namespaces.settings.name]: {
     title: 'Configurações',
     langTitle: 'Idioma da Interface',
     langDesc: 'Mude o dicionário global do site',
     themeTitle: 'Tema Visual',
     themeDesc: 'Alternar entre Modo Claro e Escuro',
-  },
-  [namespaces.notFound.name]: {
-    title: '404',
-    message: 'Página não encontrada',
   },
   [namespaces.components.languageSelector]: {
     portuguese: 'Português',

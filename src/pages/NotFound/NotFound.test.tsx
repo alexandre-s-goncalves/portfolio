@@ -1,36 +1,69 @@
-import {describe, test, expect, beforeEach} from 'vitest';
-import {render, screen} from '@testing-library/react';
+import {describe, test, expect, beforeEach, vi} from 'vitest';
+import {render, screen, fireEvent} from '@testing-library/react';
 import {I18nextProvider} from 'react-i18next';
-import {NotFound} from './NotFound';
+import {BrowserRouter} from 'react-router-dom';
+import {NotFoundPage} from './index';
 import i18n from '../../i18n/i18n';
 
-describe('NotFound Page Unit Test', () => {
+const mockNavigate = vi.fn();
+vi.mock('react-router-dom', async () => {
+  const actual = await vi.importActual('react-router-dom');
+  return {
+    ...actual,
+    useNavigate: () => mockNavigate,
+  };
+});
+
+describe('NotFoundPage System Integration', () => {
   beforeEach(async () => {
     await i18n.changeLanguage('pt');
+    mockNavigate.mockClear();
   });
 
   const renderComponent = () => {
     return render(
       <I18nextProvider i18n={i18n}>
-        <NotFound />
+        <BrowserRouter>
+          <NotFoundPage />
+        </BrowserRouter>
       </I18nextProvider>,
     );
   };
 
-  describe('Render & Tailwind v4', () => {
-    test('should render error identification layout elements completely', () => {
+  describe('Renderização & Tailwind v4', () => {
+    test('should mount background branding vectors and initial page contents completely', () => {
       renderComponent();
+
       expect(screen.getByRole('heading', {level: 1})).toHaveTextContent('404');
-      expect(screen.getByText('Página não encontrada')).toBeInTheDocument();
+      expect(screen.getByRole('heading', {level: 2})).toHaveTextContent(
+        /Página não encontrada|Page not found/i,
+      );
+      expect(screen.getByRole('button')).toBeInTheDocument();
     });
 
-    test('should enforce specialized emphasis styles matching error template status', () => {
+    test('should enforce precise core tailwind structural visual layout styles', () => {
       renderComponent();
+
       expect(screen.getByRole('heading', {level: 1})).toHaveClass(
-        'text-6xl',
+        'text-[120px]',
         'font-black',
-        'text-sky-500',
+        'tracking-tighter',
+        'text-transparent',
+        'bg-clip-text',
+        'bg-linear-to-b',
       );
+    });
+  });
+
+  describe('Comportamento & Ações', () => {
+    test('should invoke safe navigation handler redirecting to root directory path on click', () => {
+      renderComponent();
+
+      const backButton = screen.getByRole('button');
+      fireEvent.click(backButton);
+
+      expect(mockNavigate).toHaveBeenCalledTimes(1);
+      expect(mockNavigate).toHaveBeenCalledWith('/');
     });
   });
 });

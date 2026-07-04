@@ -16,7 +16,7 @@ export const en = {
   [namespaces.footer.name]: {
     bio: 'Developer passionate about technology with experience in React.js and React Native. Focused on creating elegant and efficient solutions.',
     contactTitle: 'Contact',
-    location: 'São Paulo, Brazil',
+    location: 'Sao Paulo, Brazil',
     rights: 'All rights reserved.',
     builtWith: 'Built with',
   },
@@ -32,16 +32,19 @@ export const en = {
   [namespaces.about.name]: {
     title: 'About Page',
   },
+  [namespaces.notFound.name]: {
+    title: '404',
+    message: 'Page not found',
+    description:
+      'The link you tried to access was not found or the route was moved in space-time. Use the button below to return safely.',
+    backButton: 'Back to Home',
+  },
   [namespaces.settings.name]: {
     title: 'Settings',
     langTitle: 'Interface Language',
     langDesc: 'Change the global website dictionary',
     themeTitle: 'Visual Theme',
     themeDesc: 'Switch between Light and Dark Mode',
-  },
-  [namespaces.notFound.name]: {
-    title: '404',
-    message: 'Page not found',
   },
   [namespaces.components.languageSelector]: {
     portuguese: 'Portuguese',
