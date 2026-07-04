@@ -6,7 +6,7 @@ export const fr = {
     skills: 'Compétences',
     projects: 'Projets',
     about: 'À propos',
-    settings: 'Paramètres',
+    settings: 'Réglages',
   },
   [namespaces.header.name]: {
     logoAlt: 'Logo du portfolio',
@@ -16,12 +16,12 @@ export const fr = {
   [namespaces.footer.name]: {
     bio: 'Développeur passionné par la technologie avec de l’expérience en React.js et React Native. Axé sur la création de solutions élégantes et efficaces.',
     contactTitle: 'Contact',
-    location: 'São Paulo, Brésil',
+    location: 'Sao Paulo, Brésil',
     rights: 'Tous droits réservés.',
-    builtWith: 'Propulsé par',
+    builtWith: 'Construit avec',
   },
   [namespaces.home.name]: {
-    title: "Page d'accueil",
+    title: 'Page d’accueil',
   },
   [namespaces.skills.name]: {
     title: 'Page des compétences',
@@ -32,16 +32,19 @@ export const fr = {
   [namespaces.about.name]: {
     title: 'Page à propos',
   },
+  [namespaces.notFound.name]: {
+    title: '404',
+    message: 'Page non trouvée',
+    description:
+      "Le lien que vous avez essayé d'accéder est introuvable ou a été déplacé dans l'espace-temps. Utilisez le bouton ci-dessous pour revenir en toute sécurité.",
+    backButton: 'Retour à l’accueil',
+  },
   [namespaces.settings.name]: {
-    title: 'Paramètres',
+    title: 'Réglages',
     langTitle: 'Langue de l’interface',
     langDesc: 'Changer le dictionnaire global du site',
     themeTitle: 'Thème Visuel',
     themeDesc: 'Basculer entre le mode clair et sombre',
-  },
-  [namespaces.notFound.name]: {
-    title: '404',
-    message: 'Page non trouvée',
   },
   [namespaces.components.languageSelector]: {
     portuguese: 'Portugais',

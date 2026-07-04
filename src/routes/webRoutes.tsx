@@ -5,7 +5,7 @@ import {Skills} from 'pages/Skills';
 import {Projects} from 'pages/Projects';
 import {About} from 'pages/About';
 import {Settings} from 'pages/Settings';
-import {NotFound} from 'pages/NotFound';
+import {NotFoundPage} from 'pages/NotFound';
 import {Footer} from 'components/Footer';
 import {BottomTabBar} from 'components/BottomTabBar/BottomTabBar';
 
@@ -23,7 +23,7 @@ export const WebRoutes = () => {
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/settings" element={<Settings />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
         <Footer />

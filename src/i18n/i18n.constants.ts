@@ -63,6 +63,8 @@ export const namespaces = {
     keys: {
       title: 'title',
       message: 'message',
+      description: 'description',
+      backButton: 'backButton',
     },
   },
   settings: {

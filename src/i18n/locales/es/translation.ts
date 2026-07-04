@@ -32,16 +32,19 @@ export const es = {
   [namespaces.about.name]: {
     title: 'Página Sobre mí',
   },
+  [namespaces.notFound.name]: {
+    title: '404',
+    message: 'Página no encontrada',
+    description:
+      'El enlace que intentó acceder no foi encontrado o la ruta fue movida en el espacio-tiempo. Use el botón de abajo para regresar de forma segura.',
+    backButton: 'Voltar ao Início',
+  },
   [namespaces.settings.name]: {
     title: 'Configuración',
     langTitle: 'Idioma de la interfaz',
     langDesc: 'Cambiar el diccionario global del sitio',
     themeTitle: 'Tema Visual',
     themeDesc: 'Alternar entre Modo Claro y Oscuro',
-  },
-  [namespaces.notFound.name]: {
-    title: '404',
-    message: 'Página no encontrada',
   },
   [namespaces.components.languageSelector]: {
     portuguese: 'Portugués',
