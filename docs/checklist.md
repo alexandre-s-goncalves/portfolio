@@ -146,3 +146,18 @@
 - [x] **Etapa 2:** Desenvolvimento do teste E2E de Fluxo de Navegação Responsiva (`navigation.spec.ts`).
 - [x] **Etapa 3:** Desenvolvimento do teste E2E de Reatividade de Idiomas (`i18n.spec.ts`).
 - [x] **Etapa 4:** Desenvolvimento do teste E2E de Persistência de Tema e LocalStorage (`theme.spec.ts`).
+
+## 🛡️ Módulo 6: Blindagem, Governança & Segurança Sênior (Fase Atual 🕒)
+
+### 🩺 Linha de Frente: Diagnóstico de Saúde do Código
+
+- [ ] **Etapa 1:** Integração do `react-doctor` no `package.json` para análises de arquitetura e performance.
+- [ ] **Etapa 2:** Correção e resolução de todas as brechas ou avisos apontados pelo relatório do `react-doctor`.
+- [ ] **Etapa 3:** Automação do `react-doctor` na esteira do GitHub Actions para bloquear PRs com nota baixa.
+
+### 🛡️ Camada de Segurança Estrita (Security & Compliance)
+
+- [ ] **Etapa 4:** Instalação e configuração do `eslint-plugin-security` no Flat Config contra brechas e ataques OWASP.
+- [ ] **Etapa 5:** Ativação do script de checagem estrita de tipos em tempo de compilação de produção (`tsc --noEmit && vite build`).
+- [ ] **Etapa 6:** Configuração do scanner automatizado `npm audit` no pipeline CI/CD para detecção de pacotes vulneráveis de terceiros.
+- [ ] **Etapa 7:** Configuração de bloqueio local (via Husky) e remoto contra vazamento acidental de chaves secretas e tokens de APIs.
