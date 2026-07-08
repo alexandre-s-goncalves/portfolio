@@ -14,7 +14,7 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-describe('NotFoundPage System Integration', () => {
+describe('NotFound Page System Integration', () => {
   beforeEach(async () => {
     await i18n.changeLanguage('pt');
     mockNavigate.mockClear();
@@ -45,7 +45,8 @@ describe('NotFoundPage System Integration', () => {
       renderComponent();
 
       expect(screen.getByRole('heading', {level: 1})).toHaveClass(
-        'text-[120px]',
+        'text-[90px]',
+        'md:text-[120px]',
         'font-black',
         'tracking-tighter',
         'text-transparent',

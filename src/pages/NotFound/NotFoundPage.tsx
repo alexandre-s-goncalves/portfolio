@@ -9,17 +9,15 @@ export const NotFoundPage = () => {
   const {t} = useTranslation(namespaces.notFound.name);
 
   return (
-    <div
-      data-testid="pagina-notfound"
-      className="animate-fade-in flex h-full w-full flex-1 items-center justify-center p-6 select-none">
-      <div className="flex max-w-2xl flex-col items-center text-center">
-        <div className="relative mb-6 flex h-48 w-full items-center justify-center">
-          <h1 className="absolute bg-linear-to-b from-sky-400 to-sky-600 bg-clip-text text-[120px] font-black tracking-tighter text-transparent opacity-15 drop-shadow-2xl select-none dark:from-sky-500 dark:to-sky-800">
+    <div className="animate-fade-in flex h-full w-full flex-1 items-center justify-center p-4 select-none md:p-6">
+      <div className="flex w-full max-w-2xl flex-col items-center text-center">
+        <div className="relative mb-4 flex h-36 w-full items-center justify-center md:mb-6 md:h-48">
+          <h1 className="absolute bg-linear-to-b from-sky-400 to-sky-600 bg-clip-text text-[90px] font-black tracking-tighter text-transparent opacity-15 drop-shadow-2xl select-none md:text-[120px] dark:from-sky-500 dark:to-sky-800">
             {t('title')}
           </h1>
           <svg
             viewBox="0 0 200 200"
-            className="h-44 w-44 animate-bounce text-sky-500/80 drop-shadow-[0_0_15px_rgba(14,165,233,0.3)] duration-4000 dark:text-sky-400/80"
+            className="h-32 w-32 animate-bounce text-sky-500/80 drop-shadow-[0_0_15px_rgba(14,165,233,0.3)] duration-4000 md:h-44 md:w-44 dark:text-sky-400/80"
             fill="none"
             stroke="currentColor"
             strokeWidth="4"
@@ -43,11 +41,11 @@ export const NotFoundPage = () => {
           </svg>
         </div>
 
-        <h2 className="mb-3 text-2xl font-bold tracking-tight text-slate-800 sm:text-3xl dark:text-slate-100">
+        <h2 className="mb-2 px-2 text-xl font-bold tracking-tight text-slate-800 sm:text-3xl md:mb-3 dark:text-slate-100">
           {t('message')}
         </h2>
 
-        <p className="mx-auto mb-8 max-w-md text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+        <p className="mx-auto mb-6 max-w-md px-4 text-xs leading-relaxed text-slate-500 md:mb-8 md:text-sm dark:text-slate-400">
           {t('description')}
         </p>
 
