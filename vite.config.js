@@ -1,7 +1,6 @@
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import svgr from 'vite-plugin-svgr';
-import tsconfigPaths from 'vite-tsconfig-paths';
 import {defineConfig} from 'vite';
 import {VitePWA} from 'vite-plugin-pwa';
 import path from 'path';
@@ -9,7 +8,6 @@ import path from 'path';
 export default defineConfig({
   base: process.env.VITE_BASE || '/',
   plugins: [
-    tsconfigPaths(),
     svgr({exportAsDefault: true}),
     react(),
     tailwindcss(),
@@ -40,6 +38,7 @@ export default defineConfig({
   ],
 
   resolve: {
+    tsconfigPaths: true,
     alias: {
       assets: path.resolve(__dirname, 'src/assets'),
       components: path.resolve(__dirname, 'src/components'),
@@ -49,6 +48,7 @@ export default defineConfig({
       constants: path.resolve(__dirname, 'src/constants'),
       resources: path.resolve(__dirname, 'src/resources'),
       routes: path.resolve(__dirname, 'src/routes'),
+      helpers: path.resolve(__dirname, 'src/helpers'),
       i18n: path.resolve(__dirname, 'src/i18n/index.ts'),
     },
   },

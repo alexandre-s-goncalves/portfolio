@@ -17,6 +17,7 @@ import FlagBrazil from 'assets/icons/iFlag-Brazil.svg';
 import FlagUSA from 'assets/icons/iFlag-USA.svg';
 import FlagFrance from 'assets/icons/iFlag-France.svg';
 import FlagSpain from 'assets/icons/iFlag-Spain.svg';
+import {getMenuItems} from 'helpers/languageSelector';
 
 export type LanguageCode = 'pt' | 'en' | 'fr' | 'es';
 
@@ -33,7 +34,6 @@ export const LanguageSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const menuItemsRef = useRef<(HTMLButtonElement | null)[]>([]);
 
   const rawLanguage = i18n.language || 'pt';
   const currentLanguageCode = rawLanguage
@@ -88,8 +88,8 @@ export const LanguageSelector = () => {
   }, []);
 
   const focusFirstActiveItem = () => {
-    const firstActive = menuItemsRef.current.find(
-      item => item && !item.disabled,
+    const firstActive = dropdownRef.current?.querySelector<HTMLButtonElement>(
+      'button:not(:disabled)',
     );
     firstActive?.focus();
   };
@@ -98,26 +98,25 @@ export const LanguageSelector = () => {
     (event: React.KeyboardEvent) => {
       if (!isOpen) return;
 
-      const activeElement = document.activeElement;
-      const currentIndex = menuItemsRef.current.findIndex(
-        item => item === activeElement,
-      );
+      const activeElement = document.activeElement as HTMLButtonElement | null;
+      const menuItems = getMenuItems(dropdownRef.current);
+      const currentIndex = menuItems.findIndex(item => item === activeElement);
 
       if (event.key === 'Escape') {
         setIsOpen(false);
         buttonRef.current?.focus();
       } else if (event.key === 'ArrowDown') {
         event.preventDefault();
-        const nextIndex = (currentIndex + 1) % languageOptions.length;
-        menuItemsRef.current[nextIndex]?.focus();
+        const nextIndex = (currentIndex + 1) % menuItems.length;
+        menuItems[nextIndex]?.focus();
       } else if (event.key === 'ArrowUp') {
         event.preventDefault();
         const prevIndex =
-          (currentIndex - 1 + languageOptions.length) % languageOptions.length;
-        menuItemsRef.current[prevIndex]?.focus();
+          (currentIndex - 1 + menuItems.length) % menuItems.length;
+        menuItems[prevIndex]?.focus();
       }
     },
-    [isOpen, languageOptions.length],
+    [isOpen],
   );
 
   const handleToggleMenu = () => {
@@ -182,15 +181,12 @@ export const LanguageSelector = () => {
             'z-50 border-slate-100 bg-white shadow-slate-200/50',
             'dark:border-slate-800 dark:bg-slate-900 dark:shadow-none',
           )}>
-          {languageOptions.map((lang, index) => {
+          {languageOptions.map(lang => {
             const isSelected = lang.abbreviation === currentLanguageCode;
             return (
               <button
                 type="button"
                 key={lang.testId}
-                ref={el => {
-                  menuItemsRef.current[index] = el;
-                }}
                 role="menuitem"
                 disabled={isSelected}
                 onClick={() => handleSelectLanguage(lang.abbreviation)}

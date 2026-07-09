@@ -2,6 +2,7 @@ import {describe, test, expect, beforeEach, vi} from 'vitest';
 import {render, screen, fireEvent, waitFor} from '@testing-library/react';
 import {I18nextProvider} from 'react-i18next';
 import {LanguageSelector} from './LanguageSelector';
+import {getMenuItems} from '../../helpers/languageSelector/LanguageSelector.helpers';
 import i18n from '../../i18n/i18n';
 
 describe('LanguageSelector Component', () => {
@@ -206,6 +207,10 @@ describe('LanguageSelector Component', () => {
 
       fireEvent.keyDown(screen.getByRole('menu'), {key: 'ArrowUp'});
       expect(items[3]).toHaveFocus();
+    });
+
+    test('should return no menu items for a null container', () => {
+      expect(getMenuItems(null)).toEqual([]);
     });
 
     test('should skip action when an unmapped key is pressed while the menu is open', () => {

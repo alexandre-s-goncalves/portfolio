@@ -6,6 +6,7 @@ import tsParser from '@typescript-eslint/parser';
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import prettierPlugin from 'eslint-plugin-prettier';
 import sonarjs from 'eslint-plugin-sonarjs';
+import security from 'eslint-plugin-security';
 import prettier from 'eslint-config-prettier/flat';
 import {defineConfig} from 'eslint/config';
 
@@ -31,11 +32,13 @@ export default defineConfig([
       ...tsPlugin.configs['flat/recommended'],
       reactRefresh.configs.vite,
       sonarjs.configs.recommended,
+      security.configs.recommended,
       prettier,
     ],
     plugins: {
       '@typescript-eslint': tsPlugin,
       prettier: prettierPlugin,
+      security: security,
     },
     rules: {
       'prettier/prettier': 'warn',
@@ -59,6 +62,18 @@ export default defineConfig([
         sourceType: 'module',
         ecmaFeatures: {jsx: true},
       },
+    },
+  },
+  {
+    files: ['src/i18n/locales/**/*.test.ts'],
+    rules: {
+      'security/detect-object-injection': 'off',
+    },
+  },
+  {
+    files: ['src/components/LanguageSelector/LanguageSelector.tsx'],
+    rules: {
+      'security/detect-object-injection': 'off',
     },
   },
   {

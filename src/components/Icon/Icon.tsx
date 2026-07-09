@@ -12,21 +12,6 @@ export interface IconProps extends Omit<
   alt?: string;
 }
 
-const sizeMap = {
-  sm: 'h-4 w-4',
-  md: 'h-5 w-5',
-  lg: 'h-6 w-6',
-  xl: 'h-8 w-8',
-};
-
-const rotateMap = {
-  0: 'rotate-0',
-  45: 'rotate-45',
-  90: 'rotate-90',
-  180: 'rotate-180',
-  'animate-spin': 'animate-spin',
-};
-
 const getMaskStyle = (
   isStringIcon: boolean,
   shouldApplyColors: boolean,
@@ -63,6 +48,36 @@ const getMaskStyle = (
   };
 };
 
+const getSizeClass = (size: 'sm' | 'md' | 'lg' | 'xl' | number): string => {
+  switch (size) {
+    case 'sm':
+      return 'h-4 w-4';
+    case 'lg':
+      return 'h-6 w-6';
+    case 'xl':
+      return 'h-8 w-8';
+    case 'md':
+    default:
+      return 'h-5 w-5';
+  }
+};
+
+const getRotateClass = (rotate: 0 | 45 | 90 | 180 | 'animate-spin'): string => {
+  switch (rotate) {
+    case 45:
+      return 'rotate-45';
+    case 90:
+      return 'rotate-90';
+    case 180:
+      return 'rotate-180';
+    case 'animate-spin':
+      return 'animate-spin';
+    case 0:
+    default:
+      return 'rotate-0';
+  }
+};
+
 export const Icon = ({
   icon: IconInput,
   size = 'md',
@@ -90,9 +105,9 @@ export const Icon = ({
       style={isCustomSize ? {width: size, height: size} : undefined}
       className={clsx(
         'inline-flex items-center justify-center transition-transform duration-200 ease-in-out select-none',
-        !isCustomSize && sizeMap[size],
+        !isCustomSize && getSizeClass(size),
         shouldApplyColors && color,
-        rotateMap[rotate],
+        getRotateClass(rotate),
         className,
       )}>
       {isStringIcon ? (
