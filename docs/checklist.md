@@ -158,6 +158,6 @@
 ### 🛡️ Camada de Segurança Estrita (Security & Compliance)
 
 - [x] **Etapa 4:** Instalação e configuração do `eslint-plugin-security` no Flat Config contra brechas e ataques OWASP.
-- [ ] **Etapa 5:** Ativação do script de checagem estrita de tipos em tempo de compilação de produção (`tsc --noEmit && vite build`).
-- [ ] **Etapa 6:** Configuração do scanner automatizado `npm audit` no pipeline CI/CD para detecção de pacotes vulneráveis de terceiros.
+- [x] **Etapa 5:** Ativação do script de checagem estrita de tipos em tempo de compilação de produção (`tsc --noEmit && vite build`).
+- [x] **Etapa 6:** Configuração do scanner automatizado `npm audit` no pipeline CI/CD para detecção de pacotes vulneráveis de terceiros.
 - [ ] **Etapa 7:** Configuração de bloqueio local (via Husky) e remoto contra vazamento acidental de chaves secretas e tokens de APIs.
