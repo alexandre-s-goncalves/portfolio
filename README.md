@@ -8,7 +8,8 @@
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat&logo=prettier&logoColor=black)
 ![Vitest](https://img.shields.io/badge/Vitest-7B9B00?style=flat&logo=vitest&logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-🎭-2EAD33?style=flat)
+![Playwright](https://shields.io/badge/Playwright-%F0%9F%8E%AD-2EAD33?style=flat)
+[![React Doctor](https://img.shields.io/badge/React%20Doctor-verified-blue?style=flat&logo=react&logoColor=white)](https://react.doctor)
 [![Coverage Status](https://coveralls.io/repos/github/alexandre-s-goncalves/portfolio/badge.svg?branch=main)](https://coveralls.io/github/alexandre-s-goncalves/portfolio?branch=main)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 

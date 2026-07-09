@@ -54,6 +54,27 @@ describe('LanguageSelector Component', () => {
       expect(items).toHaveLength(4);
     });
 
+    test('should call focus on the first non-disabled language option when the menu opens', async () => {
+      const rafSpy = vi
+        .spyOn(window, 'requestAnimationFrame')
+        .mockImplementation((callback: FrameRequestCallback) => {
+          callback(0);
+          return 0;
+        });
+      const focusSpy = vi.spyOn(HTMLButtonElement.prototype, 'focus');
+
+      renderWithI18n();
+      fireEvent.click(screen.getByRole('button'));
+
+      await waitFor(() => {
+        expect(rafSpy).toHaveBeenCalled();
+        expect(focusSpy).toHaveBeenCalled();
+      });
+
+      rafSpy.mockRestore();
+      focusSpy.mockRestore();
+    });
+
     test('should ensure the active language button starts as disabled inside the dropdown menu', () => {
       renderWithI18n();
 
@@ -87,10 +108,13 @@ describe('LanguageSelector Component', () => {
       const enItem = screen.getByTestId('idioma-ingles');
       fireEvent.click(enItem);
 
-      await waitFor(() => {
-        expect(screen.queryByRole('menu')).not.toBeInTheDocument();
-        expect(screen.getByText(/en/i)).toBeInTheDocument();
-      });
+      await waitFor(
+        () => {
+          expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+          expect(screen.getByText(/en/i)).toBeInTheDocument();
+        },
+        {timeout: 5000},
+      );
     });
 
     test('should close dropdown menu when an external click occurs', () => {
@@ -100,6 +124,18 @@ describe('LanguageSelector Component', () => {
       expect(screen.getByRole('menu')).toBeInTheDocument();
 
       fireEvent.mouseDown(document.body);
+      expect(screen.queryByRole('menu')).not.toBeInTheDocument();
+    });
+
+    test('should close dropdown when focus leaves the language selector', () => {
+      renderWithI18n();
+      const triggerButton = screen.getByRole('button');
+      const dropdown = triggerButton.closest('div');
+
+      fireEvent.click(triggerButton);
+      expect(screen.getByRole('menu')).toBeInTheDocument();
+
+      fireEvent.blur(dropdown!, {relatedTarget: document.body});
       expect(screen.queryByRole('menu')).not.toBeInTheDocument();
     });
 

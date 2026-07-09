@@ -1,9 +1,9 @@
 import {
   useState,
   useRef,
-  useEffect,
   useCallback,
   useMemo,
+  useEffect,
   ComponentType,
   SVGProps,
 } from 'react';
@@ -74,14 +74,25 @@ export const LanguageSelector = () => {
     [t],
   );
 
-  const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
+  const handleBlur = useCallback((event: React.FocusEvent<HTMLDivElement>) => {
+    const nextTarget = event.relatedTarget as Node | null;
+    if (!nextTarget || !dropdownRef.current?.contains(nextTarget)) {
       setIsOpen(false);
     }
   }, []);
+
+  const handleExternalClick = useCallback((event: MouseEvent) => {
+    if (!dropdownRef.current?.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  }, []);
+
+  const focusFirstActiveItem = () => {
+    const firstActive = menuItemsRef.current.find(
+      item => item && !item.disabled,
+    );
+    firstActive?.focus();
+  };
 
   const handleKeyDown = useCallback(
     (event: React.KeyboardEvent) => {
@@ -109,21 +120,22 @@ export const LanguageSelector = () => {
     [isOpen, languageOptions.length],
   );
 
-  useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [handleClickOutside]);
+  const handleToggleMenu = () => {
+    setIsOpen(prevOpen => !prevOpen);
+  };
 
   useEffect(() => {
-    if (isOpen) {
-      const firstActive = menuItemsRef.current.find(
-        item => item && !item.disabled,
-      );
-      firstActive?.focus();
-    }
+    if (!isOpen) return;
+
+    requestAnimationFrame(focusFirstActiveItem);
   }, [isOpen]);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleExternalClick);
+    return () => {
+      document.removeEventListener('mousedown', handleExternalClick);
+    };
+  }, [handleExternalClick]);
 
   const handleSelectLanguage = async (code: LanguageCode) => {
     await i18n.changeLanguage(code);
@@ -134,11 +146,13 @@ export const LanguageSelector = () => {
   return (
     <div
       ref={dropdownRef}
+      onBlur={handleBlur}
       onKeyDown={handleKeyDown}
       className="relative inline-block text-left select-none">
       <button
+        type="button"
         ref={buttonRef}
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggleMenu}
         aria-haspopup="true"
         aria-expanded={isOpen}
         aria-controls="language-menu"
@@ -172,6 +186,7 @@ export const LanguageSelector = () => {
             const isSelected = lang.abbreviation === currentLanguageCode;
             return (
               <button
+                type="button"
                 key={lang.testId}
                 ref={el => {
                   menuItemsRef.current[index] = el;

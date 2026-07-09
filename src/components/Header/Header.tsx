@@ -66,7 +66,6 @@ export const Header = () => {
           </div>
 
           <nav
-            role="navigation"
             aria-label="Main Navigation"
             className="hidden items-center gap-8 select-none lg:flex">
             {tabs.map(item => (
@@ -93,6 +92,7 @@ export const Header = () => {
             </div>
 
             <button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
               aria-controls="mobile-menu"

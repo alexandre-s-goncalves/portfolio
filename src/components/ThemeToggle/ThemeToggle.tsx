@@ -9,6 +9,7 @@ export const ThemeToggle = () => {
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
       aria-label={themeDark ? 'Ativar modo claro' : 'Ativar modo escuro'}
       className={clsx(

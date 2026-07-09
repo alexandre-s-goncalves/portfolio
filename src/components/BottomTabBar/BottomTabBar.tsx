@@ -23,7 +23,6 @@ export const BottomTabBar = () => {
 
   return (
     <nav
-      role="navigation"
       aria-label="Mobile Bottom Navigation"
       className={clsx(
         'fixed bottom-4 left-1/2 z-50 flex h-16 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 items-center justify-around rounded-2xl border px-2 shadow-xl transition-colors duration-300 select-none md:hidden',
