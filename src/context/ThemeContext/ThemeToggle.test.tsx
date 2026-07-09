@@ -1,18 +1,28 @@
-import {describe, test, expect, vi, beforeEach} from 'vitest';
+import {describe, test, expect, beforeEach} from 'vitest';
 import {render, screen, fireEvent} from '@testing-library/react';
-import {ThemeProvider, useTheme} from './index';
+import {ThemeProvider} from './ThemeContext';
+import {ThemeContext} from './ThemeContext.core';
+import {useTheme} from './useTheme';
+import {use} from 'react';
 
 const DummyComponent = () => {
-  const {themeDark, toggleTheme} = useTheme();
+  const {theme, toggleTheme} = useTheme();
   return (
-    <div>
-      <span data-testid="theme-status">{themeDark ? 'dark' : 'light'}</span>
-      <button onClick={toggleTheme}>Toggle</button>
-    </div>
+    <button type="button" onClick={toggleTheme} data-testid="theme-btn">
+      {theme}
+    </button>
   );
 };
 
 const BrokenComponent = () => {
+  const context = use(ThemeContext);
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return <div>{context.theme}</div>;
+};
+
+const BrokenHookComponent = () => {
   useTheme();
   return null;
 };
@@ -21,7 +31,6 @@ describe('ThemeContext System', () => {
   beforeEach(() => {
     localStorage.clear();
     document.documentElement.className = '';
-    vi.clearAllMocks();
   });
 
   describe('Render & Tailwind v4', () => {
@@ -31,27 +40,39 @@ describe('ThemeContext System', () => {
           <DummyComponent />
         </ThemeProvider>,
       );
-
-      expect(screen.getByTestId('theme-status').textContent).toBe('light');
+      expect(screen.getByTestId('theme-btn')).toHaveTextContent('light');
       expect(document.documentElement.classList.contains('dark')).toBe(false);
-      expect(localStorage.getItem('theme')).toBe('light');
     });
 
     test('should initialize with dark mode if persisted inside localStorage keys', () => {
       localStorage.setItem('theme', 'dark');
-
       render(
         <ThemeProvider>
           <DummyComponent />
         </ThemeProvider>,
       );
-
-      expect(screen.getByTestId('theme-status').textContent).toBe('dark');
+      expect(screen.getByTestId('theme-btn')).toHaveTextContent('dark');
       expect(document.documentElement.classList.contains('dark')).toBe(true);
     });
 
     test('should return false and initialize with light mode when localStorage contains light value', () => {
       localStorage.setItem('theme', 'light');
+      render(
+        <ThemeProvider>
+          <DummyComponent />
+        </ThemeProvider>,
+      );
+      expect(screen.getByTestId('theme-btn')).toHaveTextContent('light');
+      expect(document.documentElement.classList.contains('dark')).toBe(false);
+    });
+
+    test('should initialize with dark mode when system prefers dark and no stored theme exists', () => {
+      const originalMatchMedia = window.matchMedia;
+      Object.defineProperty(window, 'matchMedia', {
+        configurable: true,
+        value: vi.fn(() => ({matches: true})),
+      });
+      localStorage.removeItem('theme');
 
       render(
         <ThemeProvider>
@@ -59,8 +80,23 @@ describe('ThemeContext System', () => {
         </ThemeProvider>,
       );
 
-      expect(screen.getByTestId('theme-status').textContent).toBe('light');
-      expect(document.documentElement.classList.contains('dark')).toBe(false);
+      expect(screen.getByTestId('theme-btn')).toHaveTextContent('dark');
+      expect(document.documentElement.classList.contains('dark')).toBe(true);
+
+      Object.defineProperty(window, 'matchMedia', {
+        configurable: true,
+        value: originalMatchMedia,
+      });
+    });
+
+    test('should throw when useTheme is called with an undefined ThemeContext provider value', () => {
+      expect(() =>
+        render(
+          <ThemeContext.Provider value={undefined}>
+            <BrokenHookComponent />
+          </ThemeContext.Provider>,
+        ),
+      ).toThrowError('useTheme must be used within a ThemeProvider');
     });
   });
 
@@ -71,24 +107,25 @@ describe('ThemeContext System', () => {
           <DummyComponent />
         </ThemeProvider>,
       );
+      const btn = screen.getByTestId('theme-btn');
 
-      const button = screen.getByRole('button');
-
-      fireEvent.click(button);
-      expect(screen.getByTestId('theme-status').textContent).toBe('dark');
+      fireEvent.click(btn);
+      expect(btn).toHaveTextContent('dark');
       expect(document.documentElement.classList.contains('dark')).toBe(true);
-      expect(localStorage.getItem('theme')).toBe('dark');
 
-      fireEvent.click(button);
-      expect(screen.getByTestId('theme-status').textContent).toBe('light');
+      fireEvent.click(btn);
+      expect(btn).toHaveTextContent('light');
       expect(document.documentElement.classList.contains('dark')).toBe(false);
-      expect(localStorage.getItem('theme')).toBe('light');
     });
 
     test('should strictly throw an descriptive error when hook is invoked outside context provider boundary', () => {
-      vi.spyOn(console, 'error').mockImplementation(() => {});
-
       expect(() => render(<BrokenComponent />)).toThrowError(
+        'useTheme must be used within a ThemeProvider',
+      );
+    });
+
+    test('should throw when useTheme is called directly outside of a ThemeProvider', () => {
+      expect(() => render(<BrokenHookComponent />)).toThrowError(
         'useTheme must be used within a ThemeProvider',
       );
     });

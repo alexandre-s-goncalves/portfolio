@@ -1,6 +1,9 @@
-import {createContext, ReactNode} from 'react';
+import {ReactNode} from 'react';
+
+export type Theme = 'light' | 'dark';
 
 export interface ThemeContextType {
+  theme: Theme;
   themeDark: boolean;
   toggleTheme: () => void;
 }
@@ -8,7 +11,3 @@ export interface ThemeContextType {
 export interface ThemeProviderProps {
   children: ReactNode;
 }
-
-export const ThemeContext = createContext<ThemeContextType | undefined>(
-  undefined,
-);

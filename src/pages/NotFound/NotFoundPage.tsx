@@ -17,7 +17,7 @@ export const NotFoundPage = () => {
           </h1>
           <svg
             viewBox="0 0 200 200"
-            className="h-32 w-32 animate-bounce text-sky-500/80 drop-shadow-[0_0_15px_rgba(14,165,233,0.3)] duration-4000 md:h-44 md:w-44 dark:text-sky-400/80"
+            className="motion-safe:animate-soft-bounce h-32 w-32 text-sky-500/80 drop-shadow-[0_0_15px_rgba(14,165,233,0.3)] motion-reduce:animate-none md:h-44 md:w-44 dark:text-sky-400/80"
             fill="none"
             stroke="currentColor"
             strokeWidth="4"
@@ -50,6 +50,7 @@ export const NotFoundPage = () => {
         </p>
 
         <button
+          type="button"
           onClick={() => navigate(AppRoutes.HOME)}
           className={clsx(
             'group relative inline-flex h-11 cursor-pointer items-center justify-center rounded-xl px-6 text-sm font-semibold tracking-wide transition-all duration-300 outline-none active:scale-95',

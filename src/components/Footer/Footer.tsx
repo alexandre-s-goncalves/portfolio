@@ -39,6 +39,7 @@ export const Footer = () => {
                 href={profile.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="GitHub"
                 className="rounded-lg p-1 transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
                 <Icon size="md" icon={iGithub} color="currentColor" />
               </a>
@@ -46,6 +47,7 @@ export const Footer = () => {
                 href={profile.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="LinkedIn"
                 className="rounded-lg p-1 transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
                 <Icon size="md" icon={iLinkedin} color="currentColor" />
               </a>
@@ -53,6 +55,7 @@ export const Footer = () => {
                 href={`mailto:${profile.email}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Email"
                 className="rounded-lg p-1 transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
                 <Icon size="md" icon={iMail} color="currentColor" />
               </a>
@@ -84,6 +87,7 @@ export const Footer = () => {
               href={profile.links.github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub"
               className="rounded-lg transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
               <Icon size="md" icon={iGithub} color="currentColor" />
             </a>
@@ -91,6 +95,7 @@ export const Footer = () => {
               href={profile.links.linkedin}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn"
               className="rounded-lg transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
               <Icon size="md" icon={iLinkedin} color="currentColor" />
             </a>
@@ -98,6 +103,7 @@ export const Footer = () => {
               href={`mailto:${profile.email}`}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Email"
               className="rounded-lg transition-colors outline-none hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-sky-500 dark:hover:text-white">
               <Icon size="md" icon={iMail} color="currentColor" />
             </a>
