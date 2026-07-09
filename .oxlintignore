@@ -1,0 +1,3 @@
+# Ignore generated Playwright report artifacts and bundled trace files
+
+playwright-report/
