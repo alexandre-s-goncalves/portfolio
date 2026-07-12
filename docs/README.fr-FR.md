@@ -81,6 +81,17 @@ Portfolio personnel moderne et responsive présentant mes projets, compétences 
 - **Husky** 9.1.7 - Outil d'automatisation pour l'exécution des git hooks locaux
 - **lint-staged** 16.2.4 - Exécuteur de vérifications de qualité uniquement pour les fichiers modifiés
 
+### Analyse du Code
+
+Ce projet utilise [SonarCloud](https://sonarcloud.io) pour l'analyse continue de la qualité du code.
+
+Points principaux surveillés :
+
+- Bugs potentiels détectés automatiquement
+- Vulnérabilités de sécurité dans les dépendances
+- Mauvaises pratiques de code affectant la maintenabilité
+- Couverture des tests automatisés
+
 ---
 
 ## 🚀 Prise en main

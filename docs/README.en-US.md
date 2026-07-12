@@ -81,6 +81,17 @@ Modern and responsive personal portfolio showcasing projects, skills, and profes
 - **Husky** 9.1.7 - Automation tool for local Git hooks execution
 - **lint-staged** 16.2.4 - Quality assurance check runner for staged files only
 
+### Code Analysis
+
+This project uses [SonarCloud](https://sonarcloud.io) for continuous code quality analysis.
+
+Key aspects monitored:
+
+- Potential bugs automatically detected
+- Security vulnerabilities in dependencies
+- Code smells affecting maintainability
+- Automated test coverage
+
 ---
 
 ## 🚀 Getting Started

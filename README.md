@@ -10,6 +10,7 @@
 ![Vitest](https://img.shields.io/badge/Vitest-7B9B00?style=flat&logo=vitest&logoColor=white)
 ![Playwright](https://shields.io/badge/Playwright-%F0%9F%8E%AD-2EAD33?style=flat)
 [![React Doctor](https://img.shields.io/badge/React%20Doctor-verified-blue?style=flat&logo=react&logoColor=white)](https://react.doctor)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=alert_status)](https://sonarcloud.io/dashboard?id=alexandre-s-goncalves_portfolio)
 [![Coverage Status](https://coveralls.io/repos/github/alexandre-s-goncalves/portfolio/badge.svg?branch=main)](https://coveralls.io/github/alexandre-s-goncalves/portfolio?branch=main)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
 
