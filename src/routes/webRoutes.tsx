@@ -16,7 +16,7 @@ export const WebRoutes = () => {
     <BrowserRouter basename={baseName}>
       <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
         <Header />
-        <main className="w-full flex-1">
+        <main className="flex w-full flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/skills" element={<Skills />} />
