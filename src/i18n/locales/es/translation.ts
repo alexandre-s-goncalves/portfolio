@@ -22,6 +22,14 @@ export const es = {
   },
   [namespaces.home.name]: {
     title: 'Página de Inicio',
+    greeting: 'Hola, yo soy',
+    role: 'Desarrollador Full-Stack',
+    bio: 'Desarrollador apasionado por la tecnología con experiencia en React.js, React Native, .NET y Java. Enfocado en crear soluciones elegantes y eficientes.',
+    ctaProjects: 'Ver Mis Proyectos',
+    ctaContact: 'Ponte en Contacto',
+    metricsProjects: 'Proyectos Completados',
+    metricsExperience: 'Años de Experiencia',
+    metricsTech: 'Tecnologías',
   },
   [namespaces.skills.name]: {
     title: 'Página de Habilidades',

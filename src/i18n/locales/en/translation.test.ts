@@ -99,6 +99,16 @@ describe('English Translation Integrity System', () => {
 
     test('should lock exact structural value parameters for home page content', () => {
       expect(en[name].title).toBe('Home Page');
+      expect(en[name].greeting).toBe('Hi, I am');
+      expect(en[name].role).toBe('Full-Stack Developer');
+      expect(en[name].bio).toBe(
+        'Technology developer passionate about technology with experience in React.js, React Native, .NET and Java. Focused on creating elegant and efficient solutions.',
+      );
+      expect(en[name].ctaProjects).toBe('View My Projects');
+      expect(en[name].ctaContact).toBe('Get in Touch');
+      expect(en[name].metricsProjects).toBe('Completed Projects');
+      expect(en[name].metricsExperience).toBe('Years of Experience');
+      expect(en[name].metricsTech).toBe('Technologies');
     });
   });
 

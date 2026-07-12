@@ -38,6 +38,14 @@ export const namespaces = {
     name: 'home',
     keys: {
       title: 'title',
+      greeting: 'greeting',
+      role: 'role',
+      bio: 'bio',
+      ctaProjects: 'ctaProjects',
+      ctaContact: 'ctaContact',
+      metricsProjects: 'metricsProjects',
+      metricsExperience: 'metricsExperience',
+      metricsTech: 'metricsTech',
     },
   },
   skills: {

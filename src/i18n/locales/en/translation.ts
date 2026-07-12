@@ -22,6 +22,14 @@ export const en = {
   },
   [namespaces.home.name]: {
     title: 'Home Page',
+    greeting: 'Hi, I am',
+    role: 'Full-Stack Developer',
+    bio: 'Technology developer passionate about technology with experience in React.js, React Native, .NET and Java. Focused on creating elegant and efficient solutions.',
+    ctaProjects: 'View My Projects',
+    ctaContact: 'Get in Touch',
+    metricsProjects: 'Completed Projects',
+    metricsExperience: 'Years of Experience',
+    metricsTech: 'Technologies',
   },
   [namespaces.skills.name]: {
     title: 'Skills Page',

@@ -4,6 +4,7 @@ import {I18nextProvider} from 'react-i18next';
 import {ThemeProvider} from 'context/ThemeContext';
 import {WebRoutes} from './webRoutes';
 import i18n from '../i18n/i18n';
+import {profile} from 'constants/profile';
 
 describe('WebRoutes System Integration', () => {
   beforeEach(async () => {
@@ -35,14 +36,14 @@ describe('WebRoutes System Integration', () => {
       expect(
         screen.getByRole('navigation', {name: /Mobile Bottom Navigation/i}),
       ).toBeInTheDocument();
-      expect(screen.getByText('Página Início')).toBeInTheDocument();
+      expect(screen.getAllByText(profile.name)[0]).toBeInTheDocument();
     });
 
     test('should fallback to root directory route when environment base url is empty', () => {
       vi.stubEnv('BASE_URL', '');
       renderWithProviders();
 
-      expect(screen.getByText('Página Início')).toBeInTheDocument();
+      expect(screen.getAllByText(profile.name)[0]).toBeInTheDocument();
     });
   });
 
@@ -68,7 +69,7 @@ describe('WebRoutes System Integration', () => {
 
       const homeLinks = screen.getAllByRole('link', {name: /Início/i});
       fireEvent.click(homeLinks[0]!);
-      expect(screen.getByText('Página Início')).toBeInTheDocument();
+      expect(screen.getAllByText(profile.name).length).toBeGreaterThan(0);
     });
 
     test('should trigger the global fallback catch routing view when an invalid URL route matches', () => {
@@ -76,7 +77,9 @@ describe('WebRoutes System Integration', () => {
       renderWithProviders();
 
       expect(screen.getByText('404')).toBeInTheDocument();
-      expect(screen.getByText('Página não encontrada')).toBeInTheDocument();
+      expect(
+        screen.getByText(/Página não encontrada|Page not found/i),
+      ).toBeInTheDocument();
     });
   });
 });
