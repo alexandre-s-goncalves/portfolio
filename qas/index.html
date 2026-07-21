@@ -10,7 +10,7 @@
             .split('&')
             .forEach(function (v) {
               var a = v.split('=');
-              q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+              q[a[0]] = a.slice(1).join('=').replaceAll('~and~', '&');
             });
           if (q.p !== undefined) {
             window.history.replaceState(
@@ -30,13 +30,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1a1a1a" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="google" content="notranslate" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Portfolio" />
     <title>portfolio</title>
-    <script type="module" crossorigin src="/portfolio/qas/assets/index-BvNu1r1e.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/qas/assets/index-MmprybfE.css">
+    <script type="module" crossorigin src="/portfolio/qas/assets/index-BY7QJ8Xz.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/qas/assets/index-D_pdiWxo.css">
   <link rel="manifest" href="/portfolio/qas/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/portfolio/qas/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
