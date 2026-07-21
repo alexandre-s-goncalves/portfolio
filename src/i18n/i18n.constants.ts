@@ -64,6 +64,35 @@ export const namespaces = {
     name: 'about',
     keys: {
       title: 'title',
+      subtitle: 'subtitle',
+      downloadCv: 'downloadCv',
+      sections: {
+        bio: 'sections.bio',
+        experience: 'sections.experience',
+        education: 'sections.education',
+      },
+      paragraphs: {
+        p1: 'paragraphs.p1',
+        p2: 'paragraphs.p2',
+        p3: 'paragraphs.p3',
+        p4: 'paragraphs.p4',
+        p5: 'paragraphs.p5',
+      },
+      jobs: {
+        title1: 'jobs.title1',
+        company1: 'jobs.company1',
+        period1: 'jobs.period1',
+        desc1: 'jobs.desc1',
+        title2: 'jobs.title2',
+        company2: 'jobs.company2',
+        period2: 'jobs.period2',
+        desc2: 'jobs.desc2',
+      },
+      academy: {
+        degree: 'academy.degree',
+        school: 'academy.school',
+        period: 'academy.period',
+      },
     },
   },
   notFound: {

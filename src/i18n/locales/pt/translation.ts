@@ -38,7 +38,52 @@ export const pt = {
     title: 'Página Projetos',
   },
   [namespaces.about.name]: {
-    title: 'Página Sobre',
+    title: 'Sobre Mim',
+    subtitle: 'Sobre Mim',
+    downloadCv: 'Baixar CV',
+    sections: {
+      bio: 'Sobre Mim',
+      experience: 'Experiência Profissional',
+      education: 'Formação',
+    },
+    paragraphs: {
+      p1: 'Desenvolvo soluções front-end e mobile com forte foco em React Native e ReactJS. Experiência no gerenciamento de projetos complexos e interconectados, incluindo aplicações offline-first e portais web com micro front-ends.',
+      p2: 'Tecnólogo em Desenvolvimento Móvel e formação técnica em Automação Industrial, que despertou meu interesse por programação e abriu caminho para minha carreira em tecnologia. Especializações em Cibersegurança e Ciência de Dados & Inteligência Artificial ampliaram minha perspectiva sobre inovação e tendências globais de tecnologia.',
+      p3: 'Experiência prática na entrega de soluções escaláveis — como paginação de dados em larga escala, integração de sistemas e gerenciamento de materiais e produção. Especialista em React, JavaScript, TypeScript, APIs REST, Git e metodologias ágeis. Atuo também como um dos principais revisores de código da equipe, contribuindo para identificação e resolução de bugs em produção para garantir estabilidade e qualidade nas entregas.',
+      p4: 'Colaborativo por natureza, gosto de compartilhar conhecimento e ajudar colegas a melhorar a qualidade do código e o crescimento técnico. Me adapto facilmente a equipes multidisciplinares e ambientes globais de desenvolvimento.',
+      p5: 'Meu objetivo é contribuir como desenvolvedor de software em ambientes inovadores, aplicando minha experiência em front-end e mobile para criar soluções modernas, seguras e de alto impacto, enquanto continuo aprendendo e evoluindo constantemente.',
+    },
+    jobs: {
+      title1: 'Desenvolvedor de Software Sênior',
+      company1: 'MRV',
+      period1: 'Ago 2021 - Presente',
+      desc1:
+        'Desenvolvimento de soluções escaláveis em frontend e mobile usando React Native e ReactJS. Revisão de código e resolução de bugs em produção. Integração de sistemas e arquiteturas de micro frontend.',
+      title2: 'Eletricista',
+      company2: 'Club Méditerranée',
+      period2: 'Ago 2016 - Abr 2020',
+      desc2:
+        'Atuação com automação industrial e sistemas elétricos, manutenção e calibração de equipamentos controlados por sensores e programação de controle.',
+      title3: 'Eletricista',
+      company3: 'Paradise Golf & Lake Resort',
+      period3: 'Nov 2010 - Jul 2016',
+      desc3:
+        'Manutenção elétrica e automação de sistemas industriais de controle e instrumentação.',
+    },
+    academy: {
+      title1: 'Pós-graduação, Ciência de Dados e IA',
+      school1: 'UNINTER Centro Universitário Internacional',
+      period1: 'Fev 2024 - Out 2024',
+      title2: 'Pós-graduação, Segurança e Defesa Cibernética',
+      school2: 'UNINTER Centro Universitário Internacional',
+      period2: 'Mai 2023 - Fev 2024',
+      title3: 'Tecnólogo, Desenvolvimento Mobile',
+      school3: 'UNINTER Centro Universitário Internacional',
+      period3: 'Jun 2020 - Fev 2023',
+      title4: 'Ensino Técnico, Automação Industrial',
+      school4: 'Etec Presidente Vargas',
+      period4: 'Jan 2013 - Dez 2015',
+    },
   },
   [namespaces.notFound.name]: {
     title: '404',

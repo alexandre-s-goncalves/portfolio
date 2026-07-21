@@ -61,7 +61,9 @@ describe('WebRoutes System Integration', () => {
 
       const aboutLinks = screen.getAllByRole('link', {name: /Sobre/i});
       fireEvent.click(aboutLinks[0]!);
-      expect(screen.getByText('Página Sobre')).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', {level: 1, name: /Sobre Mim/i}),
+      ).toBeInTheDocument();
 
       const settingsLinks = screen.getAllByRole('link', {name: /Ajustes/i});
       fireEvent.click(settingsLinks[0]!);

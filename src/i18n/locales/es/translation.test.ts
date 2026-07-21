@@ -143,11 +143,38 @@ describe('Spanish Translation Integrity System', () => {
 
     test('should verify all structural about dictionary keys exist', () => {
       expect(es).toHaveProperty(name);
-      Object.values(keys).forEach(key => expect(es[name]).toHaveProperty(key));
+      expect(es[name].sections).toHaveProperty('bio');
+      expect(es[name].sections).toHaveProperty('experience');
+      expect(es[name].sections).toHaveProperty('education');
+
+      expect(es[name].paragraphs).toHaveProperty('p1');
+      expect(es[name].paragraphs).toHaveProperty('p2');
+      expect(es[name].paragraphs).toHaveProperty('p3');
+      expect(es[name].paragraphs).toHaveProperty('p4');
+      expect(es[name].paragraphs).toHaveProperty('p5');
+
+      expect(es[name].jobs).toHaveProperty('title1');
+      expect(es[name].jobs).toHaveProperty('title2');
+      expect(es[name].jobs).toHaveProperty('title3');
+
+      expect(es[name].academy).toHaveProperty('title1');
+      expect(es[name].academy).toHaveProperty('title2');
+      expect(es[name].academy).toHaveProperty('title3');
+      expect(es[name].academy).toHaveProperty('title4');
+
+      expect(keys.title).toBeDefined();
     });
 
     test('should lock exact structural value parameters for about page content', () => {
-      expect(es[name].title).toBe('Página Sobre mí');
+      expect(es[name].title).toBe('Sobre Mí');
+      expect(es[name].downloadCv).toBe('Descargar CV');
+      expect(es[name].jobs.company1).toBe('MRV');
+      expect(es[name].jobs.company2).toBe('Club Méditerranée');
+      expect(es[name].jobs.company3).toBe('Paradise Golf & Lake Resort');
+      expect(es[name].academy.school1).toBe(
+        'UNINTER Centro Universitário Internacional',
+      );
+      expect(es[name].academy.school4).toBe('Etec Presidente Vargas');
     });
   });
 });
