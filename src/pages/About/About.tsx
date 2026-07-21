@@ -3,13 +3,14 @@ import {useTranslation} from 'react-i18next';
 import {namespaces} from 'i18n';
 import {profile} from 'constants/profile';
 import {Icon} from 'components/Icon/Icon';
-import fotoPerfil from 'assets/images/foto-perfil.jpeg';
-import iMail from 'assets/icons/iMail.svg';
-import iLocation from 'assets/icons/iLocation.svg';
-import iGithub from 'assets/icons/iGithub.svg';
-import iLinkedin from 'assets/icons/iLinkedin.svg';
-import iDownload from 'assets/icons/iDownload.svg';
-import iCalendar from 'assets/icons/iCalendar.svg';
+
+import fotoPerfil from '../../assets/images/foto-perfil.jpeg';
+import iMail from '../../assets/icons/iMail.svg';
+import iLocation from '../../assets/icons/iLocation.svg';
+import iGithub from '../../assets/icons/iGithub.svg';
+import iLinkedin from '../../assets/icons/iLinkedin.svg';
+import iDownload from '../../assets/icons/iDownload.svg';
+import iCalendar from '../../assets/icons/iCalendar.svg';
 
 export const About = () => {
   const {t} = useTranslation(namespaces.about.name);
