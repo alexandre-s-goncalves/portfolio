@@ -8,11 +8,33 @@
 ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat&logo=eslint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=flat&logo=prettier&logoColor=black)
 ![Vitest](https://img.shields.io/badge/Vitest-7B9B00?style=flat&logo=vitest&logoColor=white)
-![Playwright](https://shields.io/badge/Playwright-%F0%9F%8E%AD-2EAD33?style=flat)
+![Playwright](https://img.shields.io/badge/Playwright-%F0%9F%8E%AD-2EAD33?style=flat)
+
+</div>
+
+<div align="center">
+
 [![React Doctor](https://img.shields.io/badge/React%20Doctor-verified-blue?style=flat&logo=react&logoColor=white)](https://react.doctor)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=alert_status)](https://sonarcloud.io/dashboard?id=alexandre-s-goncalves_portfolio)
-[![Coverage Status](https://coveralls.io/repos/github/alexandre-s-goncalves/portfolio/badge.svg?branch=main)](https://coveralls.io/github/alexandre-s-goncalves/portfolio?branch=main)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://tldrlegal.com/license/mit-license)
+
+</div>
+
+<div align="center">
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=coverage)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=bugs)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+
+</div>
+
+<div align="center">
+
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=alexandre-s-goncalves_portfolio&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=alexandre-s-goncalves_portfolio)
 
 </div>
 
