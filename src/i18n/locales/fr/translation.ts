@@ -32,8 +32,23 @@ export const fr = {
     metricsTech: 'Technologies',
   },
   [namespaces.skills.name]: {
-    title: 'Page des compétences',
+    title: 'Mes Compétences',
+    subtitle: 'Technologies & Compétences',
+    footerTitle: 'Évolution Continue',
+    footerDesc:
+      'Plus que la maîtrise des outils, mon objectif est d’appliquer la bonne technologie pour résoudre des problèmes métiers complexes, concevoir des architectures évolutives et garantir un code propre et sécurisé.',
+    categories: {
+      frontend: 'Frontend & Mobile',
+      backend: 'Backend & APIs',
+      tools: 'Outils & Tests',
+    },
+    levels: {
+      intermediate: 'Intermédiaire',
+      advanced: 'Avancé',
+      expert: 'Expert',
+    },
   },
+
   [namespaces.projects.name]: {
     title: 'Page des projets',
   },

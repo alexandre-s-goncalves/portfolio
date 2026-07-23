@@ -53,7 +53,9 @@ describe('WebRoutes System Integration', () => {
 
       const skillsLinks = screen.getAllByRole('link', {name: /Habilidades/i});
       fireEvent.click(skillsLinks[0]!);
-      expect(screen.getByText('Página Habilidades')).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', {level: 1, name: /Minhas Habilidades/i}),
+      ).toBeInTheDocument();
 
       const projectsLinks = screen.getAllByRole('link', {name: /Projetos/i});
       fireEvent.click(projectsLinks[0]!);
