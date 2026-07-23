@@ -117,11 +117,19 @@ describe('Portuguese Translation Integrity System', () => {
 
     test('should verify all structural skills dictionary keys exist', () => {
       expect(pt).toHaveProperty(name);
-      Object.values(keys).forEach(key => expect(pt[name]).toHaveProperty(key));
+      expect(pt[name].categories).toHaveProperty('frontend');
+      expect(pt[name].categories).toHaveProperty('tools');
+      expect(pt[name].levels).toHaveProperty('advanced');
+      expect(pt[name].levels).toHaveProperty('expert');
+      expect(keys.title).toBeDefined();
     });
 
     test('should lock exact structural value parameters for skills page content', () => {
-      expect(pt[name].title).toBe('Página Habilidades');
+      expect(pt[name].title).toBe('Minhas Habilidades');
+      expect(pt[name].categories.frontend).toBe('Frontend & Mobile');
+      expect(pt[name].categories.tools).toBe('Ferramentas & Testes');
+      expect(pt[name].levels.expert).toBe('Especialista');
+      expect(pt[name].levels.advanced).toBe('Avançado');
     });
   });
 

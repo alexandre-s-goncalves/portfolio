@@ -32,8 +32,23 @@ export const es = {
     metricsTech: 'Tecnologías',
   },
   [namespaces.skills.name]: {
-    title: 'Página de Habilidades',
+    title: 'Mis Habilidades',
+    subtitle: 'Tecnologías & Competencias',
+    footerTitle: 'Evolución Continua',
+    footerDesc:
+      'Más que dominar herramientas, mi enfoque está en aplicar la tecnología adecuada para resolver problemas de negocio complejos, diseñar arquitecturas escalables y garantizar un código limpio y seguro.',
+    categories: {
+      frontend: 'Frontend & Mobile',
+      backend: 'Backend & APIs',
+      tools: 'Herramientas & Pruebas',
+    },
+    levels: {
+      intermediate: 'Intermedio',
+      advanced: 'Avanzado',
+      expert: 'Especialista',
+    },
   },
+
   [namespaces.projects.name]: {
     title: 'Página de Proyectos',
   },

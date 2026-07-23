@@ -52,6 +52,19 @@ export const namespaces = {
     name: 'skills',
     keys: {
       title: 'title',
+      subtitle: 'subtitle',
+      footerTitle: 'footerTitle',
+      footerDesc: 'footerDesc',
+      categories: {
+        frontend: 'categories.frontend',
+        backend: 'categories.backend',
+        tools: 'categories.tools',
+      },
+      levels: {
+        advanced: 'levels.advanced',
+        intermediate: 'levels.intermediate',
+        expert: 'levels.expert',
+      },
     },
   },
   projects: {
