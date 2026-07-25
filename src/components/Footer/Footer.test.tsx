@@ -48,7 +48,7 @@ describe('Footer Component', () => {
 
       expect(githubLink).toBeDefined();
       expect(linkedinLink).toBeDefined();
-      expect(mailLinks.length).toBe(3);
+      expect(mailLinks).toHaveLength(3);
 
       expect(githubLink).toHaveAttribute('target', '_blank');
       expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
