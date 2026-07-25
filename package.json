@@ -27,8 +27,8 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-i18next": "^17.0.8",
-    "react-router": "^7.18.1",
-    "react-router-dom": "^7.18.1"
+    "react-router": "7.18.1",
+    "react-router-dom": "7.18.1"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^20.5.3",
@@ -60,7 +60,7 @@
     "lint-staged": "^16.4.0",
     "prettier": "3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "react-doctor": "^0.8.1",
+    "react-doctor": "^0.7.2",
     "sonar-scanner": "^3.1.0",
     "typescript": "^5.6.2",
     "vite": "^8.0.12",
@@ -76,20 +76,26 @@
     "*.{js,jsx,ts,tsx,json,css,md}": "prettier --write"
   },
   "overrides": {
-    "react-router": "^7.18.1",
-    "react-router-dom": "^7.18.1",
-    "brace-expansion": "^2.0.1",
-    "minimatch": "^3.1.5",
+    "react-router": "7.18.1",
+    "react-router-dom": "7.18.1",
+    "brace-expansion": "2.0.1",
+    "minimatch": "3.1.5",
     "eslint": {
-      "minimatch": "^3.1.5",
-      "brace-expansion": "^2.0.1"
+      "minimatch": "3.1.5",
+      "brace-expansion": "2.0.1"
+    },
+    "@eslint/config-array": {
+      "minimatch": "3.1.5"
+    },
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "3.1.5"
     },
     "eslint-plugin-sonarjs": {
-      "minimatch": "^3.1.5"
+      "minimatch": "3.1.5"
     },
     "react-doctor": {
       "deslop-js": {
-        "minimatch": "^3.1.5"
+        "minimatch": "3.1.5"
       }
     },
     "vite-plugin-pwa": {
@@ -99,7 +105,7 @@
           "ejs": {
             "jake": {
               "filelist": {
-                "minimatch": "^3.1.5"
+                "minimatch": "3.1.5"
               }
             }
           }
