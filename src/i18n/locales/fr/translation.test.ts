@@ -138,14 +138,21 @@ describe('French Translation Integrity System', () => {
 
     test('should verify all structural projects dictionary keys exist', () => {
       expect(fr).toHaveProperty(name);
-      Object.values(keys).forEach(key => expect(fr[name]).toHaveProperty(key));
+      expect(fr[name].status).toHaveProperty('completed');
+      expect(fr[name].status).toHaveProperty('progress');
+      expect(fr[name].items.portfolio).toHaveProperty('title');
+      expect(fr[name].items.portfolio).toHaveProperty('desc');
+      expect(keys.title).toBeDefined();
     });
 
     test('should lock exact structural value parameters for projects page content', () => {
-      expect(fr[name].title).toBe('Page des projets');
+      expect(fr[name].title).toBe('Mes Projets');
+      expect(fr[name].ctaView).toBe('Voir le Projet');
+      expect(fr[name].ctaCode).toBe('Voir le Code');
+      expect(fr[name].status.completed).toBe('Complété');
+      expect(fr[name].items.portfolio.title).toBe('Portfolio Personnel');
     });
   });
-
   describe('About Page Namespace', () => {
     const {name, keys} = namespaces.about;
 

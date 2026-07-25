@@ -48,9 +48,21 @@ export const fr = {
       expert: 'Expert',
     },
   },
-
   [namespaces.projects.name]: {
-    title: 'Page des projets',
+    title: 'Mes Projets',
+    subtitle: 'Quelques-uns de mes travaux récents',
+    ctaView: 'Voir le Projet',
+    ctaCode: 'Voir le Code',
+    status: {
+      completed: 'Complété',
+      progress: 'En Cours',
+    },
+    items: {
+      portfolio: {
+        title: 'Portfolio Personnel',
+        desc: 'Portfolio d’ingénierie logicielle haute fidélité développé avec React.js et Tailwind v4. Dispose d’un pipeline automatisé avec une couverture de 100% via Vitest et Playwright.',
+      },
+    },
   },
   [namespaces.about.name]: {
     title: 'À Propos de Moi',

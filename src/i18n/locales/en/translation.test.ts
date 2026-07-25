@@ -138,11 +138,19 @@ describe('English Translation Integrity System', () => {
 
     test('should verify all structural projects dictionary keys exist', () => {
       expect(en).toHaveProperty(name);
-      Object.values(keys).forEach(key => expect(en[name]).toHaveProperty(key));
+      expect(en[name].status).toHaveProperty('completed');
+      expect(en[name].status).toHaveProperty('progress');
+      expect(en[name].items.portfolio).toHaveProperty('title');
+      expect(en[name].items.portfolio).toHaveProperty('desc');
+      expect(keys.title).toBeDefined();
     });
 
     test('should lock exact structural value parameters for projects page content', () => {
-      expect(en[name].title).toBe('Projects Page');
+      expect(en[name].title).toBe('My Projects');
+      expect(en[name].ctaView).toBe('View Project');
+      expect(en[name].ctaCode).toBe('View Code');
+      expect(en[name].status.completed).toBe('Completed');
+      expect(en[name].items.portfolio.title).toBe('Personal Portfolio');
     });
   });
 

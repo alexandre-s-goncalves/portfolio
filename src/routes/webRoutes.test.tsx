@@ -12,6 +12,9 @@ describe('WebRoutes System Integration', () => {
     localStorage.clear();
     document.documentElement.className = '';
     window.history.pushState({}, '', '/');
+
+    HTMLDialogElement.prototype.showModal = vi.fn();
+    HTMLDialogElement.prototype.close = vi.fn();
   });
 
   afterEach(() => {
@@ -59,7 +62,9 @@ describe('WebRoutes System Integration', () => {
 
       const projectsLinks = screen.getAllByRole('link', {name: /Projetos/i});
       fireEvent.click(projectsLinks[0]!);
-      expect(screen.getByText('Página Projetos')).toBeInTheDocument();
+      expect(
+        screen.getByRole('heading', {level: 1, name: /Meus Projetos/i}),
+      ).toBeInTheDocument();
 
       const aboutLinks = screen.getAllByRole('link', {name: /Sobre/i});
       fireEvent.click(aboutLinks[0]!);

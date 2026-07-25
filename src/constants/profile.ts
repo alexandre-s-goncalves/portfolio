@@ -1,4 +1,9 @@
-import {AcademicItem, JobItem, SkillItem} from 'resources/interface';
+import {
+  AcademicItem,
+  JobItem,
+  ProjectItem,
+  SkillItem,
+} from 'resources/interface';
 
 export const profile = {
   name: 'Alexandre Gonçalves',
@@ -82,4 +87,16 @@ export const profile = {
       desc: 'about.jobs.desc3',
     },
   ] as JobItem[],
+  projects: [
+    {
+      id: 'portfolio',
+      titleKey: 'items.portfolio.title',
+      descKey: 'items.portfolio.desc',
+      status: 'completed',
+      image: 'portfolio-preview',
+      tags: ['React.js', 'TypeScript', 'Tailwind v4', 'Vitest', 'Playwright'],
+      viewUrl: 'https://alexandre-s-goncalves.github.io/portfolio/',
+      codeUrl: 'https://github.com/alexandre-s-goncalves/portfolio',
+    },
+  ] as ProjectItem[],
 } as const;

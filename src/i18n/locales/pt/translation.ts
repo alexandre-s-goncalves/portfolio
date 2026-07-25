@@ -49,7 +49,20 @@ export const pt = {
     },
   },
   [namespaces.projects.name]: {
-    title: 'Página Projetos',
+    title: 'Meus Projetos',
+    subtitle: 'Alguns dos meus trabalhos recentes',
+    ctaView: 'Ver Projeto',
+    ctaCode: 'Ver Código',
+    status: {
+      completed: 'Concluído',
+      progress: 'Em Progresso',
+    },
+    items: {
+      portfolio: {
+        title: 'Portfolio Pessoal',
+        desc: 'Portfólio de engenharia de software de alta fidelidade desenvolvido com React.js e Tailwind v4. Possui esteira automatizada com cobertura de 100% via Vitest e Playwright.',
+      },
+    },
   },
   [namespaces.about.name]: {
     title: 'Sobre Mim',
