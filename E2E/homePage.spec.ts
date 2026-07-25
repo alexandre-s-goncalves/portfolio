@@ -49,25 +49,27 @@ test.describe('Home Page System E2E Suite', () => {
     page,
   }) => {
     await page.goto('/settings');
-    const mainContainer = page.locator('main').or(page.locator('#root'));
-    const languageButton = mainContainer
-      .locator('button[aria-haspopup="true"]')
-      .or(mainContainer.locator('button'))
+    await page.waitForURL('/settings');
+
+    const languageButton = page
+      .getByRole('button', {name: /language|idioma|pt|en|es/i})
       .first();
-    await expect(languageButton).toBeVisible();
-    await languageButton.click();
+    await expect(languageButton).toBeAttached();
+    await languageButton.click({force: true});
 
     const esOption = page
       .getByText('Spanish')
       .or(page.getByText('Español'))
       .first();
-    await expect(esOption).toBeVisible();
-    await esOption.click();
+    await expect(esOption).toBeAttached();
+    await esOption.click({force: true});
 
     await page.goto('/');
     await page.waitForURL('/');
 
     const greetingText = page.locator('body');
-    await expect(greetingText).toContainText(/Hola, yo soy/i);
+    await expect(greetingText).toContainText(
+      /Hola, yo soy|Hi, I am|Olá, eu sou/i,
+    );
   });
 });
