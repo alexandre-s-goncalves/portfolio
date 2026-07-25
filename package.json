@@ -25,7 +25,8 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-i18next": "^17.0.8",
-    "react-router-dom": "^7.11.0"
+    "react-router": "7.11.0",
+    "react-router-dom": "7.11.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^20.5.3",
@@ -69,5 +70,36 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "eslint --fix",
     "*.{js,jsx,ts,tsx,json,css,md}": "prettier --write"
+  },
+  "overrides": {
+    "react-router": "7.11.0",
+    "react-router-dom": "7.11.0",
+    "brace-expansion": "2.0.1",
+    "minimatch": "3.0.5",
+    "eslint": {
+      "minimatch": "3.0.5"
+    },
+    "eslint-plugin-sonarjs": {
+      "minimatch": "3.0.5"
+    },
+    "react-doctor": {
+      "deslop-js": {
+        "minimatch": "3.0.5"
+      }
+    },
+    "vite-plugin-pwa": {
+      "vite": "$vite",
+      "workbox-build": {
+        "@trickfilm400/rollup-plugin-off-main-thread": {
+          "ejs": {
+            "jake": {
+              "filelist": {
+                "minimatch": "3.0.5"
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
