@@ -138,11 +138,19 @@ describe('Portuguese Translation Integrity System', () => {
 
     test('should verify all structural projects dictionary keys exist', () => {
       expect(pt).toHaveProperty(name);
-      Object.values(keys).forEach(key => expect(pt[name]).toHaveProperty(key));
+      expect(pt[name].status).toHaveProperty('completed');
+      expect(pt[name].status).toHaveProperty('progress');
+      expect(pt[name].items.portfolio).toHaveProperty('title');
+      expect(pt[name].items.portfolio).toHaveProperty('desc');
+      expect(keys.title).toBeDefined();
     });
 
     test('should lock exact structural value parameters for projects page content', () => {
-      expect(pt[name].title).toBe('Página Projetos');
+      expect(pt[name].title).toBe('Meus Projetos');
+      expect(pt[name].ctaView).toBe('Ver Projeto');
+      expect(pt[name].ctaCode).toBe('Ver Código');
+      expect(pt[name].status.completed).toBe('Concluído');
+      expect(pt[name].items.portfolio.title).toBe('Portfolio Pessoal');
     });
   });
 

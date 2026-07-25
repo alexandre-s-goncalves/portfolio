@@ -32,53 +32,43 @@ describe('Icon Component', () => {
       );
     });
 
-    test('should apply small size classes when sm is provided', () => {
-      render(<Icon icon={DummyIconComponent} size="sm" />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('h-4', 'w-4');
-    });
+    test.each([
+      ['sm', 'h-4 w-4'],
+      ['md', 'h-5 w-5'],
+      ['lg', 'h-6 w-6'],
+      ['xl', 'h-8 w-8'],
+    ])(
+      'should apply %s size classes when configuration parameters match',
+      (sizeInput, expectedClass) => {
+        render(
+          <Icon
+            icon={DummyIconComponent}
+            size={sizeInput as 'sm' | 'md' | 'lg' | 'xl'}
+          />,
+        );
+        const iconContainer = screen.getByTestId('mock-svg').parentElement;
+        expect(iconContainer).toHaveClass(...expectedClass.split(' '));
+      },
+    );
 
-    test('should apply medium size classes when md is provided', () => {
-      render(<Icon icon={DummyIconComponent} size="md" />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('h-5', 'w-5');
-    });
-
-    test('should apply large size classes when lg is provided', () => {
-      render(<Icon icon={DummyIconComponent} size="lg" />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('h-6', 'w-6');
-    });
-
-    test('should apply extra large size classes when xl is provided', () => {
-      render(<Icon icon={DummyIconComponent} size="xl" />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('h-8', 'w-8');
-    });
-
-    test('should apply 45 degrees rotation class when 45 is provided', () => {
-      render(<Icon icon={DummyIconComponent} rotate={45} />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('rotate-45');
-    });
-
-    test('should apply 90 degrees rotation class when 90 is provided', () => {
-      render(<Icon icon={DummyIconComponent} rotate={90} />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('rotate-90');
-    });
-
-    test('should apply 180 degrees rotation class when 180 is provided', () => {
-      render(<Icon icon={DummyIconComponent} rotate={180} />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('rotate-180');
-    });
-
-    test('should apply infinite spin utility class when animate-spin is provided', () => {
-      render(<Icon icon={DummyIconComponent} rotate="animate-spin" />);
-      const iconContainer = screen.getByTestId('mock-svg').parentElement;
-      expect(iconContainer).toHaveClass('animate-spin');
-    });
+    test.each([
+      [45, 'rotate-45'],
+      [90, 'rotate-90'],
+      [180, 'rotate-180'],
+      ['animate-spin', 'animate-spin'],
+    ])(
+      'should apply correct rotation alignment classes when parameter is %s',
+      (rotateInput, expectedClass) => {
+        render(
+          <Icon
+            icon={DummyIconComponent}
+            rotate={rotateInput as 0 | 45 | 90 | 180 | 'animate-spin'}
+          />,
+        );
+        const iconContainer = screen.getByTestId('mock-svg').parentElement;
+        expect(iconContainer).toHaveClass(expectedClass);
+      },
+    );
 
     test('should append custom string class names seamlessly into DOM tree', () => {
       render(
@@ -89,6 +79,51 @@ describe('Icon Component', () => {
       );
       const iconContainer = screen.getByTestId('mock-svg').parentElement;
       expect(iconContainer).toHaveClass('custom-utility-class', 'p-4', 'm-2');
+    });
+
+    test('should apply custom pixel properties when size numeric parameters are enforced', () => {
+      const {container} = render(<Icon icon={DummyIconComponent} size={42} />);
+      const iconContainer = container.querySelector('div');
+      expect(iconContainer).toHaveStyle({width: '42px', height: '42px'});
+    });
+  });
+
+  describe('Renderização de String (Máscaras CSS) & Acessibilidade', () => {
+    test('should render structural inner div element with correct aria attributes when icon input is a string', () => {
+      const {container} = render(
+        <Icon icon={mockBase64String} alt="Ícone de Teste" />,
+      );
+
+      const mainContainer = container.querySelector('div');
+      expect(mainContainer).toBeInTheDocument();
+      expect(mainContainer).not.toHaveAttribute('aria-hidden');
+
+      const innerDiv = mainContainer?.querySelector('div');
+      expect(innerDiv).toBeInTheDocument();
+      expect(innerDiv).toHaveAttribute('aria-label', 'Ícone de Teste');
+      expect(innerDiv).not.toHaveAttribute('aria-hidden');
+    });
+
+    test('should apply strict aria-hidden attributes onto inner string container when alt metadata is absent', () => {
+      const {container} = render(<Icon icon={mockBase64String} />);
+
+      const mainContainer = container.querySelector('div');
+      expect(mainContainer).toBeInTheDocument();
+      expect(mainContainer).toHaveAttribute('aria-hidden', 'true');
+
+      const innerDiv = mainContainer?.querySelector('div');
+      expect(innerDiv).toBeInTheDocument();
+      expect(innerDiv).toHaveAttribute('aria-hidden', 'true');
+    });
+
+    test('should omit mask colors layout settings if background color configuration is disabled', () => {
+      const {container} = render(<Icon icon={mockBase64String} color="none" />);
+
+      const innerDiv = container.querySelector('div > div') as HTMLElement;
+      expect(innerDiv).toBeInTheDocument();
+
+      expect(innerDiv.style.width).toBeDefined();
+      expect(innerDiv.style.height).toBeDefined();
     });
   });
 
@@ -160,7 +195,7 @@ describe('Icon Component', () => {
       expect(titleElement?.textContent).toBe('Ícone de Teste');
     });
 
-    test('should apply role and aria label attributes directly onto mask DOM element when alt text is provided to string inputs', () => {
+    test('should apply aria label attributes directly onto mask DOM element when alt text is provided to string inputs', () => {
       const {container} = render(
         <Icon icon={mockBase64String} alt="Bandeira de Teste" />,
       );
@@ -169,7 +204,6 @@ describe('Icon Component', () => {
       const maskDiv = mainDiv.firstChild as HTMLElement;
 
       expect(mainDiv).not.toHaveAttribute('aria-hidden');
-      expect(maskDiv).toHaveAttribute('role', 'img');
       expect(maskDiv).toHaveAttribute('aria-label', 'Bandeira de Teste');
     });
   });

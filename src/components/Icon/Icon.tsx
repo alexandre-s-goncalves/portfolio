@@ -113,7 +113,7 @@ export const Icon = ({
       {isStringIcon ? (
         <div
           style={maskStyle}
-          role={alt ? 'img' : undefined}
+          aria-hidden={alt ? undefined : 'true'}
           aria-label={alt}
         />
       ) : (

@@ -50,7 +50,20 @@ export const en = {
   },
 
   [namespaces.projects.name]: {
-    title: 'Projects Page',
+    title: 'My Projects',
+    subtitle: 'Some of my recent works',
+    ctaView: 'View Project',
+    ctaCode: 'View Code',
+    status: {
+      completed: 'Completed',
+      progress: 'In Progress',
+    },
+    items: {
+      portfolio: {
+        title: 'Personal Portfolio',
+        desc: 'High-fidelity software engineering portfolio built with React.js and Tailwind v4. Features automated pipeline with 100% coverage via Vitest and Playwright.',
+      },
+    },
   },
   [namespaces.about.name]: {
     title: 'About Me',
