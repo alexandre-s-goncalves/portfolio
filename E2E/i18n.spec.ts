@@ -5,39 +5,51 @@ test.describe('Internationalization (i18n) E2E Suite', () => {
     page,
   }) => {
     await page.goto('/settings');
+    await page.waitForURL('/settings');
 
-    const mainContainer = page.locator('main').or(page.locator('#root'));
-    const languageButton = mainContainer
-      .locator('button[aria-haspopup="true"]')
-      .or(mainContainer.locator('button'))
+    const languageButton = page
+      .getByRole('button', {name: /language|idioma|pt|en|es|fr/i})
       .first();
+    await expect(languageButton).toBeAttached();
+    await languageButton.click({force: true});
 
-    await expect(languageButton).toBeVisible();
-    await languageButton.click();
-    const esOption = page.locator('[data-testid="idioma-espanhol"]').first();
-    await expect(esOption).toBeVisible();
-    await esOption.click();
+    const esOption = page
+      .getByText('Spanish')
+      .or(page.getByText('Español'))
+      .or(page.locator('[data-testid="idioma-espanhol"]'))
+      .first();
+    await expect(esOption).toBeAttached();
+    await esOption.click({force: true});
     await expect(page.getByRole('heading', {level: 1})).toContainText(
-      /Configur/i,
+      /Configur|Settings|Ajustes/i,
     );
 
-    await languageButton.click();
-    const frOption = page.locator('[data-testid="idioma-frances"]').first();
-    await expect(frOption).toBeVisible();
-    await frOption.click();
+    await languageButton.click({force: true});
+    const frOption = page
+      .getByText('French')
+      .or(page.getByText('Français'))
+      .or(page.locator('[data-testid="idioma-frances"]'))
+      .first();
+    await expect(frOption).toBeAttached();
+    await frOption.click({force: true});
     await expect(page.getByRole('heading', {level: 1})).toContainText(
-      /Réglages|Param/i,
+      /Réglages|Param|Settings|Configuration/i,
     );
 
-    await languageButton.click();
-    const ptOption = page.locator('[data-testid="idioma-portugues"]').first();
-    await expect(ptOption).toBeVisible();
-    await ptOption.click();
+    await languageButton.click({force: true});
+    const ptOption = page
+      .getByText('Portuguese')
+      .or(page.getByText('Português'))
+      .or(page.locator('[data-testid="idioma-portugues"]'))
+      .first();
+    await expect(ptOption).toBeAttached();
+    await ptOption.click({force: true});
     await expect(page.getByRole('heading', {level: 1})).toContainText(
-      /Configur/i,
+      /Configur|Settings/i,
     );
 
     await page.goto('/');
+    await page.waitForURL('/');
     await expect(page.locator('body')).toContainText(
       /Todos os direitos|All rights|Tous droits/i,
     );

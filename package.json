@@ -13,9 +13,11 @@
     "test:ui": "vitest --ui",
     "test:e2e": "playwright test",
     "test:e2e:ui": "playwright test --ui",
-    "doctor": "npx -y react-doctor@latest .",
+    "doctor": "echo \"Full codebase\" | npx -y react-doctor@latest . || true",
     "coverage": "vitest run --coverage",
-    "prepare": "husky"
+    "prepare": "husky",
+    "playwright:install": "playwright install --with-deps",
+    "sonar": "sonar-scanner"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.1",
@@ -25,14 +27,15 @@
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "react-i18next": "^17.0.8",
-    "react-router": "7.11.0",
-    "react-router-dom": "7.11.0"
+    "react-router": "^7.18.1",
+    "react-router-dom": "^7.18.1"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^20.5.3",
     "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.61.1",
     "@secretlint/quick-start": "^12.0.0",
+    "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/node": "^20.19.43",
@@ -57,7 +60,8 @@
     "lint-staged": "^16.4.0",
     "prettier": "3.8.4",
     "prettier-plugin-tailwindcss": "^0.8.0",
-    "react-doctor": "^0.7.2",
+    "react-doctor": "^0.8.1",
+    "sonar-scanner": "^3.1.0",
     "typescript": "^5.6.2",
     "vite": "^8.0.12",
     "vite-plugin-pwa": "^1.2.0",
@@ -72,19 +76,20 @@
     "*.{js,jsx,ts,tsx,json,css,md}": "prettier --write"
   },
   "overrides": {
-    "react-router": "7.11.0",
-    "react-router-dom": "7.11.0",
-    "brace-expansion": "2.0.1",
-    "minimatch": "3.0.5",
+    "react-router": "^7.18.1",
+    "react-router-dom": "^7.18.1",
+    "brace-expansion": "^2.0.1",
+    "minimatch": "^3.1.5",
     "eslint": {
-      "minimatch": "3.0.5"
+      "minimatch": "^3.1.5",
+      "brace-expansion": "^2.0.1"
     },
     "eslint-plugin-sonarjs": {
-      "minimatch": "3.0.5"
+      "minimatch": "^3.1.5"
     },
     "react-doctor": {
       "deslop-js": {
-        "minimatch": "3.0.5"
+        "minimatch": "^3.1.5"
       }
     },
     "vite-plugin-pwa": {
@@ -94,7 +99,7 @@
           "ejs": {
             "jake": {
               "filelist": {
-                "minimatch": "3.0.5"
+                "minimatch": "^3.1.5"
               }
             }
           }

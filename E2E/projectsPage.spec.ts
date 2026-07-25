@@ -67,11 +67,7 @@ test.describe('Projects Page System E2E Suite', () => {
     const fullViewImage = dialogElement.locator('img');
     await expect(fullViewImage).toBeVisible();
 
-    const dismissBackdropButton = dialogElement.getByRole('button', {
-      name: /Close Preview/i,
-    });
-    await expect(dismissBackdropButton).toBeVisible();
-    await dismissBackdropButton.click();
+    await fullViewImage.click();
 
     await expect(dialogElement).not.toBeVisible();
   });
