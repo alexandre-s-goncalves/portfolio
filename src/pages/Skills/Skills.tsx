@@ -26,7 +26,7 @@ export const Skills = () => {
   }, []);
 
   return (
-    <div className="animate-fade-in mx-auto mb-28 flex w-full max-w-7xl flex-1 flex-col p-4 select-none md:mb-0 md:p-8 lg:p-12">
+    <div className="animate-fade-in mx-auto mb-28 flex w-full max-w-7xl flex-1 flex-col p-4 select-none md:mb-0 md:p-8 lg:h-full lg:p-12">
       <div className="mb-8 border-b border-slate-100 pb-4 text-left dark:border-slate-900">
         <h1 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl dark:text-slate-50">
           {t('title')}

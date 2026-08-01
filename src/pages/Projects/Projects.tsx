@@ -45,7 +45,7 @@ export const Projects = () => {
   }, [activeImage, closeModal]);
 
   return (
-    <div className="animate-fade-in mx-auto flex h-[calc(100vh-13rem)] w-full max-w-7xl flex-col overflow-hidden pt-8 pr-4 pb-4 pl-4 select-none md:h-[calc(100vh-14rem)] md:pr-8 md:pl-8 lg:pr-12 lg:pl-12">
+    <div className="animate-fade-in mx-auto flex h-auto w-full max-w-7xl flex-col pt-8 pr-4 pb-4 pl-4 select-none lg:h-full lg:overflow-hidden lg:pr-8 lg:pb-4 lg:pl-8 xl:pr-12 xl:pl-12">
       <div className="mb-6 shrink-0 border-b border-slate-100 pb-4 text-left dark:border-slate-900">
         <h1 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl dark:text-slate-50">
           {t('title')}
@@ -55,8 +55,8 @@ export const Projects = () => {
         </p>
       </div>
 
-      <div className="flex-1 scrollbar-thin overflow-y-auto pr-2 pb-16">
-        <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-start gap-6 md:grid-cols-2">
+      <div className="w-full lg:flex-1 lg:scrollbar-thin lg:overflow-y-auto lg:pr-2">
+        <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-start gap-6 pb-6 md:grid-cols-2 md:pb-0">
           {profile.projects.map(project => {
             const projectImage = PROJECT_IMAGES[project.id];
             const isCompleted = project.status === 'completed';
@@ -64,27 +64,28 @@ export const Projects = () => {
             return (
               <div
                 key={project.id}
-                className="flex min-h-96 flex-col overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 shadow-xs dark:border-slate-900 dark:bg-[#0c111d]">
+                className="flex flex-col overflow-hidden rounded-2xl border border-slate-100 bg-slate-50/50 shadow-xs dark:border-slate-900 dark:bg-[#0c111d]">
                 <button
                   type="button"
                   disabled={!projectImage}
                   onClick={() => projectImage && openModal(projectImage)}
                   aria-label={`${t(project.titleKey)} — Expandir Imagem de Preview`}
                   className={clsx(
-                    'group relative block h-36 w-full shrink-0 overflow-hidden border-b border-slate-100 bg-slate-200/50 text-left transition-opacity hover:opacity-90 dark:border-slate-900/80 dark:bg-slate-900/60',
+                    'group relative block h-36 w-full shrink-0 overflow-hidden border-b border-slate-100 bg-slate-50/50 text-left transition-opacity hover:opacity-90 dark:border-slate-900/80 dark:bg-[#0c111d]',
                     projectImage ? 'cursor-zoom-in' : 'cursor-default',
                   )}>
                   {projectImage ? (
                     <img
                       src={projectImage}
                       alt={t(project.titleKey)}
-                      className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-102"
+                      className="h-full w-full object-contain object-center transition-transform duration-500 group-hover:scale-102"
                     />
                   ) : (
                     <div className="flex h-full w-full flex-col items-center justify-center gap-2 text-slate-400 dark:text-slate-600">
                       <Icon icon="image" size={24} color="currentColor" />
                       <span className="text-[10px] font-bold tracking-wider uppercase">
-                        Preview Indisponível
+                        {' '}
+                        Preview Indisponível{' '}
                       </span>
                     </div>
                   )}
@@ -112,11 +113,9 @@ export const Projects = () => {
                         {t(`status.${project.status}`)}
                       </span>
                     </div>
-
                     <p className="mb-4 min-h-12 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
                       {t(project.descKey)}
                     </p>
-
                     <div className="mb-5 flex flex-wrap gap-1.5">
                       {project.tags.map(tag => (
                         <span
@@ -127,6 +126,7 @@ export const Projects = () => {
                       ))}
                     </div>
                   </div>
+
                   <div
                     className={clsx(
                       'mt-auto grid w-full gap-2',
@@ -148,7 +148,6 @@ export const Projects = () => {
                         </span>
                       </a>
                     )}
-
                     <a
                       href={project.codeUrl}
                       target="_blank"
@@ -179,13 +178,13 @@ export const Projects = () => {
             onClick={closeModal}
             aria-label="Fechar visualização expandida"
             className="absolute inset-0 flex h-full w-full cursor-zoom-out items-center justify-center border-0 bg-black/80 p-4 backdrop-blur-sm outline-none">
-            <div className="relative max-h-[85vh] max-w-5xl overflow-hidden rounded-xl border border-slate-800 bg-slate-950/40 p-0 shadow-2xl">
+            <figure className="pointer-events-none relative flex max-h-[85vh] max-w-5xl overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-2xl dark:border-slate-800 dark:bg-[#0c111d]">
               <img
                 src={activeImage}
-                alt="Visualização expandida em alta resolução"
-                className="max-h-[85vh] max-w-full cursor-zoom-out rounded-xl border border-slate-800 bg-slate-950/40 object-contain shadow-2xl"
+                alt="Visualização expandida"
+                className="pointer-events-auto max-h-[80vh] max-w-full rounded-lg object-contain"
               />
-            </div>
+            </figure>
           </button>
         )}
       </dialog>

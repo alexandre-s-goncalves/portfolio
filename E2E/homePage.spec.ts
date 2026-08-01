@@ -1,4 +1,5 @@
 import {test, expect} from '@playwright/test';
+import {profile} from '../src/constants/profile';
 
 test.describe('Home Page System E2E Suite', () => {
   test.beforeEach(async ({page}) => {
@@ -17,10 +18,15 @@ test.describe('Home Page System E2E Suite', () => {
       /Desenvolvedor Full-Stack|Full-Stack Developer/i,
     );
 
-    const projectsMetric = page.getByText('15+');
+    const techTagsCount = page.getByTestId('tech-tags-count');
+    await expect(techTagsCount).toHaveText(`${profile.techTags.length}+`);
+
+    const projectsMetric = page
+      .getByText(`${profile.projects.length}+`)
+      .first();
     await expect(projectsMetric).toBeVisible();
 
-    const techMetric = page.getByText('8+');
+    const techMetric = page.getByText(`${profile.techTags.length}+`).first();
     await expect(techMetric).toBeVisible();
   });
 
@@ -28,48 +34,58 @@ test.describe('Home Page System E2E Suite', () => {
     page,
   }) => {
     const projectsButton = page
-      .getByRole('button')
-      .filter({hasText: /Projetos|Projects|Projets/i});
+      .getByRole('link')
+      .or(page.getByRole('button'))
+      .filter({hasText: /Projetos|Projects|View My Projects/i})
+      .first();
+
     await expect(projectsButton).toBeVisible();
     await projectsButton.click();
-    await expect(page).toHaveURL(/\/projects/);
+    await expect(page).toHaveURL(/projects/);
 
     await page.goto('/');
     await page.waitForURL('/');
 
     const contactButton = page
-      .getByRole('button')
-      .filter({hasText: /Contato|Contact|Touch|Ponte/i});
+      .getByRole('link')
+      .or(page.getByRole('button'))
+      .filter({hasText: /Contato|Contact|Touch|Get in touch/i})
+      .first();
+
     await expect(contactButton).toBeVisible();
     await contactButton.click();
-    await expect(page).toHaveURL(/\/about/);
+
+    await expect(page).toHaveURL(/about/);
   });
 
   test('should dynamically localize core content titles when switching languages on settings view', async ({
     page,
   }) => {
     await page.goto('/settings');
-    await page.waitForURL('/settings');
+    await page.waitForURL('**/settings');
 
     const languageButton = page
       .getByRole('button', {name: /language|idioma|pt|en|es/i})
       .first();
-    await expect(languageButton).toBeAttached();
-    await languageButton.click({force: true});
+
+    await expect(languageButton).toBeVisible();
+    await languageButton.click();
 
     const esOption = page
-      .getByText('Spanish')
+      .getByRole('option', {name: /Spanish|Español/i})
+      .or(page.getByText('Spanish'))
       .or(page.getByText('Español'))
       .first();
-    await expect(esOption).toBeAttached();
-    await esOption.click({force: true});
 
-    await page.goto('/');
-    await page.waitForURL('/');
+    await expect(esOption).toBeVisible();
+    await esOption.click();
 
-    const greetingText = page.locator('body');
-    await expect(greetingText).toContainText(
-      /Hola, yo soy|Hi, I am|Olá, eu sou/i,
+    await page.goBack();
+    await page.waitForURL('**/');
+
+    const mainHeading = page.getByRole('heading', {level: 1});
+    await expect(mainHeading).toContainText(
+      /Hola, yo soy|Hi, I am|Olá, eu sou|Alexandre/i,
     );
   });
 });

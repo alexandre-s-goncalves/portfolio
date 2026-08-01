@@ -106,7 +106,7 @@ describe('Portuguese Translation Integrity System', () => {
       );
       expect(pt[name].ctaProjects).toBe('Ver Meus Projetos');
       expect(pt[name].ctaContact).toBe('Entre em Contato');
-      expect(pt[name].metricsProjects).toBe('Projetos Concluídos');
+      expect(pt[name].metricsProjects).toBe('Projetos');
       expect(pt[name].metricsExperience).toBe('Anos de Experiência');
       expect(pt[name].metricsTech).toBe('Tecnologias');
     });

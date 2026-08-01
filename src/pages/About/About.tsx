@@ -3,26 +3,24 @@ import {useTranslation} from 'react-i18next';
 import {namespaces} from 'i18n';
 import {profile} from 'constants/profile';
 import {Icon} from 'components/Icon/Icon';
-
-import fotoPerfil from '../../assets/images/foto-perfil.jpeg';
-import iMail from '../../assets/icons/iMail.svg';
-import iLocation from '../../assets/icons/iLocation.svg';
-import iGithub from '../../assets/icons/iGithub.svg';
-import iLinkedin from '../../assets/icons/iLinkedin.svg';
-import iDownload from '../../assets/icons/iDownload.svg';
-import iCalendar from '../../assets/icons/iCalendar.svg';
+import fotoPerfil from 'assets/images/foto-perfil.jpeg';
+import iMail from 'assets/icons/iMail.svg';
+import iLocation from 'assets/icons/iLocation.svg';
+import iGithub from 'assets/icons/iGithub.svg';
+import iLinkedin from 'assets/icons/iLinkedin.svg';
+import iDownload from 'assets/icons/iDownload.svg';
+import iCalendar from 'assets/icons/iCalendar.svg';
 
 export const About = () => {
   const {t} = useTranslation(namespaces.about.name);
 
   return (
-    <div className="animate-fade-in mx-auto flex w-full max-w-7xl flex-1 flex-col p-4 select-none md:p-8 lg:p-12">
-      <h1 className="mb-8 border-b border-slate-200 pb-4 text-2xl font-black tracking-tight text-slate-900 md:text-3xl dark:border-slate-900 dark:text-slate-50">
+    <div className="animate-fade-in mx-auto flex h-auto w-full max-w-7xl flex-col p-4 pb-24 select-none md:p-8 lg:h-full lg:overflow-hidden lg:p-12 lg:pb-4">
+      <h1 className="mb-8 shrink-0 border-b border-slate-200 pb-4 text-2xl font-black tracking-tight text-slate-900 md:text-3xl dark:border-slate-900 dark:text-slate-50">
         {t('title')}
       </h1>
-
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[280px_1fr]">
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+      <div className="grid grid-cols-1 gap-8 lg:min-h-0 lg:flex-1 lg:grid-cols-[280px_1fr] lg:overflow-hidden">
+        <div className="flex flex-col items-center text-center lg:ml-5 lg:shrink-0 lg:items-start lg:text-left">
           <div className="mb-6 flex w-full flex-col items-center justify-center rounded-2xl border border-slate-200 bg-slate-50/50 p-6 shadow-xs dark:border-slate-900 dark:bg-[#0c111d]">
             <div className="mb-4 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200/60 bg-slate-100 shadow-md dark:border-slate-800 dark:bg-slate-900">
               <img
@@ -31,15 +29,12 @@ export const About = () => {
                 className="h-full w-full object-cover"
               />
             </div>
-
             <h2 className="mb-1 text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
               {profile.name}
             </h2>
-
             <span className="mb-4 text-xs font-semibold text-slate-500 dark:text-slate-400">
               {t('jobs.title1')}
             </span>
-
             <ul className="w-full space-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600 dark:border-slate-800/60 dark:text-slate-400">
               <li className="flex items-center justify-center gap-2 truncate lg:justify-start">
                 <Icon size="md" icon={iMail} color="currentColor" />
@@ -55,7 +50,6 @@ export const About = () => {
               </li>
             </ul>
           </div>
-
           <div className="mb-3 grid w-full grid-cols-2 gap-2">
             <a
               href={profile.links.github}
@@ -69,7 +63,6 @@ export const About = () => {
               <Icon icon={iGithub} size={14} color="currentColor" />
               <span>GitHub</span>
             </a>
-
             <a
               href={profile.links.linkedin}
               target="_blank"
@@ -83,7 +76,6 @@ export const About = () => {
               <span>LinkedIn</span>
             </a>
           </div>
-
           <button
             type="button"
             className={clsx(
@@ -95,7 +87,14 @@ export const About = () => {
             <span>{t('downloadCv')}</span>
           </button>
         </div>
-        <div className="space-y-6">
+        <div
+          className={clsx(
+            'w-full space-y-6 lg:overflow-y-auto lg:pr-3',
+            'scrollbar-stable',
+            'lg:scrollbar-thin',
+            'scrollbar-thumb-transparent dark:scrollbar-thumb-transparent',
+            'hover:scrollbar-thumb-slate-300/80 dark:hover:scrollbar-thumb-slate-800/60',
+          )}>
           <section className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 shadow-xs dark:border-slate-900 dark:bg-[#0c111d]">
             <h3 className="mb-4 flex items-center gap-2 border-b border-slate-100 pb-2 text-base font-bold tracking-tight text-slate-900 dark:border-slate-800/60 dark:text-slate-50">
               {t('sections.bio')}
@@ -108,7 +107,6 @@ export const About = () => {
               <p>{t('paragraphs.p5')}</p>
             </div>
           </section>
-
           <section className="rounded-2xl border border-slate-200 bg-slate-50/50 p-6 shadow-xs dark:border-slate-900 dark:bg-[#0c111d]">
             <h3 className="mb-6 text-base font-bold tracking-tight text-slate-900 dark:text-slate-50">
               {t('sections.experience')}

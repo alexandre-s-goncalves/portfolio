@@ -14,9 +14,10 @@ export const WebRoutes = () => {
 
   return (
     <BrowserRouter basename={baseName}>
-      <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 transition-colors duration-200 dark:bg-slate-950 dark:text-slate-50">
+      <div className="flex h-auto min-h-screen w-full flex-col bg-slate-50 text-slate-900 transition-colors duration-200 lg:h-screen lg:overflow-hidden dark:bg-slate-950 dark:text-slate-50">
         <Header />
-        <main className="flex w-full flex-1">
+
+        <main className="h-auto w-full lg:min-h-0 lg:flex-1 lg:overflow-hidden">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/skills" element={<Skills />} />
@@ -26,6 +27,7 @@ export const WebRoutes = () => {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </main>
+
         <Footer />
         <BottomTabBar />
       </div>
