@@ -15,7 +15,7 @@ export const Footer = () => {
   return (
     <footer
       className={clsx(
-        'mt-auto w-full border-t pb-24 transition-colors duration-200 lg:pb-4',
+        'w-full border-t pb-24 transition-colors duration-200 lg:mt-auto lg:pb-4',
         'border-slate-100 bg-white text-slate-600',
         'dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400',
       )}>

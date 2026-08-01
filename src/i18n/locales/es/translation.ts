@@ -27,7 +27,7 @@ export const es = {
     bio: 'Desarrollador apasionado por la tecnología con experiencia en React.js, React Native, .NET y Java. Enfocado en crear soluciones elegantes y eficientes.',
     ctaProjects: 'Ver Mis Proyectos',
     ctaContact: 'Ponte en Contacto',
-    metricsProjects: 'Proyectos Completados',
+    metricsProjects: 'Proyectos',
     metricsExperience: 'Años de Experiencia',
     metricsTech: 'Tecnologías',
   },

@@ -71,8 +71,9 @@ describe('Home Page System Integration', () => {
       ) {
         expectedYears--;
       }
+      const component = screen.getByTestId('tech-tags-count');
 
-      expect(screen.getByText(`${expectedYears}+`)).toBeInTheDocument();
+      expect(component).toHaveTextContent(`${expectedYears}+`);
     });
   });
 

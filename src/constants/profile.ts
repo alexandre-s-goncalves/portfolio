@@ -12,6 +12,7 @@ export const profile = {
     github: 'https://github.com/alexandre-s-goncalves',
     linkedin: 'https://www.linkedin.com/in/alexandre-sgoncalves/',
   },
+  techTags: ['React.js', 'React Native', 'JavaScript', 'TypeScript', 'Jest'],
   skills: [
     {
       name: 'React.js',

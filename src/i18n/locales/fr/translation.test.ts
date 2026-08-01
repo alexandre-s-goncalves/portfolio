@@ -106,7 +106,7 @@ describe('French Translation Integrity System', () => {
       );
       expect(fr[name].ctaProjects).toBe('Voir Mes Projets');
       expect(fr[name].ctaContact).toBe('Contactez-moi');
-      expect(fr[name].metricsProjects).toBe('Projets Réalisés');
+      expect(fr[name].metricsProjects).toBe('Projets');
       expect(fr[name].metricsExperience).toBe('Années d’Expérience');
       expect(fr[name].metricsTech).toBe('Technologies');
     });
