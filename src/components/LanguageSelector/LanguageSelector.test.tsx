@@ -178,6 +178,20 @@ describe('LanguageSelector Component', () => {
       expect(items[3]).toHaveFocus();
     });
 
+    test('should start navigation at the first item when the menu has focus', async () => {
+      await i18n.changeLanguage('en');
+      renderWithI18n();
+      fireEvent.click(screen.getByRole('button'));
+
+      const menu = screen.getByRole('menu');
+      const items = screen.getAllByRole('menuitem');
+      menu.focus();
+
+      fireEvent.keyDown(menu, {key: 'ArrowDown'});
+
+      expect(items[0]).toHaveFocus();
+    });
+
     test('should manage keyboard selection up the menu accurately using ArrowUp keys', () => {
       renderWithI18n();
       fireEvent.click(screen.getByRole('button'));

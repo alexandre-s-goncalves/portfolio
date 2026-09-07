@@ -62,11 +62,11 @@ describe('Settings Page Component', () => {
       ).toBeInTheDocument();
       expect(screen.getByText('Interface Language')).toBeInTheDocument();
       expect(
-        screen.getByText('Change the global website dictionary'),
+        screen.getByText('Change the global dictionary of the site'),
       ).toBeInTheDocument();
       expect(screen.getByText('Visual Theme')).toBeInTheDocument();
       expect(
-        screen.getByText('Switch between Light and Dark Mode'),
+        screen.getByText('Toggle between Light and Dark Mode'),
       ).toBeInTheDocument();
     });
   });

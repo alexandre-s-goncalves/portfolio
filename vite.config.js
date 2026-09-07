@@ -3,7 +3,7 @@ import tailwindcss from '@tailwindcss/vite';
 import svgr from 'vite-plugin-svgr';
 import {defineConfig} from 'vite';
 import {VitePWA} from 'vite-plugin-pwa';
-import path from 'path';
+import path from 'node:path';
 
 export default defineConfig({
   base: process.env.VITE_BASE || '/',

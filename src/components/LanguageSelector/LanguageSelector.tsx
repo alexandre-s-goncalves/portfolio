@@ -94,30 +94,25 @@ export const LanguageSelector = () => {
     firstActive?.focus();
   };
 
-  const handleKeyDown = useCallback(
-    (event: React.KeyboardEvent) => {
-      if (!isOpen) return;
+  const handleKeyDown = useCallback((event: React.KeyboardEvent) => {
+    const activeElement = document.activeElement as HTMLButtonElement | null;
+    const menuItems = getMenuItems(dropdownRef.current);
+    const currentIndex = menuItems.indexOf(activeElement as HTMLButtonElement);
 
-      const activeElement = document.activeElement as HTMLButtonElement | null;
-      const menuItems = getMenuItems(dropdownRef.current);
-      const currentIndex = menuItems.findIndex(item => item === activeElement);
-
-      if (event.key === 'Escape') {
-        setIsOpen(false);
-        buttonRef.current?.focus();
-      } else if (event.key === 'ArrowDown') {
-        event.preventDefault();
-        const nextIndex = (currentIndex + 1) % menuItems.length;
-        menuItems[nextIndex]?.focus();
-      } else if (event.key === 'ArrowUp') {
-        event.preventDefault();
-        const prevIndex =
-          (currentIndex - 1 + menuItems.length) % menuItems.length;
-        menuItems[prevIndex]?.focus();
-      }
-    },
-    [isOpen],
-  );
+    if (event.key === 'Escape') {
+      setIsOpen(false);
+      buttonRef.current?.focus();
+    } else if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      const nextIndex = (currentIndex + 1) % menuItems.length;
+      menuItems[nextIndex]?.focus();
+    } else if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      const prevIndex =
+        (currentIndex - 1 + menuItems.length) % menuItems.length;
+      menuItems[prevIndex]?.focus();
+    }
+  }, []);
 
   const handleToggleMenu = () => {
     setIsOpen(prevOpen => !prevOpen);
@@ -146,7 +141,6 @@ export const LanguageSelector = () => {
     <div
       ref={dropdownRef}
       onBlur={handleBlur}
-      onKeyDown={handleKeyDown}
       className="relative inline-block text-left select-none">
       <button
         type="button"
@@ -176,6 +170,8 @@ export const LanguageSelector = () => {
         <div
           id="language-menu"
           role="menu"
+          tabIndex={-1}
+          onKeyDown={handleKeyDown}
           className={clsx(
             'absolute right-0 mt-2 w-48 rounded-xl border p-1 shadow-lg transition-all duration-150',
             'z-50 border-slate-100 bg-white shadow-slate-200/50',
