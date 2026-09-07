@@ -1,7 +1,9 @@
 export const computeFinalUrl = (pdfPath: string, envBaseUrl: string) => {
-  let sanitizedBase = envBaseUrl
-    .replace(/\/qas\/?$/, '')
-    .replace(/\/main\/?$/, '');
+  let sanitizedBase = envBaseUrl;
+
+  if (sanitizedBase.includes('/qas')) {
+    sanitizedBase = sanitizedBase.replace(/\/qas\/?$/, '');
+  }
 
   if (!sanitizedBase.endsWith('/')) {
     sanitizedBase = `${sanitizedBase}/`;
