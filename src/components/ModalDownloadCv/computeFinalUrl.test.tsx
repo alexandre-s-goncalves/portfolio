@@ -24,14 +24,14 @@ describe('computeFinalUrl', () => {
     expect(computeFinalUrl('/pdf/resume.pdf', '')).toBe('/pdf/resume.pdf');
   });
 
-  test('purges branch specific qas suffixes from base urls to keep links active', () => {
+  test('purges branch specific qas suffixes from base urls to direct requests onto root assets folder', () => {
     expect(computeFinalUrl('/pdf/resume.pdf', '/portfolio/qas/')).toBe(
       '/portfolio/pdf/resume.pdf',
     );
   });
 
-  test('purges branch specific main suffixes from base urls securely', () => {
-    expect(computeFinalUrl('/pdf/resume.pdf', '/portfolio/main/')).toBe(
+  test('purges branch specific qas suffixes without trailing slash correctly', () => {
+    expect(computeFinalUrl('/pdf/resume.pdf', '/portfolio/qas')).toBe(
       '/portfolio/pdf/resume.pdf',
     );
   });
