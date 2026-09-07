@@ -7,65 +7,75 @@ import path from 'node:path';
 
 export default defineConfig({
   base: process.env.VITE_BASE || '/',
+  experimental: {
+    renderBuiltUrl(filename) {
+      return `${filename}?v=${Date.now()}`;
+    },
+  },
   plugins: [
     svgr({exportAsDefault: true}),
     react(),
     tailwindcss(),
     VitePWA({
-      registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'Alexandre Gonçalves | Portfolio',
-        short_name: 'Alexandre G.',
-        description: 'Portfolio pessoal moderno de desenvolvimento software',
-        theme_color: '#1a1a1a',
         background_color: '#1a1a1a',
+        description: 'Portfolio pessoal moderno de desenvolvimento software',
         display: 'standalone',
-        orientation: 'portrait',
-        start_url: '.',
         icons: [
           {src: 'pwa-192x192.png', sizes: '192x192', type: 'image/png'},
           {src: 'pwa-512x512.png', sizes: '512x512', type: 'image/png'},
           {
-            src: 'pwa-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
             purpose: 'any maskable',
+            sizes: '512x512',
+            src: 'pwa-512x512.png',
+            type: 'image/png',
           },
         ],
+        name: 'Alexandre Gonçalves | Portfolio',
+        orientation: 'portrait',
+        short_name: 'Alexandre G.',
+        start_url: '.',
+        theme_color: '#1a1a1a',
+      },
+      registerType: 'autoUpdate',
+      workbox: {
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
       },
     }),
   ],
 
   resolve: {
-    tsconfigPaths: true,
     alias: {
       assets: path.resolve(__dirname, 'src/assets'),
       components: path.resolve(__dirname, 'src/components'),
-      context: path.resolve(__dirname, 'src/context'),
-      pages: path.resolve(__dirname, 'src/pages'),
-      utils: path.resolve(__dirname, 'src/utils'),
       constants: path.resolve(__dirname, 'src/constants'),
-      resources: path.resolve(__dirname, 'src/resources'),
-      routes: path.resolve(__dirname, 'src/routes'),
+      context: path.resolve(__dirname, 'src/context'),
       helpers: path.resolve(__dirname, 'src/helpers'),
       i18n: path.resolve(__dirname, 'src/i18n/index.ts'),
+      pages: path.resolve(__dirname, 'src/pages'),
+      resources: path.resolve(__dirname, 'src/resources'),
+      routes: path.resolve(__dirname, 'src/routes'),
+      utils: path.resolve(__dirname, 'src/utils'),
     },
+    tsconfigPaths: true,
   },
   server: {
-    port: 5173,
     open: true,
+    port: 5173,
   },
   test: {
-    globals: true,
-    environment: 'jsdom',
     alias: {
       assets: path.resolve(__dirname, 'src/assets'),
       components: path.resolve(__dirname, 'src/components'),
       context: path.resolve(__dirname, 'src/context'),
+      i18n: path.resolve(__dirname, 'src/i18n/index.ts'),
       pages: path.resolve(__dirname, 'src/pages'),
       utils: path.resolve(__dirname, 'src/utils'),
-      i18n: path.resolve(__dirname, 'src/i18n/index.ts'),
     },
+    environment: 'jsdom',
+    globals: true,
   },
 });
