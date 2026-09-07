@@ -23,4 +23,16 @@ describe('computeFinalUrl', () => {
   test('returns a root-relative path when the base url is empty', () => {
     expect(computeFinalUrl('/pdf/resume.pdf', '')).toBe('/pdf/resume.pdf');
   });
+
+  test('purges branch specific qas suffixes from base urls to keep links active', () => {
+    expect(computeFinalUrl('/pdf/resume.pdf', '/portfolio/qas/')).toBe(
+      '/portfolio/pdf/resume.pdf',
+    );
+  });
+
+  test('purges branch specific main suffixes from base urls securely', () => {
+    expect(computeFinalUrl('/pdf/resume.pdf', '/portfolio/main/')).toBe(
+      '/portfolio/pdf/resume.pdf',
+    );
+  });
 });
