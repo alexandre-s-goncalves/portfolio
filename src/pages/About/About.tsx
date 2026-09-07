@@ -10,9 +10,12 @@ import iGithub from 'assets/icons/iGithub.svg';
 import iLinkedin from 'assets/icons/iLinkedin.svg';
 import iDownload from 'assets/icons/iDownload.svg';
 import iCalendar from 'assets/icons/iCalendar.svg';
+import {useState} from 'react';
+import {ModalDownloadCv} from 'components/ModalDownloadCv';
 
 export const About = () => {
   const {t} = useTranslation(namespaces.about.name);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="animate-fade-in mx-auto flex h-auto w-full max-w-7xl flex-col p-4 pb-24 select-none md:p-8 lg:h-full lg:overflow-hidden lg:p-12 lg:pb-4">
@@ -82,7 +85,9 @@ export const About = () => {
               'inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-xl text-xs font-bold shadow-xs transition-all outline-none active:scale-95',
               'bg-slate-950 text-white hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-slate-950/40',
               'dark:bg-slate-50 dark:text-slate-950 dark:hover:bg-slate-200 dark:focus-visible:ring-slate-300/40',
-            )}>
+            )}
+            data-testid="about-download-cv-btn"
+            onClick={() => setIsModalOpen(true)}>
             <Icon icon={iDownload} size={16} color="currentColor" />
             <span>{t('downloadCv')}</span>
           </button>
@@ -170,6 +175,10 @@ export const About = () => {
           </section>
         </div>
       </div>
+      <ModalDownloadCv
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };
