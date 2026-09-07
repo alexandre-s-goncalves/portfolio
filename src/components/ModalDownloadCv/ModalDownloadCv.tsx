@@ -1,12 +1,14 @@
+import {useTranslation} from 'react-i18next';
 import iFlagBrazilSVG from 'assets/icons/iFlag-Brazil.svg';
 import iPdfSVG from 'assets/icons/iPdf.svg';
 import iWorldMapSVG from 'assets/icons/iWorldMap.svg';
-import {useTranslation} from 'react-i18next';
 import {Icon} from 'components/Icon';
 import {namespaces} from 'i18n';
+import {computeFinalUrl} from './computeFinalUrl';
 
 const handlePrintDocument = (pdfPath: string) => {
-  const newWindow = window.open(pdfPath, '_blank');
+  const finalUrl = computeFinalUrl(pdfPath, import.meta.env.BASE_URL);
+  const newWindow = window.open(finalUrl, '_blank');
   if (newWindow) {
     newWindow.focus();
   }
@@ -29,6 +31,7 @@ export const ModalDownloadCv = ({
         <h2 className="mb-4 p-1 text-lg font-bold text-slate-900 dark:text-slate-50">
           {t(namespaces.cvModal.keys.titleText)}
         </h2>
+
         <div className="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2">
           <div className="flex h-56 flex-col gap-2 rounded-xl border border-white/30 bg-white/40 p-4 transition-all hover:bg-white/80 dark:border-slate-700/30 dark:bg-slate-800/20 dark:hover:bg-slate-800/60">
             <Icon icon={iFlagBrazilSVG} size={38} color="none" />
