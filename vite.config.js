@@ -8,11 +8,8 @@ import path from 'node:path';
 export default defineConfig({
   base: process.env.VITE_BASE || '/',
   experimental: {
-    renderBuiltUrl(filename, {hostType}) {
-      if (hostType === 'html') {
-        return `${filename}?v=${new Date().Date.now()}`;
-      }
-      return filename;
+    renderBuiltUrl(filename) {
+      return `${filename}?v=${Date.now()}`;
     },
   },
   plugins: [
