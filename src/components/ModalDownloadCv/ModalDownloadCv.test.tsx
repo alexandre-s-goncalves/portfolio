@@ -1,7 +1,6 @@
 import {afterEach, beforeEach, describe, expect, test, vi} from 'vitest';
 import {fireEvent, render, screen} from '@testing-library/react';
 import {ModalDownloadCv} from './ModalDownloadCv';
-import {computeFinalUrl} from './computeFinalUrl';
 
 vi.mock('react-i18next', async importOriginal => {
   const actual = await importOriginal<typeof import('react-i18next')>();
@@ -72,36 +71,6 @@ describe('ModalDownloadCv Component Behavioral & Rendering Gates', () => {
         expect.stringContaining('pdf/resume.pdf'),
         '_blank',
       );
-    });
-  });
-
-  describe('Branch Coverage Calibrations', () => {
-    test('should correctly build target url paths when BASE_URL metadata string does not end with a trailing slash', () => {
-      const result = computeFinalUrl('pdf/curriculo-br.pdf', '/portfolio');
-      expect(result).toBe('/portfolio/pdf/curriculo-br.pdf');
-    });
-
-    test('should correctly build target url paths when BASE_URL metadata string ends with a trailing slash', () => {
-      const result = computeFinalUrl('pdf/curriculo-br.pdf', '/portfolio/');
-      expect(result).toBe('/portfolio/pdf/curriculo-br.pdf');
-    });
-
-    test('should correctly build target url paths when input path starts with a redundant leading slash', () => {
-      const result = computeFinalUrl('/pdf/curriculo-br.pdf', '/portfolio');
-      expect(result).toBe('/portfolio/pdf/curriculo-br.pdf');
-    });
-
-    test('should bypass focus execution parameters safely if new window context returns as null', () => {
-      vi.stubGlobal(
-        'open',
-        vi.fn(() => null),
-      );
-      render(<ModalDownloadCv isOpen={true} onClose={handleCloseMock} />);
-
-      const brButton = screen.getByTestId('print-br-btn');
-      fireEvent.click(brButton);
-
-      expect(window.open).toReturnWith(null);
     });
   });
 

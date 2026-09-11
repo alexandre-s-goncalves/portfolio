@@ -3,16 +3,10 @@ import iFlagBrazilSVG from 'assets/icons/iFlag-Brazil.svg';
 import iPdfSVG from 'assets/icons/iPdf.svg';
 import iWorldMapSVG from 'assets/icons/iWorldMap.svg';
 import {Icon} from 'components/Icon';
+import coverLetterPdf from 'assets/pdf/cover-letter.pdf';
+import curriculoBrPdf from 'assets/pdf/curriculo-br.pdf';
+import resumePdf from 'assets/pdf/resume.pdf';
 import {namespaces} from 'i18n';
-import {computeFinalUrl} from './computeFinalUrl';
-
-const handlePrintDocument = (pdfPath: string) => {
-  const finalUrl = computeFinalUrl(pdfPath, import.meta.env.BASE_URL);
-  const newWindow = window.open(finalUrl, '_blank');
-  if (newWindow) {
-    newWindow.focus();
-  }
-};
 
 export const ModalDownloadCv = ({
   isOpen,
@@ -24,6 +18,13 @@ export const ModalDownloadCv = ({
   const {t} = useTranslation(namespaces.cvModal.name);
 
   if (!isOpen) return null;
+
+  const handlePrintDocument = (pdfUrl: string) => {
+    const newWindow = window.open(pdfUrl, '_blank');
+    if (newWindow) {
+      newWindow.focus();
+    }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-md backdrop-saturate-150">
@@ -41,7 +42,7 @@ export const ModalDownloadCv = ({
               </h2>
             </div>
             <button
-              onClick={() => handlePrintDocument('/pdf/curriculo-br.pdf')}
+              onClick={() => handlePrintDocument(curriculoBrPdf)}
               className="cursor-pointer transition-transform focus:outline-none active:scale-95"
               aria-label={t(namespaces.cvModal.keys.printBrLabel)}
               data-testid="print-br-btn">
@@ -62,7 +63,7 @@ export const ModalDownloadCv = ({
             <div className="flex justify-around gap-4 pt-1">
               <div className="flex flex-col items-center gap-1">
                 <button
-                  onClick={() => handlePrintDocument('/pdf/resume.pdf')}
+                  onClick={() => handlePrintDocument(resumePdf)}
                   className="cursor-pointer transition-transform focus:outline-none active:scale-95"
                   aria-label={t(namespaces.cvModal.keys.printCvLabel)}
                   data-testid="print-resume-btn">
@@ -76,7 +77,7 @@ export const ModalDownloadCv = ({
               </div>
               <div className="flex flex-col items-center gap-1">
                 <button
-                  onClick={() => handlePrintDocument('/pdf/cover-letter.pdf')}
+                  onClick={() => handlePrintDocument(coverLetterPdf)}
                   className="cursor-pointer transition-transform focus:outline-none active:scale-95"
                   aria-label={t(namespaces.cvModal.keys.printLetterLabel)}
                   data-testid="print-letter-btn">

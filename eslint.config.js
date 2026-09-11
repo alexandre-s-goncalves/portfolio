@@ -77,6 +77,12 @@ export default defineConfig([
     },
   },
   {
+    files: ['**/*.d.ts'],
+    rules: {
+      'multiline-comment-style': 'off',
+    },
+  },
+  {
     files: ['vite.config.*', 'vite.config.{js,cjs,mjs,ts}'],
     languageOptions: {
       globals: globals.node,
