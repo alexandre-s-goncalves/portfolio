@@ -4,11 +4,9 @@ import iPdfSVG from 'assets/icons/iPdf.svg';
 import iWorldMapSVG from 'assets/icons/iWorldMap.svg';
 import {Icon} from 'components/Icon';
 import {namespaces} from 'i18n';
-import {computeFinalUrl} from './computeFinalUrl';
 
 const handlePrintDocument = (pdfPath: string) => {
-  const finalUrl = computeFinalUrl(pdfPath, import.meta.env.BASE_URL);
-  const newWindow = window.open(finalUrl, '_blank');
+  const newWindow = window.open(pdfPath, '_blank');
   if (newWindow) {
     newWindow.focus();
   }
