@@ -1,12 +1,19 @@
 import {useTranslation} from 'react-i18next';
+import {namespaces} from 'i18n';
+import {Icon} from 'components/Icon';
 import iFlagBrazilSVG from 'assets/icons/iFlag-Brazil.svg';
 import iPdfSVG from 'assets/icons/iPdf.svg';
 import iWorldMapSVG from 'assets/icons/iWorldMap.svg';
-import {Icon} from 'components/Icon';
+import resumePdf from 'assets/pdf/resume.pdf';
 import coverLetterPdf from 'assets/pdf/cover-letter.pdf';
 import curriculoBrPdf from 'assets/pdf/curriculo-br.pdf';
-import resumePdf from 'assets/pdf/resume.pdf';
-import {namespaces} from 'i18n';
+
+const handlePrintDocument = (pdfUrl: string) => {
+  const newWindow = window.open(pdfUrl, '_blank');
+  if (newWindow) {
+    newWindow.focus();
+  }
+};
 
 const handlePrintDocument = (pdfUrl: string) => {
   const newWindow = window.open(pdfUrl, '_blank');
