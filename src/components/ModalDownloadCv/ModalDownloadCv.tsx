@@ -15,13 +15,6 @@ const handlePrintDocument = (pdfUrl: string) => {
   }
 };
 
-const handlePrintDocument = (pdfUrl: string) => {
-  const newWindow = window.open(pdfUrl, '_blank');
-  if (newWindow) {
-    newWindow.focus();
-  }
-};
-
 export const ModalDownloadCv = ({
   isOpen,
   onClose,
