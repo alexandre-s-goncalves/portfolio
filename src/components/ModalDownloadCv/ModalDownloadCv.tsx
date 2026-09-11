@@ -1,12 +1,15 @@
 import {useTranslation} from 'react-i18next';
+import {namespaces} from 'i18n';
+import {Icon} from 'components/Icon';
 import iFlagBrazilSVG from 'assets/icons/iFlag-Brazil.svg';
 import iPdfSVG from 'assets/icons/iPdf.svg';
 import iWorldMapSVG from 'assets/icons/iWorldMap.svg';
-import {Icon} from 'components/Icon';
-import {namespaces} from 'i18n';
+import resumePdf from 'assets/pdf/resume.pdf';
+import coverLetterPdf from 'assets/pdf/cover-letter.pdf';
+import curriculoBrPdf from 'assets/pdf/curriculo-br.pdf';
 
-const handlePrintDocument = (pdfPath: string) => {
-  const newWindow = window.open(pdfPath, '_blank');
+const handlePrintDocument = (pdfUrl: string) => {
+  const newWindow = window.open(pdfUrl, '_blank');
   if (newWindow) {
     newWindow.focus();
   }
@@ -39,7 +42,7 @@ export const ModalDownloadCv = ({
               </h2>
             </div>
             <button
-              onClick={() => handlePrintDocument('/pdf/curriculo-br.pdf')}
+              onClick={() => handlePrintDocument(curriculoBrPdf)}
               className="cursor-pointer transition-transform focus:outline-none active:scale-95"
               aria-label={t(namespaces.cvModal.keys.printBrLabel)}
               data-testid="print-br-btn">
@@ -60,7 +63,7 @@ export const ModalDownloadCv = ({
             <div className="flex justify-around gap-4 pt-1">
               <div className="flex flex-col items-center gap-1">
                 <button
-                  onClick={() => handlePrintDocument('/pdf/resume.pdf')}
+                  onClick={() => handlePrintDocument(resumePdf)}
                   className="cursor-pointer transition-transform focus:outline-none active:scale-95"
                   aria-label={t(namespaces.cvModal.keys.printCvLabel)}
                   data-testid="print-resume-btn">
@@ -74,7 +77,7 @@ export const ModalDownloadCv = ({
               </div>
               <div className="flex flex-col items-center gap-1">
                 <button
-                  onClick={() => handlePrintDocument('/pdf/cover-letter.pdf')}
+                  onClick={() => handlePrintDocument(coverLetterPdf)}
                   className="cursor-pointer transition-transform focus:outline-none active:scale-95"
                   aria-label={t(namespaces.cvModal.keys.printLetterLabel)}
                   data-testid="print-letter-btn">

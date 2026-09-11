@@ -78,11 +78,13 @@ test.describe('About Page System E2E Suite', () => {
         ).__openedUrls,
     );
 
-    expect(openedUrls).toEqual([
-      '/pdf/curriculo-br.pdf',
-      '/pdf/resume.pdf',
-      '/pdf/cover-letter.pdf',
-    ]);
+    expect(openedUrls).toHaveLength(3);
+    expect(openedUrls[0]).toContain('assets/curriculo-br-');
+    expect(openedUrls[0]).toContain('.pdf');
+    expect(openedUrls[1]).toContain('assets/resume-');
+    expect(openedUrls[1]).toContain('.pdf');
+    expect(openedUrls[2]).toContain('assets/cover-letter-');
+    expect(openedUrls[2]).toContain('.pdf');
 
     await closeButton.click({force: true});
     await expect(closeButton).not.toBeAttached();

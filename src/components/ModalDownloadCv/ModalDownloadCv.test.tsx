@@ -72,6 +72,22 @@ describe('ModalDownloadCv Component Behavioral & Rendering Gates', () => {
         '_blank',
       );
     });
+
+    test('should handle blocked document windows without throwing an error', () => {
+      vi.stubGlobal(
+        'open',
+        vi.fn(() => null),
+      );
+
+      render(<ModalDownloadCv isOpen={true} onClose={handleCloseMock} />);
+
+      fireEvent.click(screen.getByTestId('print-br-btn'));
+
+      expect(window.open).toHaveBeenCalledWith(
+        expect.stringContaining('pdf/curriculo-br.pdf'),
+        '_blank',
+      );
+    });
   });
 
   describe('Rendering', () => {
