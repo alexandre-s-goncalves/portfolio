@@ -8,6 +8,13 @@ import curriculoBrPdf from 'assets/pdf/curriculo-br.pdf';
 import resumePdf from 'assets/pdf/resume.pdf';
 import {namespaces} from 'i18n';
 
+const handlePrintDocument = (pdfUrl: string) => {
+  const newWindow = window.open(pdfUrl, '_blank');
+  if (newWindow) {
+    newWindow.focus();
+  }
+};
+
 export const ModalDownloadCv = ({
   isOpen,
   onClose,
@@ -18,13 +25,6 @@ export const ModalDownloadCv = ({
   const {t} = useTranslation(namespaces.cvModal.name);
 
   if (!isOpen) return null;
-
-  const handlePrintDocument = (pdfUrl: string) => {
-    const newWindow = window.open(pdfUrl, '_blank');
-    if (newWindow) {
-      newWindow.focus();
-    }
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-md backdrop-saturate-150">
