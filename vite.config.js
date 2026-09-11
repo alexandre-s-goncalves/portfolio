@@ -7,11 +7,6 @@ import path from 'node:path';
 
 export default defineConfig({
   base: process.env.VITE_BASE || '/',
-  experimental: {
-    renderBuiltUrl(filename) {
-      return `${filename}?v=${Date.now()}`;
-    },
-  },
   plugins: [
     svgr({exportAsDefault: true}),
     react(),
