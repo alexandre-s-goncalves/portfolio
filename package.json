@@ -16,6 +16,7 @@
     "test:e2e:ui": "playwright test --ui",
     "doctor": "echo \"Full codebase\" | npx -y react-doctor@latest . || true",
     "coverage": "vitest run --coverage",
+    "secretlint": "secretlint --maskSecrets \"src/**/*\"",
     "prepare": "husky",
     "playwright:install": "playwright install --with-deps",
     "sonar": "sonar-scanner"
