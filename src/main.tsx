@@ -4,6 +4,14 @@ import {ThemeProvider} from 'context/ThemeContext';
 import {WebRoutes} from './routes';
 import './i18n/i18n';
 import './index.css';
+import {registerSW} from 'virtual:pwa-register';
+
+registerSW({
+  immediate: true,
+  onRegisteredSW: (_swUrl, registration) => {
+    registration?.update();
+  },
+});
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
