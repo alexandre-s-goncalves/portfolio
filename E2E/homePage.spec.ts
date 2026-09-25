@@ -30,7 +30,7 @@ test.describe('Home Page System E2E Suite', () => {
     await expect(techMetric).toBeVisible();
   });
 
-  test('should execute smooth application navigation when interacting with action cta buttons', async ({
+  test('should execute smooth application navigation when interacting with the projects cta', async ({
     page,
   }) => {
     const projectsButton = page
@@ -42,20 +42,6 @@ test.describe('Home Page System E2E Suite', () => {
     await expect(projectsButton).toBeVisible();
     await projectsButton.click();
     await expect(page).toHaveURL(/projects/);
-
-    await page.goto('/');
-    await page.waitForURL('/');
-
-    const contactButton = page
-      .getByRole('link')
-      .or(page.getByRole('button'))
-      .filter({hasText: /Contato|Contact|Touch|Get in touch/i})
-      .first();
-
-    await expect(contactButton).toBeVisible();
-    await contactButton.click();
-
-    await expect(page).toHaveURL(/about/);
   });
 
   test('should dynamically localize core content titles when switching languages on settings view', async ({

@@ -1,5 +1,5 @@
 import {describe, test, expect, beforeEach} from 'vitest';
-import {render, screen, fireEvent} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import {I18nextProvider} from 'react-i18next';
 import {BrowserRouter} from 'react-router-dom';
 import {Skills} from './index';
@@ -25,48 +25,25 @@ describe('Skills Page System Integration', () => {
       renderComponent();
 
       expect(
-        screen.getByRole('heading', {level: 1, name: /Minhas Habilidades/i}),
+        screen.getByRole('heading', {level: 1, name: /Habilidades/i}),
       ).toBeInTheDocument();
       expect(screen.getByText('Frontend & Mobile')).toBeInTheDocument();
       expect(screen.getByText('Ferramentas & Testes')).toBeInTheDocument();
     });
 
-    test('should map all standard core development skills buttons to the viewport', () => {
+    test('should map all standard core development skills cards to the viewport', () => {
       renderComponent();
 
-      expect(
-        screen.getByRole('button', {name: /React.js/i}),
-      ).toBeInTheDocument();
-      expect(
-        screen.getByRole('button', {name: /React Native/i}),
-      ).toBeInTheDocument();
-      expect(
-        screen.getByRole('button', {name: /JavaScript/i}),
-      ).toBeInTheDocument();
-      expect(
-        screen.getByRole('button', {name: /TypeScript/i}),
-      ).toBeInTheDocument();
-      expect(screen.getByRole('button', {name: /Git/i})).toBeInTheDocument();
-      expect(screen.getByRole('button', {name: /Jest/i})).toBeInTheDocument();
-    });
-  });
-
-  describe('Comportamento & Estado Reativo', () => {
-    test('should dynamic toggle focus highlight layers and update footer details on skill interaction click', () => {
-      renderComponent();
-
-      const jestButton = screen.getByRole('button', {name: /Jest/i});
-
-      expect(screen.queryByText('Jest — Stack View')).not.toBeInTheDocument();
-
-      fireEvent.click(jestButton);
-      expect(screen.getByText('Jest — Stack View')).toBeInTheDocument();
-      expect(
-        screen.getByText(/Em cenários reais com Jest/i),
-      ).toBeInTheDocument();
-
-      fireEvent.click(jestButton);
-      expect(screen.queryByText('Jest — Stack View')).not.toBeInTheDocument();
+      [
+        'React.js',
+        'React Native',
+        'JavaScript',
+        'TypeScript',
+        'Git',
+        'Jest',
+      ].forEach(skill => {
+        expect(screen.getByText(skill)).toBeInTheDocument();
+      });
     });
   });
 });

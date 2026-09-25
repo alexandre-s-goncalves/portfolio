@@ -15,8 +15,8 @@ export const BottomTabBar = () => {
 
   const tabs = [
     {path: AppRoutes.HOME, icon: iHome, label: t('home')},
-    {path: AppRoutes.SKILLS, icon: iCode, label: t('skills')},
     {path: AppRoutes.PROJECTS, icon: iBriefcase, label: t('projects')},
+    {path: AppRoutes.SKILLS, icon: iCode, label: t('skills')},
     {path: AppRoutes.ABOUT, icon: iUser, label: t('about')},
     {path: AppRoutes.SETTINGS, icon: iSettings, label: t('settings')},
   ];

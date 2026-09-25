@@ -93,16 +93,16 @@ describe('About Page System Integration', () => {
       renderComponent();
 
       expect(
-        screen.getByText(/Desenvolvo soluções front-end e mobile/i),
+        screen.getByText(/Desenvolvedor Full Stack com sólida trajetória/i),
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          /Especializações em Cibersegurança e Ciência de Dados/i,
+          /Especializações em Cibersegurança e Ciência de Dados & Inteligência Artificial/i,
         ),
       ).toBeInTheDocument();
       expect(
         screen.getByText(
-          /Atuo também como um dos principais revisores de código/i,
+          /Experiência prática na entrega de soluções escaláveis/i,
         ),
       ).toBeInTheDocument();
     });
@@ -130,7 +130,10 @@ describe('About Page System Integration', () => {
       renderComponent();
 
       expect(
-        screen.getByRole('heading', {level: 1, name: /Sobre Mim/i}),
+        screen.getByRole('heading', {
+          level: 1,
+          name: /Perfil Profissional/i,
+        }),
       ).toBeInTheDocument();
       expect(
         screen.getByRole('heading', {

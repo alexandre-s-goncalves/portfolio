@@ -10,7 +10,7 @@ test.describe('Projects Page System E2E Suite', () => {
   }) => {
     const mainHeading = page.getByRole('heading', {
       level: 1,
-      name: /Meus Projetos|My Projects/i,
+      name: /Projetos|Projects|Proyectos|Projets/i,
     });
     await expect(mainHeading).toBeVisible();
 

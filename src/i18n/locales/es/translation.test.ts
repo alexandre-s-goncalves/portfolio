@@ -31,7 +31,7 @@ describe('Spanish Translation Integrity System', () => {
     });
 
     test('should lock exact structural value parameters for about page content', () => {
-      expect(es[name].title).toBe('Sobre Mí');
+      expect(es[name].title).toBe('Perfil Profesional.');
       expect(es[name].downloadCv).toBe('Descargar CV');
       expect(es[name].jobs.company1).toBe('MRV');
       expect(es[name].jobs.company2).toBe('Club Méditerranée');
@@ -56,8 +56,7 @@ describe('Spanish Translation Integrity System', () => {
       expect(es[name].closeButton).toBe('Salir');
       expect(es[name].internationalFormat).toBe('Formato Internacional');
       expect(es[name].printBrLabel).toBe('Currículum BR');
-      expect(es[name].printCvLabel).toBe('Resume');
-      expect(es[name].printLetterLabel).toBe('Cover Letter');
+      expect(es[name].printResume).toBe('Currículum');
       expect(es[name].titleText).toBe('Descargar Documentos');
     });
   });
@@ -109,9 +108,9 @@ describe('Spanish Translation Integrity System', () => {
       expect(es[name].greeting).toBe('Hola, yo soy');
       expect(es[name].role).toBe('Desarrollador Full-Stack');
       expect(es[name].bio).toBe(
-        'Desarrollador apasionado por la tecnología con experiencia en React.js, React Native, .NET y Java. Enfocado en crear soluciones elegantes y eficientes.',
+        'Desarrollador Full Stack especializado en React.js, React Native y .NET, enfocado en alinear los objetivos de negocio y la experiencia del usuario (UX) con la entrega de código altamente mantenible, probado y de alto nivel.',
       );
-      expect(es[name].ctaProjects).toBe('Ver Mis Proyectos');
+      expect(es[name].ctaProjects).toBe('Ver Proyectos');
       expect(es[name].ctaContact).toBe('Póngase en Contacto');
       expect(es[name].metricsProjects).toBe('Proyectos');
       expect(es[name].metricsExperience).toBe('Años de Experiencia');
@@ -167,7 +166,7 @@ describe('Spanish Translation Integrity System', () => {
     });
 
     test('should lock exact structural value parameters for projects page content', () => {
-      expect(es[name].title).toBe('Mis Proyectos');
+      expect(es[name].title).toBe('Proyectos');
       expect(es[name].ctaView).toBe('Ver Proyecto');
       expect(es[name].ctaCode).toBe('Ver Código');
       expect(es[name].status.completed).toBe('Completado');
@@ -205,7 +204,7 @@ describe('Spanish Translation Integrity System', () => {
     });
 
     test('should lock exact structural value parameters for skills page content', () => {
-      expect(es[name].title).toBe('Mis Habilidades');
+      expect(es[name].title).toBe('Habilidades');
       expect(es[name].categories.frontend).toBe('Frontend & Mobile');
       expect(es[name].categories.tools).toBe('Herramientas & Pruebas');
       expect(es[name].levels.expert).toBe('Especialista');

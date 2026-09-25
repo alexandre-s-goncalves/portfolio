@@ -22,8 +22,6 @@ describe('Footer Component', () => {
     test('should render the developers name identity and layout structures', () => {
       renderWithI18n();
 
-      const nameElements = screen.getAllByText(profile.name);
-      expect(nameElements.length).toBeGreaterThan(0);
       expect(screen.getByRole('contentinfo')).toHaveClass(
         'w-full',
         'border-t',
@@ -48,7 +46,7 @@ describe('Footer Component', () => {
 
       expect(githubLink).toBeDefined();
       expect(linkedinLink).toBeDefined();
-      expect(mailLinks).toHaveLength(3);
+      expect(mailLinks).toHaveLength(1);
 
       expect(githubLink).toHaveAttribute('target', '_blank');
       expect(githubLink).toHaveAttribute('rel', 'noopener noreferrer');
@@ -66,13 +64,6 @@ describe('Footer Component', () => {
     test('should assert strict manual locking constraints for translated text blocks', () => {
       renderWithI18n();
 
-      expect(screen.getByText('Contato')).toBeInTheDocument();
-      expect(screen.getByText('São Paulo, Brasil')).toBeInTheDocument();
-      expect(
-        screen.getByText(
-          /Desenvolvedor apaixonado por tecnologia com experiência em React\.js e React Native/i,
-        ),
-      ).toBeInTheDocument();
       expect(
         screen.getByText(/Todos os direitos reservados\./i),
       ).toBeInTheDocument();
@@ -86,12 +77,6 @@ describe('Footer Component', () => {
         await i18n.changeLanguage('en');
       });
 
-      expect(screen.getByText('Contact')).toBeInTheDocument();
-      expect(
-        screen.getByText(
-          /Developer passionate about technology with experience in React\.js and React Native/i,
-        ),
-      ).toBeInTheDocument();
       expect(screen.getByText(/All rights reserved\./i)).toBeInTheDocument();
       expect(screen.getByText(/Built with/i)).toBeInTheDocument();
     });

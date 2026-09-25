@@ -22,23 +22,29 @@ export const About = () => {
       <h1 className="mb-8 shrink-0 border-b border-slate-200 pb-4 text-2xl font-black tracking-tight text-slate-900 md:text-3xl dark:border-slate-900 dark:text-slate-50">
         {t('title')}
       </h1>
-      <div className="grid grid-cols-1 gap-8 lg:min-h-0 lg:flex-1 lg:grid-cols-[280px_1fr] lg:overflow-hidden">
-        <div className="flex flex-col items-center text-center lg:ml-5 lg:shrink-0 lg:items-start lg:text-left">
-          <div className="mb-6 flex w-full flex-col items-center justify-center rounded-2xl border border-slate-200 bg-slate-50/50 p-6 shadow-xs dark:border-slate-900 dark:bg-[#0c111d]">
-            <div className="mb-4 flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200/60 bg-slate-100 shadow-md dark:border-slate-800 dark:bg-slate-900">
+      <div className="grid grid-cols-1 justify-items-center gap-8 lg:min-h-0 lg:flex-1 lg:grid-cols-[280px_1fr] lg:justify-items-stretch lg:overflow-hidden">
+        <div
+          className={clsx(
+            'flex min-h-0 max-w-96 flex-col items-center pb-6 text-left lg:ml-5 lg:shrink-0 lg:items-start lg:overflow-y-auto lg:pr-1 lg:pb-8',
+            'scrollbar-stable lg:scrollbar-thin',
+            'scrollbar-thumb-transparent dark:scrollbar-thumb-transparent',
+            'hover:scrollbar-thumb-slate-300/80 dark:hover:scrollbar-thumb-slate-800/60',
+          )}>
+          <div className="mb-3 flex w-full flex-col items-center justify-center rounded-2xl border border-slate-200 bg-slate-50/50 p-4 shadow-xs dark:border-slate-900 dark:bg-[#0c111d]">
+            <div className="mb-2 flex h-16 w-16 items-center justify-center overflow-hidden rounded-full border-2 border-slate-200/60 bg-slate-100 shadow-md lg:h-14 lg:w-14 dark:border-slate-800 dark:bg-slate-900">
               <img
                 src={fotoPerfil}
                 alt={profile.name}
                 className="h-full w-full object-cover"
               />
             </div>
-            <h2 className="mb-1 text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">
+            <h2 className="mb-1 text-lg font-bold tracking-tight text-slate-900 dark:text-slate-50">
               {profile.name}
             </h2>
-            <span className="mb-4 text-xs font-semibold text-slate-500 dark:text-slate-400">
+            <span className="mb-2 text-[11px] font-semibold text-slate-500 dark:text-slate-400">
               {t('jobs.title1')}
             </span>
-            <ul className="w-full space-y-2 border-t border-slate-100 pt-4 text-xs text-slate-600 dark:border-slate-800/60 dark:text-slate-400">
+            <ul className="w-full space-y-1 border-t border-slate-100 pt-2 text-[11px] text-slate-600 dark:border-slate-800/60 dark:text-slate-400">
               <li className="flex items-center justify-center gap-2 truncate lg:justify-start">
                 <Icon size="md" icon={iMail} color="currentColor" />
                 <a
@@ -53,7 +59,7 @@ export const About = () => {
               </li>
             </ul>
           </div>
-          <div className="mb-3 grid w-full grid-cols-2 gap-2">
+          <div className="mb-2 grid w-full grid-cols-2 gap-2">
             <a
               href={profile.links.github}
               target="_blank"
@@ -82,7 +88,7 @@ export const About = () => {
           <button
             type="button"
             className={clsx(
-              'inline-flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-xl text-xs font-bold shadow-xs transition-all outline-none active:scale-95',
+              'inline-flex min-h-10 w-full shrink-0 cursor-pointer items-center justify-center gap-2 rounded-xl px-3 text-xs font-bold shadow-xs transition-all outline-none active:scale-95',
               'bg-slate-950 text-white hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-slate-950/40',
               'dark:bg-slate-50 dark:text-slate-950 dark:hover:bg-slate-200 dark:focus-visible:ring-slate-300/40',
             )}

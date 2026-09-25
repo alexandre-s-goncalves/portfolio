@@ -20,8 +20,8 @@ export const Header = () => {
 
   const tabs = [
     {path: AppRoutes.HOME, label: tNav('home')},
-    {path: AppRoutes.SKILLS, label: tNav('skills')},
     {path: AppRoutes.PROJECTS, label: tNav('projects')},
+    {path: AppRoutes.SKILLS, label: tNav('skills')},
     {path: AppRoutes.ABOUT, label: tNav('about')},
   ];
 
