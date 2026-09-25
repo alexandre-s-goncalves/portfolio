@@ -45,7 +45,7 @@ export const Projects = () => {
   }, [activeImage, closeModal]);
 
   return (
-    <div className="animate-fade-in mx-auto flex h-auto w-full max-w-7xl flex-col pt-8 pr-4 pb-4 pl-4 select-none lg:h-full lg:overflow-hidden lg:pr-8 lg:pb-4 lg:pl-8 xl:pr-12 xl:pl-12">
+    <div className="animate-fade-in mx-auto flex h-auto min-h-0 w-full max-w-7xl flex-col pt-8 pr-4 pb-4 pl-4 select-none lg:h-full lg:overflow-hidden lg:pr-8 lg:pb-4 lg:pl-8 xl:pr-12 xl:pl-12">
       <div className="mb-6 shrink-0 border-b border-slate-100 pb-4 text-left dark:border-slate-900">
         <h1 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl dark:text-slate-50">
           {t('title')}
@@ -55,7 +55,12 @@ export const Projects = () => {
         </p>
       </div>
 
-      <div className="w-full lg:flex-1 lg:scrollbar-thin lg:overflow-y-auto lg:pr-2">
+      <div
+        className={clsx(
+          'min-h-0 w-full lg:flex-1 lg:overflow-y-auto lg:pr-2',
+          'scrollbar-stable scrollbar-thin scrollbar-thumb-transparent dark:scrollbar-thumb-transparent',
+          'hover:scrollbar-thumb-slate-300/80 dark:hover:scrollbar-thumb-slate-800/60',
+        )}>
         <div className="mx-auto grid w-full max-w-5xl grid-cols-1 items-start gap-6 pb-6 md:grid-cols-2 md:pb-0">
           {profile.projects.map(project => {
             const projectImage = PROJECT_IMAGES[project.id];

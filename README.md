@@ -49,9 +49,9 @@
 <h2 id="portugues">🇧🇷 Português</h2>
 
 <div align="center">
-  Progresso do Projeto: <b>74%</b>
+  Progresso do Projeto: <b>100%</b>
   <br />
-  <code>██████████████████████████░░░░░░░░░</code>
+  <code>███████████████████████████████████</code>
 </div>
 
 <br/>
@@ -114,9 +114,9 @@ Este projeto está sob a licença MIT — veja [LICENSE](LICENSE).
 <h2 id="english">🇺🇸 English</h2>
 
 <div align="center">
-  Project Progress: <b>74%</b>
+  Project Progress: <b>100%</b>
   <br />
-  <code>██████████████████████████░░░░░░░░░</code>
+  <code>███████████████████████████████████</code>
 </div>
 
 <br/>
@@ -179,9 +179,9 @@ This project is licensed under the MIT License — see [LICENSE](LICENSE).
 <h2 id="francais">🇫🇷 Français</h2>
 
 <div align="center">
-  Avancement du Projet: <b>74%</b>
+  Avancement du Projet: <b>100%</b>
   <br />
-  <code>██████████████████████████░░░░░░░░░</code>
+  <code>███████████████████████████████████</code>
 </div>
 
 <br/>
@@ -244,9 +244,9 @@ Ce projet est sous licence MIT — voir [LICENSE](LICENSE).
 <h2 id="espanol">🇪🇸 Español</h2>
 
 <div align="center">
-  Progreso del Proyecto: <b>74%</b>
+  Progreso del Proyecto: <b>100%</b>
   <br />
-  <code>██████████████████████████░░░░░░░░░</code>
+  <code>███████████████████████████████████</code>
 </div>
 
 <br/>

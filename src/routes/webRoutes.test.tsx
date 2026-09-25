@@ -57,19 +57,22 @@ describe('WebRoutes System Integration', () => {
       const skillsLinks = screen.getAllByRole('link', {name: /Habilidades/i});
       fireEvent.click(skillsLinks[0]!);
       expect(
-        screen.getByRole('heading', {level: 1, name: /Minhas Habilidades/i}),
+        screen.getByRole('heading', {level: 1, name: /Habilidades/i}),
       ).toBeInTheDocument();
 
       const projectsLinks = screen.getAllByRole('link', {name: /Projetos/i});
       fireEvent.click(projectsLinks[0]!);
       expect(
-        screen.getByRole('heading', {level: 1, name: /Meus Projetos/i}),
+        screen.getByRole('heading', {level: 1, name: /Projetos/i}),
       ).toBeInTheDocument();
 
       const aboutLinks = screen.getAllByRole('link', {name: /Sobre/i});
       fireEvent.click(aboutLinks[0]!);
       expect(
-        screen.getByRole('heading', {level: 1, name: /Sobre Mim/i}),
+        screen.getByRole('heading', {
+          level: 1,
+          name: /Perfil Profissional/i,
+        }),
       ).toBeInTheDocument();
 
       const settingsLinks = screen.getAllByRole('link', {name: /Ajustes/i});

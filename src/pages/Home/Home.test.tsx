@@ -5,6 +5,7 @@ import {BrowserRouter} from 'react-router-dom';
 import {Home} from './index';
 import i18n from '../../i18n/i18n';
 import {profile} from 'constants/profile';
+import {calculateYearsDifference} from 'utils/date';
 
 const mockNavigate = vi.fn();
 vi.mock('react-router-dom', async () => {
@@ -60,20 +61,11 @@ describe('Home Page System Integration', () => {
     test('should calculate and display dynamic years of experience counter correctly', () => {
       renderComponent();
 
-      const startDate = new Date('2021-08-01');
-      const currentDate = new Date();
-      let expectedYears = currentDate.getFullYear() - startDate.getFullYear();
-      const monthDifference = currentDate.getMonth() - startDate.getMonth();
+      const component = screen.getByText(
+        `${calculateYearsDifference('2021-08-01')}+`,
+      );
 
-      if (
-        monthDifference < 0 ||
-        (monthDifference === 0 && currentDate.getDate() < startDate.getDate())
-      ) {
-        expectedYears--;
-      }
-      const component = screen.getByTestId('tech-tags-count');
-
-      expect(component).toHaveTextContent(`${expectedYears}+`);
+      expect(component).toBeInTheDocument();
     });
   });
 
@@ -82,24 +74,12 @@ describe('Home Page System Integration', () => {
       renderComponent();
 
       const projectsButton = screen.getByRole('button', {
-        name: /Ver Meus Projetos/i,
+        name: /Ver Projetos/i,
       });
       fireEvent.click(projectsButton);
 
       expect(mockNavigate).toHaveBeenCalledTimes(1);
       expect(mockNavigate).toHaveBeenCalledWith('/projects');
-    });
-
-    test('should trigger safe redirection to about context screen on contact button click', () => {
-      renderComponent();
-
-      const contactButton = screen.getByRole('button', {
-        name: /Entre em Contato/i,
-      });
-      fireEvent.click(contactButton);
-
-      expect(mockNavigate).toHaveBeenCalledTimes(1);
-      expect(mockNavigate).toHaveBeenCalledWith('/about');
     });
   });
 });

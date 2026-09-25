@@ -29,7 +29,7 @@ test.describe('About Page System E2E Suite', () => {
 
     const biographyContainer = page.locator('body');
     await expect(biographyContainer).toContainText(
-      /Desarrollo soluciones|I develop|Desenvolvo soluções/i,
+      /Desarrollador Full Stack|Full Stack Developer/i,
     );
   });
 
@@ -56,17 +56,14 @@ test.describe('About Page System E2E Suite', () => {
     await page.getByTestId('about-download-cv-btn').click();
 
     const brButton = page.getByTestId('print-br-btn').first();
-    const resumeButton = page.getByTestId('print-resume-btn').first();
     const letterButton = page.getByTestId('print-letter-btn').first();
     const closeButton = page.getByTestId('close-modal-btn').first();
 
     await expect(brButton).toBeAttached();
-    await expect(resumeButton).toBeAttached();
     await expect(letterButton).toBeAttached();
     await expect(closeButton).toBeAttached();
 
     await brButton.click({force: true});
-    await resumeButton.click({force: true});
     await letterButton.click({force: true});
 
     const openedUrls = await page.evaluate(
@@ -78,16 +75,26 @@ test.describe('About Page System E2E Suite', () => {
         ).__openedUrls,
     );
 
-    expect(openedUrls).toHaveLength(3);
+    expect(openedUrls).toHaveLength(2);
     expect(openedUrls[0]).toContain('assets/curriculo-br-');
     expect(openedUrls[0]).toContain('.pdf');
-    expect(openedUrls[1]).toContain('assets/resume-');
+    expect(openedUrls[1]).toContain('assets/cover-letter-');
     expect(openedUrls[1]).toContain('.pdf');
-    expect(openedUrls[2]).toContain('assets/cover-letter-');
-    expect(openedUrls[2]).toContain('.pdf');
 
     await closeButton.click({force: true});
     await expect(closeButton).not.toBeAttached();
+  });
+
+  test('should keep the download cv action reachable in short desktop viewports', async ({
+    page,
+  }) => {
+    await page.setViewportSize({width: 1280, height: 500});
+    await page.goto('/about');
+
+    const downloadButton = page.getByTestId('about-download-cv-btn');
+    await expect(downloadButton).toBeVisible();
+    await downloadButton.click();
+    await expect(page.getByTestId('close-modal-btn')).toBeVisible();
   });
 
   test('should render profile identity card and contact information completely', async ({
@@ -95,7 +102,7 @@ test.describe('About Page System E2E Suite', () => {
   }) => {
     const mainHeading = page.getByRole('heading', {
       level: 1,
-      name: /Sobre Mim|About Me/i,
+      name: /Perfil Profissional|Professional Profile|Perfil Profesional|Profil Professionnel/i,
     });
     await expect(mainHeading).toBeVisible();
 

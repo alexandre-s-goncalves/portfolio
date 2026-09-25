@@ -4,7 +4,6 @@ import {Icon} from 'components/Icon';
 import iFlagBrazilSVG from 'assets/icons/iFlag-Brazil.svg';
 import iPdfSVG from 'assets/icons/iPdf.svg';
 import iWorldMapSVG from 'assets/icons/iWorldMap.svg';
-import resumePdf from 'assets/pdf/resume.pdf';
 import coverLetterPdf from 'assets/pdf/cover-letter.pdf';
 import curriculoBrPdf from 'assets/pdf/curriculo-br.pdf';
 
@@ -63,30 +62,16 @@ export const ModalDownloadCv = ({
             <div className="flex justify-around gap-4 pt-1">
               <div className="flex flex-col items-center gap-1">
                 <button
-                  onClick={() => handlePrintDocument(resumePdf)}
-                  className="cursor-pointer transition-transform focus:outline-none active:scale-95"
-                  aria-label={t(namespaces.cvModal.keys.printCvLabel)}
-                  data-testid="print-resume-btn">
-                  <div className="flex gap-1">
-                    <Icon icon={iPdfSVG} size={44} color="currentColor" />
-                  </div>
-                </button>
-                <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                  {t(namespaces.cvModal.keys.printCvLabel)}
-                </span>
-              </div>
-              <div className="flex flex-col items-center gap-1">
-                <button
                   onClick={() => handlePrintDocument(coverLetterPdf)}
                   className="cursor-pointer transition-transform focus:outline-none active:scale-95"
-                  aria-label={t(namespaces.cvModal.keys.printLetterLabel)}
+                  aria-label={t(namespaces.cvModal.keys.printResume)}
                   data-testid="print-letter-btn">
                   <div className="flex gap-1">
                     <Icon icon={iPdfSVG} size={44} color="currentColor" />
                   </div>
                 </button>
                 <span className="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                  {t(namespaces.cvModal.keys.printLetterLabel)}
+                  {t(namespaces.cvModal.keys.printResume)}
                 </span>
               </div>
             </div>

@@ -10,7 +10,7 @@ vi.mock('react-i18next', async importOriginal => {
     useTranslation: () => ({
       t: (key: string) => {
         const translations = new Map<string, string>([
-          ['title', 'Meus Projetos'],
+          ['title', 'Projetos'],
           ['subtitle', 'Alguns dos meus trabalhos recentes'],
           ['ctaView', 'Ver Projeto'],
           ['ctaCode', 'Ver Código'],
@@ -78,7 +78,7 @@ describe('Projects Page System Integration with Isolated Mocks', () => {
       renderComponent();
 
       expect(
-        screen.getByRole('heading', {level: 1, name: /Meus Projetos/i}),
+        screen.getByRole('heading', {level: 1, name: /Projetos/i}),
       ).toBeInTheDocument();
       expect(
         screen.getByRole('heading', {level: 2, name: 'Portfolio Pessoal'}),

@@ -61,18 +61,6 @@ describe('ModalDownloadCv Component Behavioral & Rendering Gates', () => {
       );
     });
 
-    test('should invoke window open target blank navigation upon resume button click interaction', () => {
-      render(<ModalDownloadCv isOpen={true} onClose={handleCloseMock} />);
-
-      const resumeButton = screen.getByTestId('print-resume-btn');
-      fireEvent.click(resumeButton);
-
-      expect(window.open).toHaveBeenCalledWith(
-        expect.stringContaining('pdf/resume.pdf'),
-        '_blank',
-      );
-    });
-
     test('should handle blocked document windows without throwing an error', () => {
       vi.stubGlobal(
         'open',
@@ -104,7 +92,6 @@ describe('ModalDownloadCv Component Behavioral & Rendering Gates', () => {
       expect(screen.getByTestId('close-modal-btn')).toBeInTheDocument();
       expect(screen.getByTestId('print-br-btn')).toBeInTheDocument();
       expect(screen.getByTestId('print-letter-btn')).toBeInTheDocument();
-      expect(screen.getByTestId('print-resume-btn')).toBeInTheDocument();
     });
   });
 });

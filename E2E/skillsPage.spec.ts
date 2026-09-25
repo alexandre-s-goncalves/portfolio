@@ -10,7 +10,7 @@ test.describe('Skills Page System E2E Suite', () => {
   }) => {
     const mainHeading = page.getByRole('heading', {
       level: 1,
-      name: /Minhas Habilidades|My Skills/i,
+      name: /Habilidades|Skills|Compétences/i,
     });
     await expect(mainHeading).toBeVisible();
 
@@ -23,37 +23,18 @@ test.describe('Skills Page System E2E Suite', () => {
     await expect(toolsCategory).toBeVisible();
   });
 
-  test('should verify the presence of all standard technology buttons', async ({
+  test('should verify the presence of all standard technology cards', async ({
     page,
   }) => {
-    const reactBtn = page.getByRole('button').filter({hasText: 'React.js'});
-    await expect(reactBtn).toBeVisible();
-
-    const reactNativeBtn = page
-      .getByRole('button')
-      .filter({hasText: 'React Native'});
-    await expect(reactNativeBtn).toBeVisible();
-
-    const jestBtn = page.getByRole('button').filter({hasText: 'Jest'});
-    await expect(jestBtn).toBeVisible();
+    await expect(page.getByText('React.js').first()).toBeVisible();
+    await expect(page.getByText('React Native').first()).toBeVisible();
+    await expect(page.getByText('Jest').first()).toBeVisible();
   });
 
-  test('should execute full interactive card selection toggle flow on skill click', async ({
+  test('should render skills without an obsolete selection panel', async ({
     page,
   }) => {
-    const jestBtn = page.getByRole('button').filter({hasText: 'Jest'});
-
     await expect(page.getByText('Jest — Stack View')).not.toBeVisible();
-
-    await jestBtn.click();
-    await expect(
-      page.getByRole('heading', {level: 3, name: 'Jest — Stack View'}),
-    ).toBeVisible();
-
-    await jestBtn.click();
-    await expect(
-      page.getByRole('heading', {level: 3, name: 'Jest — Stack View'}),
-    ).not.toBeVisible();
   });
 
   test('should dynamically localise technology levels when switching system language to spanish', async ({

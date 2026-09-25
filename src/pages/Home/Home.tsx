@@ -14,7 +14,12 @@ export const Home = () => {
   const yearsExperience = calculateYearsDifference('2021-08-01');
 
   return (
-    <div className="animate-fade-in lg: flex h-full w-full flex-1 flex-col pb-0 select-none">
+    <div
+      className={clsx(
+        'animate-fade-in flex h-full min-h-0 w-full flex-1 flex-col overflow-y-auto pb-0 select-none',
+        'scrollbar-stable scrollbar-thin scrollbar-thumb-transparent dark:scrollbar-thumb-transparent',
+        'hover:scrollbar-thumb-slate-300/80 dark:hover:scrollbar-thumb-slate-800/60',
+      )}>
       <div
         data-testid="home-content"
         className="mx-auto flex w-full max-w-3xl flex-1 flex-col justify-center p-5 pt-5 pb-5 text-center md:px-12 md:pt-8 md:pb-8 md:text-left lg:px-16">
@@ -50,16 +55,6 @@ export const Home = () => {
             )}>
             <span>{t('ctaProjects')}</span>
             <Icon icon={iArrowForward} size={16} color="currentColor" />
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate(AppRoutes.ABOUT)}
-            className={clsx(
-              'group relative inline-flex h-11 w-full max-w-xs cursor-pointer items-center justify-center gap-2 rounded-xl px-6 text-sm font-semibold tracking-wide transition-all duration-300 outline-none active:scale-95 md:w-auto md:max-w-none',
-              'border border-slate-200 bg-white text-slate-900 hover:bg-slate-50 focus-visible:ring-2 focus-visible:ring-slate-200/40',
-              'dark:border-slate-800 dark:bg-transparent dark:text-slate-100 dark:hover:bg-slate-900/60 dark:focus-visible:ring-slate-800/40',
-            )}>
-            <span>{t('ctaContact')}</span>
           </button>
         </div>
       </div>
