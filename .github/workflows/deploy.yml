@@ -81,7 +81,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           destination_dir: qas
-          keep_files: true
+          keep_files: false
 
   deploy-Production:
     runs-on: ubuntu-latest
